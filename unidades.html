@@ -81,102 +81,228 @@
                         <!-- Unit Tabs -->
                         <div
                             class="border-b border-slate-200 dark:border-slate-800 flex gap-8 mb-10 overflow-x-auto whitespace-nowrap">
-                            <button
-                                class="border-b-4 border-primary text-primary font-bold pb-4 px-2 text-sm uppercase tracking-wider">Loja
+                            <button id="tab-centro"
+                                class="tab-btn border-b-4 border-primary text-primary font-bold pb-4 px-2 text-sm uppercase tracking-wider">Loja
                                 Centro</button>
-                            <button
-                                class="border-b-4 border-transparent text-slate-400 dark:text-slate-500 font-bold pb-4 px-2 text-sm uppercase tracking-wider hover:text-primary transition-colors">Loja
+                            <button id="tab-catole"
+                                class="tab-btn border-b-4 border-transparent text-slate-400 dark:text-slate-500 font-bold pb-4 px-2 text-sm uppercase tracking-wider hover:text-primary transition-colors">Loja
                                 Catolé</button>
-                            <button
-                                class="border-b-4 border-transparent text-slate-400 dark:text-slate-500 font-bold pb-4 px-2 text-sm uppercase tracking-wider hover:text-primary transition-colors">Oficina
+                            <button id="tab-oficina"
+                                class="tab-btn border-b-4 border-transparent text-slate-400 dark:text-slate-500 font-bold pb-4 px-2 text-sm uppercase tracking-wider hover:text-primary transition-colors">Oficina
                                 Especializada</button>
                         </div>
-                        <!-- Location Detail -->
-                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                            <!-- Map Placeholder -->
-                            <div
-                                class="lg:col-span-2 relative h-[400px] md:h-auto min-h-[400px] rounded-xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800">
-                                <div class="absolute inset-0 bg-slate-200 dark:bg-slate-800">
-                                    <div class="w-full h-full bg-cover bg-center grayscale contrast-125 opacity-70"
-                                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD8dl7_HFmIgWSi_h3swAuvWzz4mEqIVwkW7Q4L_1GZyXM9w2n37dlPXudBHQKBBEgW22D-RdbYnuG-VxBERcRBlbuFz5zNNbpOxpUY2A2tbCqlGeuHGoWW7jfFyqjOmOQNgYgFaW2GCrCBOzdwwnHcp1KTSVmAMaMZ1K9kPDYoYllwhbp2SXpdM6tzDSCP8qT_VJzeWmYn6HtR-XXkD4WAUSlk5LJsCIJRiOagvxBQInDArrJcc-NgK7YWHVdkwnceiOaoI0V7nNyO')">
+
+                        <!-- Location Detail Container -->
+                        <div id="unit-content">
+                            <!-- Centro Content (Default) -->
+                            <div id="content-centro" class="unit-pane grid grid-cols-1 lg:grid-cols-3 gap-8">
+                                <div
+                                    class="lg:col-span-2 relative h-[400px] md:h-auto min-h-[400px] rounded-xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800">
+                                    <div class="absolute inset-0">
+                                        <img src="assets/unidade-centro.png" alt="Unidade Centro"
+                                            class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent">
+                                    </div>
+                                    <div
+                                        class="absolute bottom-6 left-6 flex items-center gap-3 bg-white dark:bg-slate-900 p-4 rounded-lg shadow-2xl">
+                                        <div class="bg-accent p-2 rounded-full text-white">
+                                            <span class="material-symbols-outlined">location_on</span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-slate-900 dark:text-white">Loja Matriz Centro</h3>
+                                            <p class="text-xs text-slate-500 dark:text-slate-400">R. João Suassuna, 126A
+                                                - Centro</p>
+                                        </div>
+                                        <a href="https://maps.google.com/?q=R.+João+Suassuna,+126A,+Centro,+Campina+Grande"
+                                            target="_blank"
+                                            class="ml-4 bg-primary text-white hover:bg-primary/90 px-4 py-2 rounded-lg font-bold text-sm transition-all">Ver
+                                            Rota</a>
                                     </div>
                                 </div>
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
                                 <div
-                                    class="absolute bottom-6 left-6 flex items-center gap-3 bg-white dark:bg-slate-900 p-4 rounded-lg shadow-2xl">
-                                    <div class="bg-accent p-2 rounded-full text-white">
-                                        <span class="material-symbols-outlined">location_on</span>
+                                    class="bg-white dark:bg-slate-800/50 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-primary">schedule</span>
+                                        Horário de Funcionamento
+                                    </h3>
+                                    <ul class="space-y-4 mb-8">
+                                        <li
+                                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-700 pb-2">
+                                            <span class="text-slate-600 dark:text-slate-400">Segunda a Sexta</span>
+                                            <span class="font-bold text-accent">07:00 - 17:30</span>
+                                        </li>
+                                        <li
+                                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-700 pb-2">
+                                            <span class="text-slate-600 dark:text-slate-400">Sábado</span>
+                                            <span class="font-bold text-accent">07:00 - 12:00</span>
+                                        </li>
+                                    </ul>
+                                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-primary">call</span>
+                                        Contato Direto
+                                    </h3>
+                                    <div class="space-y-4">
+                                        <div class="flex items-center gap-4">
+                                            <div class="bg-slate-100 dark:bg-slate-700 p-2 rounded-lg">
+                                                <span class="material-symbols-outlined text-primary">phone</span>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-slate-400 uppercase font-bold tracking-tighter">
+                                                    Telefone</p>
+                                                <p class="font-bold">(83) 3322-1010</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-4">
+                                            <div class="bg-slate-100 dark:bg-slate-700 p-2 rounded-lg">
+                                                <span class="material-symbols-outlined text-primary">chat</span>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-slate-400 uppercase font-bold tracking-tighter">
+                                                    WhatsApp</p>
+                                                <a href="https://wa.me/5583981869199" target="_blank"
+                                                    class="font-bold hover:text-primary transition-colors">(83)
+                                                    98186-9199</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h3 class="font-bold text-slate-900 dark:text-white">Loja Matriz Centro</h3>
-                                        <p class="text-xs text-slate-500 dark:text-slate-400">R. João Suassuna, 126A -
-                                            Centro</p>
-                                    </div>
-                                    <a href="https://maps.google.com/?q=R.+João+Suassuna,+126A,+Centro,+Campina+Grande"
-                                        target="_blank"
-                                        class="ml-4 bg-primary text-white hover:bg-primary/90 px-4 py-2 rounded-lg font-bold text-sm transition-all">Ver
-                                        Rota</a>
                                 </div>
                             </div>
-                            <!-- Info Card -->
-                            <div
-                                class="bg-white dark:bg-slate-800/50 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                                <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-                                    <span class="material-symbols-outlined text-primary">schedule</span>
-                                    Horário de Funcionamento
-                                </h3>
-                                <ul class="space-y-4 mb-8">
-                                    <li
-                                        class="flex justify-between items-center border-b border-slate-100 dark:border-slate-700 pb-2">
-                                        <span class="text-slate-600 dark:text-slate-400">Segunda a Sexta</span>
-                                        <span class="font-bold text-accent">07:00 - 17:30</span>
-                                    </li>
-                                    <li
-                                        class="flex justify-between items-center border-b border-slate-100 dark:border-slate-700 pb-2">
-                                        <span class="text-slate-600 dark:text-slate-400">Sábado</span>
-                                        <span class="font-bold text-accent">07:00 - 12:00</span>
-                                    </li>
-                                    <li class="flex justify-between items-center">
-                                        <span class="text-slate-600 dark:text-slate-400">Domingo</span>
-                                        <span class="font-medium text-slate-400">Fechado</span>
-                                    </li>
-                                </ul>
-                                <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-                                    <span class="material-symbols-outlined text-primary">call</span>
-                                    Contato Direto
-                                </h3>
-                                <div class="space-y-4">
-                                    <div class="flex items-center gap-4">
-                                        <div class="bg-slate-100 dark:bg-slate-700 p-2 rounded-lg">
-                                            <span class="material-symbols-outlined text-primary">phone</span>
+
+                            <!-- Catolé Content (Hidden) -->
+                            <div id="content-catole" class="unit-pane hidden grid grid-cols-1 lg:grid-cols-3 gap-8">
+                                <div
+                                    class="lg:col-span-2 relative h-[400px] md:h-auto min-h-[400px] rounded-xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800">
+                                    <div class="absolute inset-0">
+                                        <img src="assets/unidade-catole.png" alt="Unidade Catolé"
+                                            class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent">
+                                    </div>
+                                    <div
+                                        class="absolute bottom-6 left-6 flex items-center gap-3 bg-white dark:bg-slate-900 p-4 rounded-lg shadow-2xl">
+                                        <div class="bg-accent p-2 rounded-full text-white">
+                                            <span class="material-symbols-outlined">location_on</span>
                                         </div>
                                         <div>
-                                            <p class="text-xs text-slate-400 uppercase font-bold tracking-tighter">
-                                                Telefone</p>
-                                            <p class="font-bold">(83) 3322-1010</p>
+                                            <h3 class="font-bold text-slate-900 dark:text-white">Unidade Premium Catolé
+                                            </h3>
+                                            <p class="text-xs text-slate-500 dark:text-slate-400">Av. Elpídio de
+                                                Almeida, 1450 - Catolé</p>
+                                        </div>
+                                        <a href="https://maps.google.com/?q=Av.+Elpídio+de+Almeida,+1450,+Catolé,+Campina+Grande"
+                                            target="_blank"
+                                            class="ml-4 bg-primary text-white hover:bg-primary/90 px-4 py-2 rounded-lg font-bold text-sm transition-all">Ver
+                                            Rota</a>
+                                    </div>
+                                </div>
+                                <div
+                                    class="bg-white dark:bg-slate-800/50 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-primary">schedule</span>
+                                        Horário de Funcionamento
+                                    </h3>
+                                    <ul class="space-y-4 mb-8">
+                                        <li
+                                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-700 pb-2">
+                                            <span class="text-slate-600 dark:text-slate-400">Segunda a Sexta</span>
+                                            <span class="font-bold text-accent">08:00 - 18:00</span>
+                                        </li>
+                                        <li
+                                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-700 pb-2">
+                                            <span class="text-slate-600 dark:text-slate-400">Sábado</span>
+                                            <span class="font-bold text-accent">08:00 - 13:00</span>
+                                        </li>
+                                    </ul>
+                                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-primary">call</span>
+                                        Contato Direto
+                                    </h3>
+                                    <div class="space-y-4">
+                                        <div class="flex items-center gap-4">
+                                            <div class="bg-slate-100 dark:bg-slate-700 p-2 rounded-lg">
+                                                <span class="material-symbols-outlined text-primary">phone</span>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-slate-400 uppercase font-bold tracking-tighter">
+                                                    Telefone</p>
+                                                <p class="font-bold">(83) 3333-2020</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-4">
+                                            <div class="bg-slate-100 dark:bg-slate-700 p-2 rounded-lg">
+                                                <span class="material-symbols-outlined text-primary">chat</span>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-slate-400 uppercase font-bold tracking-tighter">
+                                                    WhatsApp</p>
+                                                <a href="https://wa.me/5583981869199" target="_blank"
+                                                    class="font-bold hover:text-primary transition-colors">(83)
+                                                    98186-9199</a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="flex items-center gap-4">
-                                        <div class="bg-slate-100 dark:bg-slate-700 p-2 rounded-lg">
-                                            <span class="material-symbols-outlined text-primary">chat</span>
-                                        </div>
-                                        <div>
-                                            <p class="text-xs text-slate-400 uppercase font-bold tracking-tighter">
-                                                WhatsApp</p>
-                                            <a href="https://wa.me/5583981869199" target="_blank"
-                                                class="font-bold hover:text-primary transition-colors">(83)
-                                                98186-9199</a>
-                                        </div>
+                                </div>
+                            </div>
+
+                            <!-- Oficina Content (Hidden) -->
+                            <div id="content-oficina" class="unit-pane hidden grid grid-cols-1 lg:grid-cols-3 gap-8">
+                                <div
+                                    class="lg:col-span-2 relative h-[400px] md:h-auto min-h-[400px] rounded-xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800">
+                                    <div class="absolute inset-0">
+                                        <img src="assets/oficina-master.png" alt="Oficina Master"
+                                            class="w-full h-full object-cover">
                                     </div>
-                                    <div class="flex items-center gap-4">
-                                        <div class="bg-slate-100 dark:bg-slate-700 p-2 rounded-lg">
-                                            <span class="material-symbols-outlined text-primary">mail</span>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent">
+                                    </div>
+                                    <div
+                                        class="absolute bottom-6 left-6 flex items-center gap-3 bg-white dark:bg-slate-900 p-4 rounded-lg shadow-2xl">
+                                        <div class="bg-accent p-2 rounded-full text-white">
+                                            <span class="material-symbols-outlined">build</span>
                                         </div>
                                         <div>
-                                            <p class="text-xs text-slate-400 uppercase font-bold tracking-tighter">
-                                                E-mail</p>
-                                            <p class="font-bold">vendas@motomania.com.br</p>
+                                            <h3 class="font-bold text-slate-900 dark:text-white">Oficina Master
+                                                Specialized</h3>
+                                            <p class="text-xs text-slate-500 dark:text-slate-400">R. João Suassuna, 130
+                                                - Centro (Anexo)</p>
                                         </div>
+                                        <a href="https://maps.google.com/?q=R.+João+Suassuna,+130,+Centro,+Campina+Grande"
+                                            target="_blank"
+                                            class="ml-4 bg-primary text-white hover:bg-primary/90 px-4 py-2 rounded-lg font-bold text-sm transition-all">Ver
+                                            Rota</a>
+                                    </div>
+                                </div>
+                                <div
+                                    class="bg-white dark:bg-slate-800/50 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-primary">schedule</span>
+                                        Horário de Atendimento
+                                    </h3>
+                                    <ul class="space-y-4 mb-8">
+                                        <li
+                                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-700 pb-2">
+                                            <span class="text-slate-600 dark:text-slate-400">Segunda a Sexta</span>
+                                            <span class="font-bold text-accent">07:00 - 17:00</span>
+                                        </li>
+                                        <li
+                                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-700 pb-2">
+                                            <span class="text-slate-600 dark:text-slate-400">Sábado</span>
+                                            <span class="font-bold text-accent">07:00 - 12:00</span>
+                                        </li>
+                                    </ul>
+                                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-primary">psychology_alt</span>
+                                        Agendamento Técnico
+                                    </h3>
+                                    <div class="space-y-4">
+                                        <p class="text-slate-600 dark:text-slate-400 text-sm">Nossos mecânicos são
+                                            treinados diretamente pela fábrica para garantir a melhor performance da sua
+                                            máquina.</p>
+                                        <a href="https://wa.me/5583981869199" target="_blank"
+                                            class="flex items-center justify-center gap-2 w-full bg-primary text-white py-3 rounded-lg font-bold hover:bg-primary/90 transition-all">
+                                            <span class="material-symbols-outlined">event_available</span>
+                                            Agendar Revisão
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -195,23 +321,19 @@
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                             <div class="aspect-square rounded-xl overflow-hidden bg-slate-200 group">
                                 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKb6wkUqsMg105N6Uc8QIruEcrzv9DUCeE_y8pw3wmPNbpnE8n2T1i5sUVV2LL9qvemjouKBTNWB9q7mlSXEN2zxYLxMHnFoJO0Aq4FynJPfrC8HbHwdKzI8hGLo1gNKtW1yQPf37I_fhPtvrehlaCQV4JYPNn8YD2wn4adgur42gUUaJkdZD_3eVHT9EvYaaLMtkLWRdULd7OFkEt4TeecmoDwWfWEzZ1t4AO6-P6GPze-Mu5Sq1lUSNPgEjsVGnOrbC1EIFMyAFT"
-                                    alt="Showroom interior" />
+                                    src="assets/unidade-centro.png" alt="Showroom Centro" />
                             </div>
                             <div class="aspect-square rounded-xl overflow-hidden bg-slate-200 group">
                                 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj9G5NSbMTh_RRE2oILVKVqe49oBDxgUsw60XIHs37tcuvP0x55hyphhl7zQyf5c1QnjbWycXRvFzEiyk5LcqXpH5nD7MU_xRsdWf-27PRDC9otvo9Hq2eUpRDR8l7tgepRudKOtpteY0S5rQIrVZFM60Pj6141tlPr69PAQa9RVlkGfQBRDm6bvRAPTMTqHAXaJq3o3aujlRUfWnhKtUAQcjZP1d2a5iNAEJ4eld118qnPN8PBzA-etZRjgD2aQjyLeGiPTBKBH23"
-                                    alt="Atendimento ao cliente" />
+                                    src="assets/unidade-catole.png" alt="Showroom Catolé" />
                             </div>
                             <div class="aspect-square rounded-xl overflow-hidden bg-slate-200 group md:translate-y-4">
                                 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWjmIaoGK-xualTKeN_4PatmPF_KOrsj19ONyd4Q4ezsEvNtKpCb6PzKm82J8LEdstIXKGBbfZ6_52iIFggB9yPS0m4yrF9Nd21uDkkD7Dpk19_e7I_BUkuuyI3NFKc0wNcNizeJJWafKJJOxHhqZBj96WiGP44qxa1UaGQ2eXz9fCnNDGk4T2QN62zEBczKg_0eAim4LAp5dymocF-Q9L5tEyxThjmSQDJmZsaTa4Ghc1zK-qIYPe40epvEJAmY1oXtotuXGhyUO7"
-                                    alt="Exposição clássica" />
+                                    src="assets/oficina-master.png" alt="Oficina Master" />
                             </div>
                             <div class="aspect-square rounded-xl overflow-hidden bg-slate-200 group md:translate-y-4">
                                 <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDTiPYLH4V1D2Q1lSUHicP-_ylpzWJebrr9jfhnCyIaAj8l_ZaCi9n2azKaliBQTRQzc70-0q5wsmb9NTO3-YasCNByQCyOAG0M1MrtGd5hXs1epEmvJacFqfgEse2nT92iDukrA5g87mNN0uZ4jilTzTyyaEaJAZnzDQzTqmg22jiHDOZ2dRX9Mdbm4VukbxQPeL70ZMbd72eG8TMm6VD4RdA4rMEZWoNFxTdzMTpIPWNgE5ZUQM8nJ5xZmWAT2951WVqK4kK47Qd"
-                                    alt="Mecânico trabalhando" />
+                                    src="assets/unidade-centro.png" alt="Detalhe Unidade" />
                             </div>
                         </div>
                     </div>
@@ -370,6 +492,34 @@
             </footer>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const panes = document.querySelectorAll('.unit-pane');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetId = tab.id.replace('tab-', 'content-');
+
+                    // Update button styles
+                    tabs.forEach(t => {
+                        t.classList.remove('border-primary', 'text-primary');
+                        t.classList.add('border-transparent', 'text-slate-400', 'dark:text-slate-500');
+                    });
+                    tab.classList.add('border-primary', 'text-primary');
+                    tab.classList.remove('border-transparent', 'text-slate-400', 'dark:text-slate-500');
+
+                    // Show content
+                    panes.forEach(pane => {
+                        pane.classList.add('hidden');
+                        if (pane.id === targetId) {
+                            pane.classList.remove('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
