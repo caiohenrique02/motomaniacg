@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Moto Mania | Sua Próxima Conquista em Duas Rodas</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#0d7ff2",
+                    "accent": "#f24b0d",
+                    "background-light": "#fcfcfd",
+                    "background-dark": "#0a0c10",
+                },
+                fontFamily: {
+                    "display": ["Inter", "sans-serif"]
+                },
+                borderRadius: {
+                    "DEFAULT": "0.5rem",
+                    "lg": "0.75rem",
+                    "xl": "1rem",
+                    "2xl": "1.5rem",
+                    "3xl": "2rem",
+                    "full": "9999px"
+                },
+            },
+        },
+    }
+</script>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .glass-nav {
+        backdrop-filter: blur(12px);
+        background-color: rgba(252, 252, 253, 0.85);
+    }
+    .dark .glass-nav {
+        background-color: rgba(10, 12, 16, 0.85);
+    }
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display selection:bg-primary selection:text-white">
+
+<!-- Header Fixo -->
+<header class="fixed top-0 left-0 right-0 z-50 border-b border-slate-200/50 dark:border-white/5 glass-nav">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-2 rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white text-2xl">motorcycle</span>
+</div>
+<a href="index.html" class="text-xl font-black tracking-tight text-slate-900 dark:text-white uppercase">Moto Mania</a>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors" href="index.html#combustao">Catálogo</a>
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors" href="unidades.html">Unidades</a>
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors" href="consorcio.html">Consórcio BB</a>
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-primary transition-colors" href="detalhes.html">Modelos</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-accent hover:bg-accent/90 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all flex items-center gap-2 shadow-lg shadow-accent/20">
+<span class="material-symbols-outlined text-sm">chat</span>
+Falar com Consultor
+</button>
+</div>
+</div>
+</div>
+</header>
+
+<!-- Hero Section -->
+<section class="relative pt-32 pb-24 overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="z-10 text-center lg:text-left">
+<span class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6 border border-primary/20">Lançamento 2024</span>
+<h1 class="text-5xl lg:text-7xl font-black text-slate-900 dark:text-white leading-[1.05] mb-8 tracking-tight">
+Sua próxima conquista em <span class="text-primary">duas rodas</span> está aqui.
+</h1>
+<p class="text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+Conheça nossa linha completa de motocicletas, bikes elétricas e triciclos. Tecnologia, economia e a liberdade que você merece.
+</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+<a href="index.html#combustao" class="bg-accent hover:bg-accent/90 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-xl shadow-accent/25 transition-all transform hover:-translate-y-0.5 text-center">
+Ver Catálogo
+</a>
+<a href="consorcio.html" class="bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 px-10 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined">account_balance</span>
+Simular Consórcio BB
+</a>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -inset-4 bg-gradient-to-tr from-primary/30 to-accent/20 rounded-full blur-[120px] -z-10 opacity-60"></div>
+<div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 border border-slate-200/50 dark:border-white/5">
+<img alt="Moto Moderna Premium" class="w-full h-auto object-cover transform lg:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAITRuR7o5232MyIPo0HwkhQMp6oCj_wYOqTgDo0BNrlzQV2TNdII8DDEkfGLOtM1lzVxsucxvR5Fqj9cSCuFg5cGZ--ggEo-p4RUwADGZhH2kMAYf0Z77qCvxY1EDdcqovs_6kZ9ajJH2it_3TeNYLo6TFYFy7nxMb8PfCLGtTL76Ho7buxGfDveS6Ba-9Io1bZ60uIGYo4LTvr6G6F-Fem87m-4nfu6a3KZWr7TojjaCRPoMXrN2dsPLti9F-QJyDvl2VUB1aQjDo"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Serviços & Consórcio -->
+<section class="py-20 bg-slate-50/50 dark:bg-slate-900/30">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-3 gap-8">
+<a href="consorcio.html" class="group flex items-start gap-5 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+<div class="bg-primary/10 p-4 rounded-xl group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">payments</span>
+</div>
+<div>
+<h3 class="font-bold text-xl mb-3">Consórcio BB</h3>
+<p class="text-slate-500 dark:text-slate-400 leading-relaxed">As menores taxas do mercado para você conquistar sua moto zero quilômetro sem juros abusivos.</p>
+</div>
+</a>
+<div class="group flex items-start gap-5 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+<div class="bg-primary/10 p-4 rounded-xl group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">build</span>
+</div>
+<div>
+<h3 class="font-bold text-xl mb-3">Oficina Própria</h3>
+<p class="text-slate-500 dark:text-slate-400 leading-relaxed">Peças originais e mecânicos especializados treinados pela fábrica para sua segurança total.</p>
+</div>
+</div>
+<div class="group flex items-start gap-5 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
+<div class="bg-primary/10 p-4 rounded-xl group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+</div>
+<div>
+<h3 class="font-bold text-xl mb-3">Garantia Estendida</h3>
+<p class="text-slate-500 dark:text-slate-400 leading-relaxed">Tranquilidade extra com planos de garantia flexíveis que protegem seu novo investimento.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Catálogo Section -->
+<section class="py-24" id="combustao">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl md:text-5xl font-black mb-6 tracking-tight">Explore nosso Catálogo</h2>
+<p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-lg">Modelos selecionados para quem busca alta performance, economia extrema ou versatilidade urbana.</p>
+</div>
+<!-- Tabs -->
+<div class="flex flex-wrap justify-center gap-3 mb-16">
+<button class="px-8 py-3 rounded-full bg-primary text-white font-bold text-sm shadow-lg shadow-primary/25">Todas</button>
+<button class="px-8 py-3 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-primary/10 hover:text-primary font-bold text-sm transition-all">Combustão</button>
+<button class="px-8 py-3 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-primary/10 hover:text-primary font-bold text-sm transition-all">Elétricas</button>
+<button class="px-8 py-3 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-primary/10 hover:text-primary font-bold text-sm transition-all">Triciclos / Quadris</button>
+</div>
+<!-- Grid de Produtos -->
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+<!-- Card 1 -->
+<div class="group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500">
+<div class="relative overflow-hidden aspect-[4/3]">
+<img alt="Modelo Sport 250cc" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjHzB97La94TJYvU0omuTr3tnBxYTxtbXThhemUT1gZ41u6XMlSWu_jSQ6fwmMtQ_5vyHNO845rAO7NbbKGrdzhJQq9ujlHsTK69NvQOBOA-iM5cjXku59Azz4xRdW-6cKonZA6QPhp3aI87rqvIuxWIM1hLoWom0XoTSykcL2fSc6mddnCIYpI4eCfxaqUL_o0Xo9SpZk4OJj8XO6tKNOqJWPdEGBHIQLVDgQOJUv1Ozq5dzkLMNhHApq_qlWfuyyYmgxFxFnZCe5"/>
+<div class="absolute top-5 left-5 bg-accent text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">Destaque</div>
+</div>
+<div class="p-8">
+<h3 class="text-2xl font-bold mb-2">Modelo Sport 250cc</h3>
+<p class="text-primary font-black text-xl mb-6">A partir de R$ 18.900</p>
+<div class="space-y-3 mb-8 text-sm text-slate-500 dark:text-slate-400">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">settings_input_component</span>
+<span class="font-medium">Cilindrada: 250cc High Output</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">speed</span>
+<span class="font-medium">Painel Digital TFT Premium</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<a href="detalhes.html" class="border border-slate-200 dark:border-slate-700 py-3 rounded-xl text-sm font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-all text-slate-700 dark:text-slate-200 text-center">Detalhes</a>
+<button class="bg-accent text-white py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-2 shadow-lg shadow-accent/20 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-sm">chat</span> WhatsApp
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500">
+<div class="relative overflow-hidden aspect-[4/3]">
+<img alt="e-Scooter City" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4Pn74WhZlKXUa3cDvPGVDzvpXIDh3YRLmEKKmONnhrTyXudj-FIZtqtn_ijXY4r8D8uS6RhCKhBVjuOZEPmRF3GHMJ57bW8dW5Zf0CVflX_XCGf9bKG3yxS31bmgdJsy5vS76ocR1ZlMHNP5k6D3TwvYN6nYrY-tdP5p_TbSiOKxLpxe5n1rm9uCjomIvqz_MGBGfBFUq22u13KBT4_Oo77z5ChVe-MAhmjwZOkqsdR-gnchiviW0uNMTnHtByKOO62UK6uUC1Afv"/>
+</div>
+<div class="p-8">
+<h3 class="text-2xl font-bold mb-2">e-Scooter City</h3>
+<p class="text-primary font-black text-xl mb-6">A partir de R$ 12.500</p>
+<div class="space-y-3 mb-8 text-sm text-slate-500 dark:text-slate-400">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">battery_charging_full</span>
+<span class="font-medium">Autonomia: 60km Eco Mode</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">bolt</span>
+<span class="font-medium">Bateria de Lítio Removível</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<a href="detalhes.html" class="border border-slate-200 dark:border-slate-700 py-3 rounded-xl text-sm font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-all text-slate-700 dark:text-slate-200 text-center">Detalhes</a>
+<button class="bg-accent text-white py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-2 shadow-lg shadow-accent/20 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-sm">chat</span> WhatsApp
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500">
+<div class="relative overflow-hidden aspect-[4/3]">
+<img alt="Triciclo Cargo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe8bmIkETMkyfviioInBItyfFOPoAW_XwNrapvH5SMyUA4jRdrqTj0Rsa1xSjUBVzbctwaQnGVF9GXknxquy5T-SJKWVkwC_CMkIXPD1c4airAszdZwDPq8mYKB2QrkxNl_6QPJfViUkiFInNefHOWQ5HyFX_fQeQWDGJo062fE_pAcw9LvIIz1rMGfJZ63Vxn_LwhEZOFfNZ4zCeLRS8B1g0fNBda43m3mFmZAhokoKjoNe-lQhPkwHD1m5306VVzSZr_FZJ1WzSZ"/>
+</div>
+<div class="p-8">
+<h3 class="text-2xl font-bold mb-2">Triciclo Cargo</h3>
+<p class="text-primary font-black text-xl mb-6">A partir de R$ 25.000</p>
+<div class="space-y-3 mb-8 text-sm text-slate-500 dark:text-slate-400">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">weight</span>
+<span class="font-medium">Capacidade: 300kg Útil</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">shield_with_heart</span>
+<span class="font-medium">Estrutura Reforçada Industrial</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<a href="detalhes.html" class="border border-slate-200 dark:border-slate-700 py-3 rounded-xl text-sm font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-all text-slate-700 dark:text-slate-200 text-center">Detalhes</a>
+<button class="bg-accent text-white py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-2 shadow-lg shadow-accent/20 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-sm">chat</span> WhatsApp
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-20 text-center">
+<button class="inline-flex items-center gap-3 font-extrabold text-primary hover:text-accent transition-colors group">
+Ver todos os 24 modelos
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+
+<!-- Seção Lojas -->
+<section class="py-24 bg-slate-50 dark:bg-slate-900/50" id="lojas">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
+<div>
+<h2 class="text-4xl font-black mb-3 tracking-tight">Nossas Unidades</h2>
+<p class="text-slate-500 dark:text-slate-400 text-lg">Visite uma de nossas concessionárias e faça um test-ride hoje mesmo.</p>
+</div>
+<div class="bg-white dark:bg-slate-800 px-8 py-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col gap-1">
+<div class="flex items-center gap-2 font-bold text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-primary">schedule</span>
+Horário de Funcionamento
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Seg-Sex: 07h às 17h30 | Sáb: 07h às 12h</p>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-10">
+<!-- Loja Centro -->
+<div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl hover:shadow-2xl transition-all flex flex-col md:flex-row gap-8 items-center group">
+<div class="w-full md:w-56 h-56 bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden relative">
+<img alt="Loja Centro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwDhp9edv36SHFAK2acWJnCvVkDnLBEtKenPjVuOlDRo6zkGqfFay6vcuqpwoK0GJo6_CLn-GQnGxafGrRdDYRmRwO-b1BJE_Qqwqsa69deE0xv8ItPSFVy6X_EsFE5Czst5HsH0fWvmngloRAGRi1rf9ClhVjzcqFdV9yGC8RZMOBggvDZTYCqwu4MQXPTkrtUiVBUqWr-vgIet1S2wXminTneN1opsNJ0qm-tEFJtSxff6Gc55wu6ys85UrpvMCrxcQDrqJTHXvI"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 text-primary font-black text-xs mb-3 uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">location_on</span> Loja Centro
+</div>
+<h3 class="text-2xl font-black mb-3">Campina Grande</h3>
+<p class="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">R. João Suassuna, 126A - Centro<br/>Próximo à Praça da Bandeira</p>
+<a href="unidades.html" class="bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-8 py-3 rounded-xl text-sm font-bold flex items-center gap-2 hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all shadow-lg w-fit">
+<span class="material-symbols-outlined text-sm">map</span> Ver no Mapa
+</a>
+</div>
+</div>
+<!-- Loja Catolé -->
+<div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl hover:shadow-2xl transition-all flex flex-col md:flex-row gap-8 items-center group">
+<div class="w-full md:w-56 h-56 bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden relative">
+<img alt="Loja Catolé" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtp7XCqZWs3OneHix1p53JfqPOwlNVmZx4OingoxSsKftRTOh-sLUx3UHNCXiVYaUCLskCMKQ317_LHaZFa-LbnxeFIsH_BsY2n5rM17pjOuwQy42MZ2EDCFSR4VplEAX58aLoRCM_xTjEzAjz1ELIimT8NlpKRjx2TNZV3fmcF5s8tSQVUnTtIAHYjM98RhxW3NbxCdDrXK9DqHlTNxT8FoDyqy5zm8XIYlzwaste18k8GTv9C-epKfbpuie8ZkiQv7UgNI3-ElOW"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 text-primary font-black text-xs mb-3 uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">location_on</span> Loja Catolé
+</div>
+<h3 class="text-2xl font-black mb-3">Campina Grande</h3>
+<p class="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">R. Maestro H Villa Lobo, 28 - Catolé<br/>Perto do Shopping Partage</p>
+<a href="unidades.html" class="bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-8 py-3 rounded-xl text-sm font-bold flex items-center gap-2 hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all shadow-lg w-fit">
+<span class="material-symbols-outlined text-sm">map</span> Ver no Mapa
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-slate-950 text-slate-400 py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-10 border-b border-slate-800/50 pb-16 mb-12">
+<div class="flex flex-col gap-4 items-center md:items-start">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-2 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-2xl">motorcycle</span>
+</div>
+<span class="text-2xl font-black tracking-tight text-white uppercase">Moto Mania</span>
+</div>
+<p class="text-sm text-slate-500 max-w-xs text-center md:text-left leading-relaxed">Referência em mobilidade urbana e aventura em Campina Grande desde 2010.</p>
+</div>
+<div class="flex flex-col items-center md:items-end gap-6">
+<div class="flex gap-8">
+<a class="text-slate-300 hover:text-primary transition-all font-bold text-sm" href="index.html#combustao">Catálogo</a>
+<a class="text-slate-300 hover:text-primary transition-all font-bold text-sm" href="unidades.html">Unidades</a>
+<a class="text-slate-300 hover:text-primary transition-all font-bold text-sm" href="consorcio.html">Consórcio BB</a>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500 bg-slate-900/50 px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-sm text-primary">security</span> Site Seguro com SSL 256-bit
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-slate-600">
+<p>© 2024 Moto Mania • CNPJ: 00.000.000/0000-00. Todos os direitos reservados.</p>
+<p>Imagens meramente ilustrativas. Preços e condições sujeitos a alteração sem aviso prévio.</p>
+</div>
+</div>
+</footer>
+</body></html>
