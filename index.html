@@ -32,13 +32,13 @@
         /* Glassmorphism nav */
         .glass-nav {
             backdrop-filter: blur(16px);
-            background: rgba(13, 43, 110, 0.92);
+            background: rgba(255, 255, 255, 0.92);
         }
 
         /* Hero gradient overlay */
         .hero-bg {
-            background-color: #0d2b6e; /* Fallback sólido */
-            background: linear-gradient(135deg, #0d2b6e 0%, #102d80 40%, #0a1e55 100%);
+            background-color: #f4f6fb; 
+            background: linear-gradient(135deg, #ffffff 0%, #f4f6fb 100%);
         }
 
         /* Animated shimmer on cards */
@@ -59,7 +59,7 @@
         /* Orange accent underline on nav links */
         .nav-link {
             position: relative;
-            color: rgba(255,255,255,0.8);
+            color: #475569;
             transition: color 0.2s;
         }
         .nav-link::after {
@@ -70,7 +70,7 @@
             background: #f5600a;
             transition: width 0.25s;
         }
-        .nav-link:hover { color: #fff; }
+        .nav-link:hover { color: #0d2b6e; }
         .nav-link:hover::after { width: 100%; }
 
         /* Badge pulse */
@@ -82,7 +82,7 @@
 
         /* Stripe background pattern */
         .stripe-bg {
-            background-image: repeating-linear-gradient(-45deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 0, transparent 50%);
+            background-image: repeating-linear-gradient(-45deg, rgba(13,43,110,0.03) 0, rgba(13,43,110,0.03) 1px, transparent 0, transparent 50%);
             background-size: 10px 10px;
         }
 
@@ -95,15 +95,15 @@
 <body class="bg-brand-light text-slate-900 font-display selection:bg-brand-orange selection:text-white">
 
     <!-- ========== HEADER ========== -->
-    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-white/10">
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-18 py-3">
                 <!-- Logo -->
                 <div class="flex items-center gap-3">
                     <img src="assets/LogoMotomaniacg.jpg" alt="Moto Mania CG Logo"
-                        class="h-11 w-auto rounded-md shadow-lg shadow-black/30">
+                        class="h-11 w-auto rounded-md shadow-lg shadow-black/10">
                     <div class="hidden sm:flex flex-col leading-tight">
-                        <span class="text-white text-lg font-black uppercase tracking-tight">Moto Mania</span>
+                        <span class="text-brand-blue text-lg font-black uppercase tracking-tight">Moto Mania</span>
                         <span class="text-brand-orange text-[10px] font-bold uppercase tracking-widest">Moto & Bike Elétrica</span>
                     </div>
                 </div>
@@ -129,7 +129,7 @@
     <section class="hero-bg stripe-bg relative pt-28 pb-20 overflow-hidden">
         <!-- Glow blobs -->
         <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-orange/10 rounded-full blur-[120px] -z-0 translate-x-1/3 -translate-y-1/4"></div>
-        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-400/10 rounded-full blur-[100px] -z-0"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-blue/5 rounded-full blur-[100px] -z-0"></div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -139,13 +139,13 @@
                         <span class="material-symbols-outlined text-base">bolt</span>
                         <span class="text-xs">Modelos Elétricos SEM CNH!</span>
                     </div>
-                    <h1 class="text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.05] mb-6 tracking-tight">
+                    <h1 class="text-5xl lg:text-6xl xl:text-7xl font-black text-brand-blue leading-[1.05] mb-6 tracking-tight">
                         Sua próxima<br>conquista em<br>
                         <span class="text-brand-orange italic">duas rodas.</span>
                     </h1>
-                    <p class="text-lg text-blue-200 mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                        A <strong class="text-white">Moto Mania CG</strong> reúne as melhores marcas de
-                        <strong class="text-white">motocicletas a combustão</strong> e <strong class="text-white">elétricas que não exigem CNH</strong>.
+                    <p class="text-lg text-slate-600 mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                        A <strong class="text-brand-blue">Moto Mania CG</strong> reúne as melhores marcas de
+                        <strong class="text-brand-blue">motocicletas a combustão</strong> e <strong class="text-brand-blue">elétricas que não exigem CNH</strong>.
                         Tecnologia, economia e mobilidade para o seu dia a dia.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -154,7 +154,7 @@
                             Ver Catálogo
                         </a>
                         <a href="#unidades"
-                            class="border-2 border-white/40 hover:border-brand-orange bg-white/5 hover:bg-brand-orange/10 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all text-center">
+                            class="border-2 border-brand-blue/20 hover:border-brand-orange bg-transparent hover:bg-brand-orange/10 text-brand-blue hover:text-brand-orange px-10 py-4 rounded-xl font-bold text-lg transition-all text-center">
                             Nossas Unidades
                         </a>
                     </div>
@@ -162,26 +162,26 @@
                     <!-- Stats -->
                     <div class="flex gap-8 mt-12 justify-center lg:justify-start">
                         <div class="text-center lg:text-left">
-                            <p class="text-3xl font-black text-white">25+</p>
-                            <p class="text-blue-300 text-xs uppercase tracking-wider mt-1">Anos de história</p>
+                            <p class="text-3xl font-black text-brand-blue">25+</p>
+                            <p class="text-slate-500 text-xs uppercase tracking-wider mt-1">Anos de história</p>
                         </div>
-                        <div class="w-px bg-white/10"></div>
+                        <div class="w-px bg-brand-blue/10"></div>
                         <div class="text-center lg:text-left">
-                            <p class="text-3xl font-black text-white">3</p>
-                            <p class="text-blue-300 text-xs uppercase tracking-wider mt-1">Unidades em CG</p>
+                            <p class="text-3xl font-black text-brand-blue">3</p>
+                            <p class="text-slate-500 text-xs uppercase tracking-wider mt-1">Unidades em CG</p>
                         </div>
-                        <div class="w-px bg-white/10"></div>
+                        <div class="w-px bg-brand-blue/10"></div>
                         <div class="text-center lg:text-left">
-                            <p class="text-3xl font-black text-white">+1k</p>
-                            <p class="text-blue-300 text-xs uppercase tracking-wider mt-1">Clientes atendidos</p>
+                            <p class="text-3xl font-black text-brand-blue">+1k</p>
+                            <p class="text-slate-500 text-xs uppercase tracking-wider mt-1">Clientes atendidos</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Hero image -->
                 <div class="relative">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-brand-orange/20 to-blue-400/10 rounded-3xl blur-[80px]"></div>
-                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-brand-orange/20 to-brand-blue/10 rounded-3xl blur-[80px]"></div>
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-brand-blue/10">
                         <img alt="Motocicleta Premium Moto Mania CG" class="w-full h-auto object-cover"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAITRuR7o5232MyIPo0HwkhQMp6oCj_wYOqTgDo0BNrlzQV2TNdII8DDEkfGLOtM1lzVxsucxvR5Fqj9cSCuFg5cGZ--ggEo-p4RUwADGZhH2kMAYf0Z77qCvxY1EDdcqovs_6kZ9ajJH2it_3TeNYLo6TFYFy7nxMb8PfCLGtTL76Ho7buxGfDveS6Ba-9Io1bZ60uIGYo4LTvr6G6F-Fem87m-4nfu6a3KZWr7TojjaCRPoMXrN2dsPLti9F-QJyDvl2VUB1aQjDo" />
                     </div>
@@ -244,56 +244,23 @@
             </div>
 
             <!-- Filter tabs -->
-            <div class="flex flex-wrap justify-center gap-3 mb-14 scrollbar-hide overflow-x-auto">
-                <button class="px-7 py-2.5 rounded-full bg-brand-blue text-white font-bold text-sm shadow-lg shadow-brand-blue/20">Todas</button>
-                <button class="px-7 py-2.5 rounded-full border-2 border-brand-blue/20 text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-sm transition-all">Combustão</button>
-                <button class="px-7 py-2.5 rounded-full border-2 border-brand-blue/20 text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-sm transition-all">Elétricas</button>
-                <button class="px-7 py-2.5 rounded-full border-2 border-brand-blue/20 text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-sm transition-all">Triciclos / Quadris</button>
+            <div id="catalog-filters" class="flex flex-wrap justify-center gap-3 mb-14 scrollbar-hide overflow-x-auto">
+                <button data-filter="todas" class="filter-btn px-7 py-2.5 rounded-full bg-brand-blue text-white shadow-lg shadow-brand-blue/20 font-bold text-sm transition-all">Todas</button>
+                <button data-filter="combustao" class="filter-btn px-7 py-2.5 rounded-full border-2 border-brand-blue/20 text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-sm transition-all">Combustão</button>
+                <button data-filter="eletricas" class="filter-btn px-7 py-2.5 rounded-full border-2 border-brand-blue/20 text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-sm transition-all">Elétricas</button>
+                <button data-filter="triciclos" class="filter-btn px-7 py-2.5 rounded-full border-2 border-brand-blue/20 text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-sm transition-all">Triciclos / Quadris</button>
             </div>
 
             <!-- Grid -->
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Card 1 — JET 150 -->
-                <div class="card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
-                    <a href="detalhes-jet-150.html" class="block relative overflow-hidden aspect-[4/3]">
-                        <img alt="Shineray JET 150" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                            src="assets/JET%20150.jpeg" />
-                        <div class="absolute top-4 left-4 bg-brand-orange text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow">
-                            Combustão
-                        </div>
-                    </a>
-                    <div class="p-7">
-                        <h3 class="text-xl font-black mb-1 text-brand-blue">Shineray JET 150</h3>
-                        <p class="text-brand-orange font-black text-lg mb-5">A partir de R$ 9.500</p>
-                        <div class="space-y-2 mb-6 text-sm text-slate-500">
-                            <div class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-brand-blue text-base">settings_input_component</span>
-                                <span class="font-medium">Cilindrada: 150cc</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-brand-blue text-base">speed</span>
-                                <span class="font-medium">Painel Digital Completo</span>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-3">
-                            <a href="detalhes-jet-150.html"
-                                class="border-2 border-brand-blue/20 py-2.5 rounded-xl text-sm font-bold hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all text-brand-blue text-center">
-                                Detalhes
-                            </a>
-                            <a href="https://wa.me/5583981869199?text=Ol%C3%A1!%20Tenho%20interesse%20na%20*Shineray%20JET%20150*%20que%20vi%20no%20site%20de%20voc%C3%AAs.%20Poderia%20me%20passar%20mais%20informa%C3%A7%C3%B5es%20sobre%20pre%C3%A7o%20e%20condi%C3%A7%C3%B5es%3F" target="_blank"
-                                class="bg-brand-orange text-white py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-1.5 shadow shadow-brand-orange/30 hover:bg-orange-600 transition-all">
-                                <span class="material-symbols-outlined text-sm">chat</span> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
+
 
                 <!-- Card 2 — Maxus Duact -->
-                <div class="card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
+                <div data-category="eletricas" class="catalog-card card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
                     <a href="detalhes-duact-maxus.html" class="block relative overflow-hidden aspect-[4/3]">
-                        <img alt="Maxus Duact" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                            src="assets/MAXUS%20DUACT.jpeg" />
+                        <img alt="Maxus Duact" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 bg-slate-100"
+                            src="assets/Manux%20Duact.webp" />
                         <div class="absolute top-4 left-4 bg-brand-blue text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow">
                             Sem CNH
                         </div>
@@ -325,10 +292,10 @@
                 </div>
 
                 <!-- Card 3 — Sudu A3T -->
-                <div class="card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
+                <div data-category="triciclos" class="catalog-card card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
                     <a href="detalhes-sudu-a3t.html" class="block relative overflow-hidden aspect-[4/3]">
-                        <img alt="Sudu A3T" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                            src="assets/SUDO%20A3T.png" />
+                        <img alt="Sudu A3T" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 bg-slate-100"
+                            src="assets/Sudu%20A3T.webp" />
                         <div class="absolute top-4 left-4 bg-brand-blue text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow">
                             Sem CNH
                         </div>
@@ -360,10 +327,10 @@
                 </div>
 
                 <!-- Card 4 — Duos Rider -->
-                <div class="card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
+                <div data-category="eletricas" class="catalog-card card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
                     <a href="detalhes-duos-rider.html" class="block relative overflow-hidden aspect-[4/3]">
                         <img alt="Duos Rider" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 bg-slate-100"
-                            src="" />
+                            src="assets/Duos%20Rider.webp" />
                         <div class="absolute top-4 left-4 bg-brand-orange text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow">
                             Bike Elétrica
                         </div>
@@ -395,10 +362,10 @@
                 </div>
 
                 <!-- Card 5 — Duos Eko-10 -->
-                <div class="card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
+                <div data-category="triciclos" class="catalog-card card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
                     <a href="detalhes-duos-eko10.html" class="block relative overflow-hidden aspect-[4/3]">
                         <img alt="Duos Eko-10" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 bg-slate-100"
-                            src="" />
+                            src="assets/Duos%20Eko-10.webp" />
                         <div class="absolute top-4 left-4 bg-brand-blue text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow">
                             Sem CNH
                         </div>
@@ -430,10 +397,10 @@
                 </div>
 
                 <!-- Card 6 — Duos Fenix -->
-                <div class="card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
+                <div data-category="triciclos" class="catalog-card card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
                     <a href="detalhes-duos-fenix.html" class="block relative overflow-hidden aspect-[4/3]">
                         <img alt="Duos Fenix" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 bg-slate-100"
-                            src="" />
+                            src="assets/Duos%20Fenix.png" />
                         <div class="absolute top-4 left-4 bg-brand-blue text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow">
                             Familiar
                         </div>
@@ -465,10 +432,10 @@
                 </div>
 
                 <!-- Card 7 — Sudu A2+ -->
-                <div class="card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
+                <div data-category="eletricas" class="catalog-card card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
                     <a href="detalhes-sudu-a2plus.html" class="block relative overflow-hidden aspect-[4/3]">
                         <img alt="Sudu A2+" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 bg-slate-100"
-                            src="" />
+                            src="assets/Sudu%20A2+.webp" />
                         <div class="absolute top-4 left-4 bg-brand-blue text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow">
                             Sem CNH
                         </div>
@@ -512,10 +479,10 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="group p-8 rounded-2xl border-2 border-slate-100 hover:border-brand-orange/30 hover:shadow-xl transition-all duration-300 text-center">
                     <div class="w-16 h-16 rounded-2xl bg-brand-blue flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform">
-                        <span class="material-symbols-outlined text-white text-3xl">payments</span>
+                        <span class="material-symbols-outlined text-white text-3xl">support_agent</span>
                     </div>
-                    <h3 class="font-black text-xl mb-3 text-brand-blue">Financiamento Facilitado</h3>
-                    <p class="text-slate-500 leading-relaxed">Parcele sua moto com condições especiais e taxas acessíveis. Consulte nossos consultores!</p>
+                    <h3 class="font-black text-xl mb-3 text-brand-blue">Atendimento Especializado</h3>
+                    <p class="text-slate-500 leading-relaxed">Consultores qualificados prontos para tirar todas as suas dúvidas e ajudar na escolha do modelo ideal.</p>
                 </div>
                 <div class="group p-8 rounded-2xl border-2 border-slate-100 hover:border-brand-orange/30 hover:shadow-xl transition-all duration-300 text-center">
                     <div class="w-16 h-16 rounded-2xl bg-brand-blue flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform">
@@ -540,14 +507,14 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <span class="inline-block text-brand-orange font-bold uppercase tracking-widest text-xs mb-3">Onde Estamos</span>
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4">Nossas Unidades</h2>
-                <p class="text-blue-200 text-lg max-w-2xl mx-auto leading-relaxed">Visite uma de nossas lojas em Campina Grande para conhecer nossos modelos de perto e fazer um test-ride.</p>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-brand-blue tracking-tight mb-4">Nossas Unidades</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">Visite uma de nossas lojas em Campina Grande para conhecer nossos modelos de perto e fazer um test-ride.</p>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-10 mb-12">
                 <!-- Unidade Centro -->
-                <div class="group bg-white/5 border border-white/10 p-8 rounded-[2rem] hover:bg-white/10 transition-all backdrop-blur-md flex flex-col gap-8 shadow-2xl">
-                    <div class="w-full h-64 rounded-2xl overflow-hidden shadow-lg border border-white/5">
+                <div class="group bg-white border border-slate-200 p-8 rounded-[2rem] hover:border-brand-orange/30 transition-all backdrop-blur-md flex flex-col gap-8 shadow-xl">
+                    <div class="w-full h-64 rounded-2xl overflow-hidden shadow-lg border border-slate-100">
                         <img alt="Unidade Centro - Moto Mania CG" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwDhp9edv36SHFAK2acWJnCvVkDnLBEtKenPjVuOlDRo6zkGqfFay6vcuqpwoK0GJo6_CLn-GQnGxafGrRdDYRmRwO-b1BJE_Qqwqsa69deE0xv8ItPSFVy6X_EsFE5Czst5HsH0fWvmngloRAGRi1rf9ClhVjzcqFdV9yGC8RZMOBggvDZTYCqwu4MQXPTkrtUiVBUqWr-vgIet1S2wXminTneN1opsNJ0qm-tEFJtSxff6Gc55wu6ys85UrpvMCrxcQDrqJTHXvI" />
                     </div>
@@ -555,32 +522,32 @@
                         <div class="flex items-center gap-2 text-brand-orange font-bold text-xs mb-3 uppercase tracking-[0.2em]">
                             <span class="material-symbols-outlined text-sm">location_on</span> Loja Centro
                         </div>
-                        <h3 class="text-3xl font-black text-white mb-4 italic">Campina Grande</h3>
+                        <h3 class="text-3xl font-black text-brand-blue mb-4 italic">Campina Grande</h3>
                         
                         <div class="space-y-4 mb-8">
                             <div class="flex gap-4">
                                 <span class="material-symbols-outlined text-brand-orange mt-1">pin_drop</span>
-                                <p class="text-blue-100 leading-relaxed font-medium">
+                                <p class="text-slate-600 leading-relaxed font-medium">
                                     R. João Suassuna, n° 126a - Centro<br>
                                     Campina Grande - PB, 58400-036
                                 </p>
                             </div>
                             <div class="flex gap-4">
-                                <span class="material-symbols-outlined text-blue-300">schedule</span>
-                                <p class="text-blue-200 text-sm">
-                                    <span class="font-bold text-white">Seg a Sex:</span> 7h às 17h30<br>
-                                    <span class="font-bold text-white">Sáb:</span> 7h às 12h
+                                <span class="material-symbols-outlined text-slate-400">schedule</span>
+                                <p class="text-slate-600 text-sm">
+                                    <span class="font-bold text-brand-blue">Seg a Sex:</span> 7h às 17h30<br>
+                                    <span class="font-bold text-brand-blue">Sáb:</span> 7h às 12h
                                 </p>
                             </div>
                         </div>
 
                         <div class="flex flex-col sm:flex-row gap-4 mt-auto">
                             <a href="https://www.google.com/maps/search/?api=1&query=R.+Jo%C3%A3o+Suassuna%2C+n%C2%B0+126a+-+Centro%2C+Campina+Grande+-+PB" target="_blank"
-                                class="flex-1 inline-flex items-center justify-center gap-2 bg-white text-brand-blue hover:bg-slate-100 px-6 py-4 rounded-xl font-bold transition-all">
+                                class="flex-1 inline-flex items-center justify-center gap-2 bg-brand-blue text-white hover:bg-blue-900 px-6 py-4 rounded-xl font-bold transition-all shadow-lg">
                                 <span class="material-symbols-outlined">map</span> Ver no Maps
                             </a>
                             <a href="https://wa.me/5583981869199" target="_blank"
-                                class="flex-1 inline-flex items-center justify-center gap-2 border-2 border-white/20 hover:border-brand-orange text-white px-6 py-4 rounded-xl font-bold transition-all">
+                                class="flex-1 inline-flex items-center justify-center gap-2 border-2 border-brand-blue/20 hover:border-brand-orange text-brand-blue hover:text-brand-orange px-6 py-4 rounded-xl font-bold transition-all">
                                 <span class="material-symbols-outlined">chat</span> Contato Direto
                             </a>
                         </div>
@@ -588,8 +555,8 @@
                 </div>
 
                 <!-- Unidade Catolé -->
-                <div class="group bg-white/5 border border-white/10 p-8 rounded-[2rem] hover:bg-white/10 transition-all backdrop-blur-md flex flex-col gap-8 shadow-2xl">
-                    <div class="w-full h-64 rounded-2xl overflow-hidden shadow-lg border border-white/5">
+                <div class="group bg-white border border-slate-200 p-8 rounded-[2rem] hover:border-brand-orange/30 transition-all backdrop-blur-md flex flex-col gap-8 shadow-xl">
+                    <div class="w-full h-64 rounded-2xl overflow-hidden shadow-lg border border-slate-100">
                         <img alt="Unidade Catolé - Moto Mania CG" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtp7XCqZWs3OneHix1p53JfqPOwlNVmZx4OingoxSsKftRTOh-sLUx3UHNCXiVYaUCLskCMKQ317_LHaZFa-LbnxeFIsH_BsY2n5rM17pjOuwQy42MZ2EDCFSR4VplEAX58aLoRCM_xTjEzAjz1ELIimT8NlpKRjx2TNZV3fmcF5s8tSQVUnTtIAHYjM98RhxW3NbxCdDrXK9DqHlTNxT8FoDyqy5zm8XIYlzwaste18k8GTv9C-epKfbpuie8ZkiQv7UgNI3-ElOW" />
                     </div>
@@ -597,32 +564,32 @@
                         <div class="flex items-center gap-2 text-brand-orange font-bold text-xs mb-3 uppercase tracking-[0.2em]">
                             <span class="material-symbols-outlined text-sm">location_on</span> Loja Catolé
                         </div>
-                        <h3 class="text-3xl font-black text-white mb-4 italic">Campina Grande</h3>
+                        <h3 class="text-3xl font-black text-brand-blue mb-4 italic">Campina Grande</h3>
                         
                         <div class="space-y-4 mb-8">
                             <div class="flex gap-4">
                                 <span class="material-symbols-outlined text-brand-orange mt-1">pin_drop</span>
-                                <p class="text-blue-100 leading-relaxed font-medium">
+                                <p class="text-slate-600 leading-relaxed font-medium">
                                     R. Maestro Heitor Vila Lobos, 28 - Loja 01 - Catolé<br>
                                     Campina Grande - PB, 58410-215
                                 </p>
                             </div>
                             <div class="flex gap-4">
-                                <span class="material-symbols-outlined text-blue-300">schedule</span>
-                                <p class="text-blue-200 text-sm">
-                                    <span class="font-bold text-white">Seg a Sex:</span> 7h às 17h30<br>
-                                    <span class="font-bold text-white">Sáb:</span> 7h às 12h
+                                <span class="material-symbols-outlined text-slate-400">schedule</span>
+                                <p class="text-slate-600 text-sm">
+                                    <span class="font-bold text-brand-blue">Seg a Sex:</span> 7h às 17h30<br>
+                                    <span class="font-bold text-brand-blue">Sáb:</span> 7h às 12h
                                 </p>
                             </div>
                         </div>
 
                         <div class="flex flex-col sm:flex-row gap-4 mt-auto">
                             <a href="https://www.google.com/maps/search/?api=1&query=R.+Maestro+Heitor+Vila+Lobos%2C+28+-+Loja+01+-+Catol%C3%A9%2C+Campina+Grande+-+PB" target="_blank"
-                                class="flex-1 inline-flex items-center justify-center gap-2 bg-white text-brand-blue hover:bg-slate-100 px-6 py-4 rounded-xl font-bold transition-all">
+                                class="flex-1 inline-flex items-center justify-center gap-2 bg-brand-blue text-white hover:bg-blue-900 px-6 py-4 rounded-xl font-bold transition-all shadow-lg">
                                 <span class="material-symbols-outlined">map</span> Ver no Maps
                             </a>
                             <a href="https://wa.me/5583981869199" target="_blank"
-                                class="flex-1 inline-flex items-center justify-center gap-2 border-2 border-white/20 hover:border-brand-orange text-white px-6 py-4 rounded-xl font-bold transition-all">
+                                class="flex-1 inline-flex items-center justify-center gap-2 border-2 border-brand-blue/20 hover:border-brand-orange text-brand-blue hover:text-brand-orange px-6 py-4 rounded-xl font-bold transition-all">
                                 <span class="material-symbols-outlined">chat</span> Contato Direto
                             </a>
                         </div>
@@ -637,8 +604,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
             <!-- CTA Banner -->
             <div class="bg-brand-orange/10 border border-brand-orange/30 rounded-3xl p-10 text-center backdrop-blur-sm">
-                <h3 class="text-2xl font-black text-white mb-3">Pronto para encontrar sua moto ideal?</h3>
-                <p class="text-blue-200 mb-6">Fale agora com um consultor especializado e tire todas as suas dúvidas.</p>
+                <h3 class="text-2xl font-black text-brand-blue mb-3">Pronto para encontrar sua moto ideal?</h3>
+                <p class="text-slate-600 mb-6">Fale agora com um consultor especializado e tire todas as suas dúvidas.</p>
                 <a href="https://wa.me/5583981869199?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Moto%20Mania%20CG%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20modelos%20e%20planos%20de%20financiamento." target="_blank"
                     class="inline-flex items-center gap-3 bg-brand-orange hover:bg-orange-600 text-white px-10 py-4 rounded-2xl font-black text-lg shadow-xl shadow-brand-orange/30 transition-all transform hover:-translate-y-1">
                     <span class="material-symbols-outlined">chat</span>
@@ -649,15 +616,15 @@
     </section>
 
     <!-- ========== FOOTER ========== -->
-    <footer class="bg-slate-950 text-slate-400 py-14">
+    <footer class="bg-white border-t border-slate-100 text-slate-600 py-14">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-start gap-10 pb-12 border-b border-slate-800 mb-8">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-10 pb-12 border-b border-slate-200 mb-8">
                 <!-- Brand -->
                 <div class="flex flex-col gap-4 max-w-xs">
                     <div class="flex items-center gap-3">
-                        <img src="assets/LogoMotomaniacg.jpg" alt="Moto Mania CG Logo" class="h-10 w-auto rounded-md">
+                        <img src="assets/LogoMotomaniacg.jpg" alt="Moto Mania CG Logo" class="h-10 w-auto rounded-md shadow-sm">
                         <div>
-                            <p class="text-white font-black text-lg uppercase leading-tight">Moto Mania CG</p>
+                            <p class="text-brand-blue font-black text-lg uppercase leading-tight">Moto Mania CG</p>
                             <p class="text-brand-orange text-[10px] font-bold uppercase tracking-widest">Moto & Bike Elétrica</p>
                         </div>
                     </div>
@@ -667,7 +634,7 @@
                 <!-- Links -->
                 <div class="flex flex-wrap gap-12 text-sm">
                     <div>
-                        <p class="text-white font-bold mb-4 uppercase tracking-wider text-xs">Navegação</p>
+                        <p class="text-brand-blue font-bold mb-4 uppercase tracking-wider text-xs">Navegação</p>
                         <ul class="space-y-3">
                             <li><a class="hover:text-brand-orange transition-colors" href="index.html#catalogo">Catálogo</a></li>
                             <li><a class="hover:text-brand-orange transition-colors" href="#unidades">Unidades</a></li>
@@ -675,15 +642,15 @@
                         </ul>
                     </div>
                     <div>
-                        <p class="text-white font-bold mb-4 uppercase tracking-wider text-xs">Serviços</p>
+                        <p class="text-brand-blue font-bold mb-4 uppercase tracking-wider text-xs">Serviços</p>
                         <ul class="space-y-3">
-                            <li><a class="hover:text-brand-orange transition-colors" href="unidades.html">Oficina</a></li>
-                            <li><a class="hover:text-brand-orange transition-colors" href="#lojas">Financiamento</a></li>
-                            <li><a class="hover:text-brand-orange transition-colors" href="#lojas">Garantia</a></li>
+                            <li><a class="hover:text-brand-orange transition-colors" href="#unidades">Oficina Especializada</a></li>
+                            <li><a class="hover:text-brand-orange transition-colors" href="#contato">Financiamento</a></li>
+                            <li><a class="hover:text-brand-orange transition-colors" href="#contato">Garantia Estendida</a></li>
                         </ul>
                     </div>
                     <div>
-                        <p class="text-white font-bold mb-4 uppercase tracking-wider text-xs">Contato</p>
+                        <p class="text-brand-blue font-bold mb-4 uppercase tracking-wider text-xs">Contato</p>
                         <ul class="space-y-3 text-sm">
                             <li class="flex items-center gap-2">
                                 <span class="material-symbols-outlined text-brand-orange text-base">phone</span>
@@ -706,5 +673,36 @@
     </footer>
 
 </body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const cards = document.querySelectorAll(".catalog-card");
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                // Reset all buttons
+                filterBtns.forEach(b => {
+                    b.classList.remove("bg-brand-blue", "text-white", "shadow-lg", "shadow-brand-blue/20");
+                    b.classList.add("border-2", "border-brand-blue/20", "text-brand-blue");
+                });
+                
+                // Activate clicked button
+                btn.classList.add("bg-brand-blue", "text-white", "shadow-lg", "shadow-brand-blue/20");
+                btn.classList.remove("border-2", "border-brand-blue/20", "text-brand-blue");
+
+                const filterValue = btn.getAttribute("data-filter");
+
+                cards.forEach(card => {
+                    if (filterValue === "todas" || card.getAttribute("data-category") === filterValue) {
+                        card.classList.remove("hidden");
+                    } else {
+                        card.classList.add("hidden");
+                    }
+                });
+            });
+        });
+    });
+</script>
 
 </html>
