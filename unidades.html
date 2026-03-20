@@ -1,525 +1,413 @@
 <!DOCTYPE html>
-
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Nossas Unidades | Moto Mania CG</title>
+    <meta name="description" content="Conheça as unidades da Moto Mania CG em Campina Grande — Loja Centro, Loja Católé e Oficina Especializada.">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#0d7ff2",
-                        "accent": "#ff5722",
-                        "background-light": "#f8fafd",
-                        "background-dark": "#0f172a",
+                        "brand-blue":   "#0d2b6e",
+                        "brand-orange": "#f5600a",
+                        "brand-light":  "#f4f6fb",
                     },
-                    fontFamily: {
-                        "display": ["Inter"]
-                    },
-                    borderRadius: { "DEFAULT": "0.5rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                    fontFamily: { "display": ["Barlow", "sans-serif"] },
                 },
             },
         }
     </script>
-    <title>Moto Mania - Unidades &amp; Sobre</title>
+    <style>
+        * { font-family: 'Barlow', sans-serif; }
+        .glass-nav { backdrop-filter: blur(16px); background: rgba(13, 43, 110, 0.92); }
+        .hero-bg { background: linear-gradient(135deg, #0d2b6e 0%, #102d80 40%, #0a1e55 100%); }
+        .stripe-bg {
+            background-image: repeating-linear-gradient(-45deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 0, transparent 50%);
+            background-size: 10px 10px;
+        }
+        .tab-btn { transition: all 0.2s; }
+        .tab-btn.active { border-bottom-color: #f5600a; color: #f5600a; }
+        .nav-link { position: relative; color: rgba(255,255,255,0.8); transition: color 0.2s; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #f5600a; transition: width 0.25s; }
+        .nav-link:hover { color: #fff; }
+        .nav-link:hover::after { width: 100%; }
+    </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
-    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
-        <div class="layout-container flex h-full grow flex-col">
-            <!-- Navigation -->
-            <header
-                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-6 md:px-20 py-4 bg-white dark:bg-slate-900/50 backdrop-blur-md sticky top-0 z-50">
+<body class="bg-brand-light text-slate-900 font-display">
+
+    <!-- ========== HEADER ========== -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between py-3">
                 <div class="flex items-center gap-3">
-                    <img src="assets/LogoMotomaniacg.jpg" alt="Moto Mania CG Logo"
-                        class="h-10 w-auto rounded-md shadow-lg shadow-primary/20">
-                    <a href="index.html"
-                        class="text-xl font-black tracking-tight text-slate-900 dark:text-white uppercase hidden sm:block">Moto
-                        Mania CG</a>
-                </div>
-                <div class="hidden md:flex flex-1 justify-end gap-8">
-                    <div class="flex items-center gap-9">
-                        <a class="text-slate-900 dark:text-slate-100 text-sm font-semibold hover:text-primary transition-colors"
-                            href="index.html">Início</a>
-                        <a class="text-primary text-sm font-semibold border-b-2 border-primary pb-0.5"
-                            href="unidades.html">Unidades</a>
-                        <a class="text-slate-900 dark:text-slate-100 text-sm font-semibold hover:text-primary transition-colors"
-                            href="index.html#combustao">Catálogo</a>
-
+                    <img src="assets/LogoMotomaniacg.jpg" alt="Moto Mania CG" class="h-11 w-auto rounded-md shadow-lg shadow-black/30">
+                    <div class="hidden sm:flex flex-col leading-tight">
+                        <span class="text-white text-lg font-black uppercase tracking-tight">Moto Mania</span>
+                        <span class="text-brand-orange text-[10px] font-bold uppercase tracking-widest">Moto & Bike Elétrica</span>
                     </div>
                 </div>
-                <div class="md:hidden flex items-center">
-                    <span class="material-symbols-outlined text-slate-900 dark:text-slate-100">menu</span>
-                </div>
-            </header>
-            <main class="flex-1">
-                <!-- Hero Section -->
-                <section class="px-6 md:px-20 py-12 md:py-20 bg-white dark:bg-slate-900">
-                    <div class="max-w-6xl mx-auto">
-                        <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
-                            <div class="flex-1">
-                                <span class="text-accent font-bold uppercase tracking-widest text-xs">Onde a paixão
-                                    acelera</span>
-                                <h1
-                                    class="text-slate-900 dark:text-slate-100 text-4xl md:text-6xl font-black leading-tight tracking-tighter mt-2">
-                                    Nossas Unidades &amp; Sobre</h1>
-                                <p
-                                    class="text-slate-600 dark:text-slate-400 text-lg md:text-xl font-normal leading-relaxed mt-4 max-w-2xl">
-                                    Conheça a trajetória da Moto Mania, nosso compromisso com a excelência e onde
-                                    encontrar as melhores máquinas em duas rodas.
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Unit Tabs -->
-                        <div
-                            class="border-b border-slate-200 dark:border-slate-800 flex gap-8 mb-10 overflow-x-auto whitespace-nowrap">
-                            <button id="tab-centro"
-                                class="tab-btn border-b-4 border-primary text-primary font-bold pb-4 px-2 text-sm uppercase tracking-wider">Loja
-                                Centro</button>
-                            <button id="tab-catole"
-                                class="tab-btn border-b-4 border-transparent text-slate-400 dark:text-slate-500 font-bold pb-4 px-2 text-sm uppercase tracking-wider hover:text-primary transition-colors">Loja
-                                Catolé</button>
-                            <button id="tab-oficina"
-                                class="tab-btn border-b-4 border-transparent text-slate-400 dark:text-slate-500 font-bold pb-4 px-2 text-sm uppercase tracking-wider hover:text-primary transition-colors">Oficina
-                                Especializada</button>
-                        </div>
-
-                        <!-- Location Detail Container -->
-                        <div id="unit-content">
-                            <!-- Centro Content (Default) -->
-                            <div id="content-centro" class="unit-pane grid grid-cols-1 lg:grid-cols-3 gap-8">
-                                <div
-                                    class="lg:col-span-2 relative h-[400px] md:h-auto min-h-[400px] rounded-xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800">
-                                    <div class="absolute inset-0">
-                                        <img src="assets/unidade-centro.png" alt="Unidade Centro"
-                                            class="w-full h-full object-cover">
-                                    </div>
-                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent">
-                                    </div>
-                                    <div
-                                        class="absolute bottom-6 left-6 flex items-center gap-3 bg-white dark:bg-slate-900 p-4 rounded-lg shadow-2xl">
-                                        <div class="bg-accent p-2 rounded-full text-white">
-                                            <span class="material-symbols-outlined">location_on</span>
-                                        </div>
-                                        <div>
-                                            <h3 class="font-bold text-slate-900 dark:text-white">Loja Matriz Centro</h3>
-                                            <p class="text-xs text-slate-500 dark:text-slate-400">R. João Suassuna, 126A
-                                                - Centro</p>
-                                        </div>
-                                        <a href="https://maps.google.com/?q=R.+João+Suassuna,+126A,+Centro,+Campina+Grande"
-                                            target="_blank"
-                                            class="ml-4 bg-primary text-white hover:bg-primary/90 px-4 py-2 rounded-lg font-bold text-sm transition-all">Ver
-                                            Rota</a>
-                                    </div>
-                                </div>
-                                <div
-                                    class="bg-white dark:bg-slate-800/50 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-primary">schedule</span>
-                                        Horário de Funcionamento
-                                    </h3>
-                                    <ul class="space-y-4 mb-8">
-                                        <li
-                                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-700 pb-2">
-                                            <span class="text-slate-600 dark:text-slate-400">Segunda a Sexta</span>
-                                            <span class="font-bold text-accent">07:00 - 17:30</span>
-                                        </li>
-                                        <li
-                                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-700 pb-2">
-                                            <span class="text-slate-600 dark:text-slate-400">Sábado</span>
-                                            <span class="font-bold text-accent">07:00 - 12:00</span>
-                                        </li>
-                                    </ul>
-                                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-primary">call</span>
-                                        Contato Direto
-                                    </h3>
-                                    <div class="space-y-4">
-                                        <div class="flex items-center gap-4">
-                                            <div class="bg-slate-100 dark:bg-slate-700 p-2 rounded-lg">
-                                                <span class="material-symbols-outlined text-primary">phone</span>
-                                            </div>
-                                            <div>
-                                                <p class="text-xs text-slate-400 uppercase font-bold tracking-tighter">
-                                                    Telefone</p>
-                                                <p class="font-bold">(83) 3322-1010</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-center gap-4">
-                                            <div class="bg-slate-100 dark:bg-slate-700 p-2 rounded-lg">
-                                                <span class="material-symbols-outlined text-primary">chat</span>
-                                            </div>
-                                            <div>
-                                                <p class="text-xs text-slate-400 uppercase font-bold tracking-tighter">
-                                                    WhatsApp</p>
-                                                <a href="https://wa.me/5583981869199" target="_blank"
-                                                    class="font-bold hover:text-primary transition-colors">(83)
-                                                    98186-9199</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Catolé Content (Hidden) -->
-                            <div id="content-catole" class="unit-pane hidden grid grid-cols-1 lg:grid-cols-3 gap-8">
-                                <div
-                                    class="lg:col-span-2 relative h-[400px] md:h-auto min-h-[400px] rounded-xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800">
-                                    <div class="absolute inset-0">
-                                        <img src="assets/unidade-catole.png" alt="Unidade Catolé"
-                                            class="w-full h-full object-cover">
-                                    </div>
-                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent">
-                                    </div>
-                                    <div
-                                        class="absolute bottom-6 left-6 flex items-center gap-3 bg-white dark:bg-slate-900 p-4 rounded-lg shadow-2xl">
-                                        <div class="bg-accent p-2 rounded-full text-white">
-                                            <span class="material-symbols-outlined">location_on</span>
-                                        </div>
-                                        <div>
-                                            <h3 class="font-bold text-slate-900 dark:text-white">Unidade Premium Catolé
-                                            </h3>
-                                            <p class="text-xs text-slate-500 dark:text-slate-400">Av. Elpídio de
-                                                Almeida, 1450 - Catolé</p>
-                                        </div>
-                                        <a href="https://maps.google.com/?q=Av.+Elpídio+de+Almeida,+1450,+Catolé,+Campina+Grande"
-                                            target="_blank"
-                                            class="ml-4 bg-primary text-white hover:bg-primary/90 px-4 py-2 rounded-lg font-bold text-sm transition-all">Ver
-                                            Rota</a>
-                                    </div>
-                                </div>
-                                <div
-                                    class="bg-white dark:bg-slate-800/50 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-primary">schedule</span>
-                                        Horário de Funcionamento
-                                    </h3>
-                                    <ul class="space-y-4 mb-8">
-                                        <li
-                                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-700 pb-2">
-                                            <span class="text-slate-600 dark:text-slate-400">Segunda a Sexta</span>
-                                            <span class="font-bold text-accent">08:00 - 18:00</span>
-                                        </li>
-                                        <li
-                                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-700 pb-2">
-                                            <span class="text-slate-600 dark:text-slate-400">Sábado</span>
-                                            <span class="font-bold text-accent">08:00 - 13:00</span>
-                                        </li>
-                                    </ul>
-                                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-primary">call</span>
-                                        Contato Direto
-                                    </h3>
-                                    <div class="space-y-4">
-                                        <div class="flex items-center gap-4">
-                                            <div class="bg-slate-100 dark:bg-slate-700 p-2 rounded-lg">
-                                                <span class="material-symbols-outlined text-primary">phone</span>
-                                            </div>
-                                            <div>
-                                                <p class="text-xs text-slate-400 uppercase font-bold tracking-tighter">
-                                                    Telefone</p>
-                                                <p class="font-bold">(83) 3333-2020</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-center gap-4">
-                                            <div class="bg-slate-100 dark:bg-slate-700 p-2 rounded-lg">
-                                                <span class="material-symbols-outlined text-primary">chat</span>
-                                            </div>
-                                            <div>
-                                                <p class="text-xs text-slate-400 uppercase font-bold tracking-tighter">
-                                                    WhatsApp</p>
-                                                <a href="https://wa.me/5583981869199" target="_blank"
-                                                    class="font-bold hover:text-primary transition-colors">(83)
-                                                    98186-9199</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Oficina Content (Hidden) -->
-                            <div id="content-oficina" class="unit-pane hidden grid grid-cols-1 lg:grid-cols-3 gap-8">
-                                <div
-                                    class="lg:col-span-2 relative h-[400px] md:h-auto min-h-[400px] rounded-xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800">
-                                    <div class="absolute inset-0">
-                                        <img src="assets/oficina-master.png" alt="Oficina Master"
-                                            class="w-full h-full object-cover">
-                                    </div>
-                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent">
-                                    </div>
-                                    <div
-                                        class="absolute bottom-6 left-6 flex items-center gap-3 bg-white dark:bg-slate-900 p-4 rounded-lg shadow-2xl">
-                                        <div class="bg-accent p-2 rounded-full text-white">
-                                            <span class="material-symbols-outlined">build</span>
-                                        </div>
-                                        <div>
-                                            <h3 class="font-bold text-slate-900 dark:text-white">Oficina Master
-                                                Specialized</h3>
-                                            <p class="text-xs text-slate-500 dark:text-slate-400">R. João Suassuna, 130
-                                                - Centro (Anexo)</p>
-                                        </div>
-                                        <a href="https://maps.google.com/?q=R.+João+Suassuna,+130,+Centro,+Campina+Grande"
-                                            target="_blank"
-                                            class="ml-4 bg-primary text-white hover:bg-primary/90 px-4 py-2 rounded-lg font-bold text-sm transition-all">Ver
-                                            Rota</a>
-                                    </div>
-                                </div>
-                                <div
-                                    class="bg-white dark:bg-slate-800/50 p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-primary">schedule</span>
-                                        Horário de Atendimento
-                                    </h3>
-                                    <ul class="space-y-4 mb-8">
-                                        <li
-                                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-700 pb-2">
-                                            <span class="text-slate-600 dark:text-slate-400">Segunda a Sexta</span>
-                                            <span class="font-bold text-accent">07:00 - 17:00</span>
-                                        </li>
-                                        <li
-                                            class="flex justify-between items-center border-b border-slate-100 dark:border-slate-700 pb-2">
-                                            <span class="text-slate-600 dark:text-slate-400">Sábado</span>
-                                            <span class="font-bold text-accent">07:00 - 12:00</span>
-                                        </li>
-                                    </ul>
-                                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-primary">psychology_alt</span>
-                                        Agendamento Técnico
-                                    </h3>
-                                    <div class="space-y-4">
-                                        <p class="text-slate-600 dark:text-slate-400 text-sm">Nossos mecânicos são
-                                            treinados diretamente pela fábrica para garantir a melhor performance da sua
-                                            máquina.</p>
-                                        <a href="https://wa.me/5583981869199" target="_blank"
-                                            class="flex items-center justify-center gap-2 w-full bg-primary text-white py-3 rounded-lg font-bold hover:bg-primary/90 transition-all">
-                                            <span class="material-symbols-outlined">event_available</span>
-                                            Agendar Revisão
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Showroom Gallery -->
-                <section class="px-6 md:px-20 py-16 bg-slate-50 dark:bg-slate-800/30">
-                    <div class="max-w-6xl mx-auto">
-                        <div class="text-center mb-12">
-                            <h2 class="text-3xl font-black mb-2">Nosso Espaço</h2>
-                            <p class="text-slate-600 dark:text-slate-400">Ambiente climatizado e as melhores marcas do
-                                mercado mundial.</p>
-                        </div>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <div class="aspect-square rounded-xl overflow-hidden bg-slate-200 group">
-                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                    src="assets/unidade-centro.png" alt="Showroom Centro" />
-                            </div>
-                            <div class="aspect-square rounded-xl overflow-hidden bg-slate-200 group">
-                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                    src="assets/unidade-catole.png" alt="Showroom Catolé" />
-                            </div>
-                            <div class="aspect-square rounded-xl overflow-hidden bg-slate-200 group md:translate-y-4">
-                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                    src="assets/oficina-master.png" alt="Oficina Master" />
-                            </div>
-                            <div class="aspect-square rounded-xl overflow-hidden bg-slate-200 group md:translate-y-4">
-                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                    src="assets/unidade-centro.png" alt="Detalhe Unidade" />
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- History Section -->
-                <section class="px-6 md:px-20 py-20 bg-white dark:bg-slate-900">
-                    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                        <div class="relative">
-                            <div class="absolute -top-4 -left-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl"></div>
-                            <div
-                                class="relative rounded-2xl overflow-hidden border-8 border-white dark:border-slate-800 shadow-2xl rotate-2">
-                                <img class="w-full grayscale hover:grayscale-0 transition-all duration-700"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_KtZu9dq-vKAzUGiU6O_irf12A2J1jNgwqB3gunBms0iiatPYgb9WYB7F27k27TlxNk3Q_q_fH8SI_X_XvvfrMPAWDxOlg-5dDTlNpTTBmGxYUog3c9_ZM6yoXZCnJ9obSEx3dbTOFRRES86Jrsi3T9mq_aK4BA6pQdNpbBiz6I2Gwo9Rz3bR5_VL4gjC-ztZFtS6EwOCcZk0UxXYoHGs3PoYV33d2IM3UH9jIU51MjFBcjA3oOG7zs_6hvD4ANiY-H8piCS08_lD"
-                                    alt="Equipe fundadora Moto Mania" />
-                            </div>
-                            <div class="absolute -bottom-6 -right-6 bg-accent text-white p-6 rounded-xl shadow-xl">
-                                <p class="text-4xl font-black">25+</p>
-                                <p class="text-xs font-bold uppercase tracking-widest">Anos de História</p>
-                            </div>
-                        </div>
-                        <div>
-                            <span class="text-accent font-bold uppercase tracking-widest text-xs">Nossa
-                                Trajetória</span>
-                            <h2 class="text-4xl font-black mt-2 mb-6 tracking-tight">Qualidade, Tradição e a busca pela
-                                Liberdade.</h2>
-                            <div class="space-y-4 text-slate-600 dark:text-slate-400 leading-relaxed">
-                                <p>Fundada em 1998, a Moto Mania nasceu do sonho de três amigos apaixonados por
-                                    liberdade e mecânica de precisão. O que começou como uma pequena oficina no bairro
-                                    do Catolé, rapidamente se tornou referência em atendimento e estoque de qualidade.
-                                </p>
-                                <p>Nossa missão é mais do que vender motocicletas; é realizar sonhos e garantir que cada
-                                    quilômetro rodado seja sinônimo de segurança e prazer. Trabalhamos exclusivamente
-                                    com peças originais e profissionais certificados pelas maiores fabricantes do mundo.
-                                </p>
-                                <p
-                                    class="font-semibold text-slate-900 dark:text-slate-100 italic border-l-4 border-accent pl-4">
-                                    "Não vendemos apenas veículos, entregamos a chave para um novo estilo de vida."</p>
-                            </div>
-                            <div class="mt-8 flex flex-wrap gap-4">
-                                <div
-                                    class="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg">
-                                    <span class="material-symbols-outlined text-primary">verified</span>
-                                    <span class="font-bold text-sm">Garantia Estendida</span>
-                                </div>
-                                <div
-                                    class="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg">
-                                    <span class="material-symbols-outlined text-primary">handshake</span>
-                                    <span class="font-bold text-sm">Financiamento Próprio</span>
-                                </div>
-                                <div
-                                    class="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg">
-                                    <span class="material-symbols-outlined text-primary">build</span>
-                                    <span class="font-bold text-sm">Oficina Master</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- CTA Banner -->
-                <section class="px-6 md:px-20 py-20 bg-background-light dark:bg-background-dark overflow-hidden">
-                    <div class="max-w-6xl mx-auto">
-                        <div
-                            class="bg-gradient-to-br from-primary to-blue-700 rounded-3xl p-8 md:p-16 relative overflow-hidden text-white shadow-2xl">
-                            <div class="absolute top-0 right-0 opacity-10 scale-150 rotate-12">
-                                <span class="material-symbols-outlined text-[300px]">motorcycle</span>
-                            </div>
-                            <div class="relative z-10 max-w-2xl">
-                                <h2 class="text-3xl md:text-5xl font-black mb-6 leading-tight">Pronto para sua próxima
-                                    aventura?</h2>
-                                <p class="text-lg md:text-xl opacity-90 mb-8 font-medium">Fale agora com um de nossos
-                                    consultores especializados e encontre a moto perfeita para o seu perfil.</p>
-                                <div class="flex flex-wrap gap-4">
-                                    <a href="https://wa.me/5583981869199" target="_blank"
-                                        class="bg-white text-primary px-8 py-4 rounded-xl font-black text-lg hover:bg-slate-100 transition-all flex items-center gap-3">
-                                        <span class="material-symbols-outlined">chat</span>
-                                        Falar no WhatsApp
-                                    </a>
-                                    <button
-                                        class="bg-accent text-white border-2 border-accent/30 backdrop-blur-sm px-8 py-4 rounded-xl font-black text-lg hover:bg-accent/90 transition-all">
-                                        Agendar Visita
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
-
-            <!-- Footer -->
-            <footer class="bg-slate-900 text-slate-400 py-12 px-6 md:px-20 border-t border-slate-800">
-                <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-                    <div class="col-span-1 md:col-span-1">
-                        <div class="flex items-center gap-3 text-white mb-6">
-                            <img src="assets/LogoMotomaniacg.jpg" alt="Moto Mania CG Logo"
-                                class="h-10 w-auto rounded-md shadow-lg shadow-primary/20">
-                            <h2 class="text-white text-xl font-black uppercase">Moto Mania CG</h2>
-                        </div>
-                        <p class="text-sm leading-relaxed mb-6">Paixão por motocicletas desde 1998. Qualidade e tradição
-                            que você conhece.</p>
-                        <div class="flex gap-4">
-                            <div
-                                class="size-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
-                                <span class="material-symbols-outlined text-white text-sm">thumb_up</span>
-                            </div>
-                            <div
-                                class="size-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
-                                <span class="material-symbols-outlined text-white text-sm">photo_camera</span>
-                            </div>
-                            <div
-                                class="size-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
-                                <span class="material-symbols-outlined text-white text-sm">video_library</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-bold mb-6">Menu</h3>
-                        <ul class="space-y-4 text-sm">
-                            <li><a class="hover:text-primary transition-colors" href="index.html#combustao">Catálogo</a>
-                            </li>
-                            <li><a class="hover:text-primary transition-colors" href="detalhes.html">Modelos</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="unidades.html">Unidades</a></li>
-
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-bold mb-6">Institucional</h3>
-                        <ul class="space-y-4 text-sm">
-                            <li><a class="hover:text-primary transition-colors" href="unidades.html">Nossa História</a>
-                            </li>
-                            <li><a class="hover:text-primary transition-colors" href="unidades.html">Unidades</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">Políticas de Privacidade</a>
-                            </li>
-                            <li><a class="hover:text-primary transition-colors" href="#">Trabalhe Conosco</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-bold mb-6">Newsletter</h3>
-                        <p class="text-sm mb-4">Receba novidades e promoções exclusivas.</p>
-                        <div class="flex">
-                            <input
-                                class="bg-slate-800 border-none rounded-l-lg p-3 text-sm flex-1 focus:ring-1 focus:ring-primary outline-none"
-                                placeholder="Seu e-mail" type="email" />
-                            <button class="bg-primary text-white px-4 rounded-r-lg hover:bg-primary/90 transition-all">
-                                <span class="material-symbols-outlined">send</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="max-w-6xl mx-auto border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
-                    <p>© 2024 Moto Mania Motors Ltda. Todos os direitos reservados.</p>
-                    <p class="mt-4 md:mt-0">Desenvolvido com foco em alta performance.</p>
-                </div>
-            </footer>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="nav-link text-sm font-semibold" href="index.html#catalogo">Catálogo</a>
+                    <a class="nav-link text-sm font-semibold text-white" href="unidades.html">Unidades</a>
+                    <a class="nav-link text-sm font-semibold" href="index.html#lojas">Contato</a>
+                </nav>
+                <a href="https://wa.me/5583981869199?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Moto%20Mania%20CG%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank"
+                    class="bg-brand-orange hover:bg-orange-600 text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all flex items-center gap-2 shadow-lg">
+                    <span class="material-symbols-outlined text-base">chat</span>
+                    Falar no WhatsApp
+                </a>
+            </div>
         </div>
-    </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero-bg stripe-bg pt-28 pb-16 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-orange/10 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/4"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="inline-block text-brand-orange font-bold uppercase tracking-widest text-xs mb-3">Onde a paixão acelera</span>
+            <h1 class="text-5xl md:text-6xl font-black text-white leading-tight tracking-tight mb-4">Nossas Unidades</h1>
+            <p class="text-blue-200 text-lg max-w-2xl mx-auto">
+                Conheça nossas lojas em Campina Grande. Ambiente climatizado, os melhores modelos e uma equipe pronta para te atender.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========== TABS DE UNIDADES ========== -->
+    <section class="bg-white py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Tab buttons -->
+            <div class="flex gap-4 overflow-x-auto pb-px mb-10 border-b-2 border-slate-100">
+                <button id="tab-centro"
+                    class="tab-btn active whitespace-nowrap border-b-4 border-brand-orange text-brand-orange font-black pb-4 px-2 text-sm uppercase tracking-wider">
+                    Loja Centro
+                </button>
+                <button id="tab-catole"
+                    class="tab-btn whitespace-nowrap border-b-4 border-transparent text-slate-400 font-black pb-4 px-2 text-sm uppercase tracking-wider hover:text-brand-blue transition-colors">
+                    Loja Católé
+                </button>
+                <button id="tab-oficina"
+                    class="tab-btn whitespace-nowrap border-b-4 border-transparent text-slate-400 font-black pb-4 px-2 text-sm uppercase tracking-wider hover:text-brand-blue transition-colors">
+                    Oficina Especializada
+                </button>
+            </div>
+
+            <!-- Content container -->
+            <div id="unit-content">
+
+                <!-- === CENTRO === -->
+                <div id="content-centro" class="unit-pane grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2 relative h-[420px] rounded-2xl overflow-hidden shadow-xl">
+                        <img src="assets/unidade-centro.png" alt="Unidade Centro" class="w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 flex items-center gap-3 bg-white p-4 rounded-xl shadow-2xl">
+                            <div class="bg-brand-orange p-2 rounded-full text-white">
+                                <span class="material-symbols-outlined">location_on</span>
+                            </div>
+                            <div>
+                                <h3 class="font-black text-slate-900">Loja Matriz Centro</h3>
+                                <p class="text-xs text-slate-500">R. João Suassuna, 126A – Centro</p>
+                            </div>
+                            <a href="https://maps.google.com/?q=R.+João+Suassuna,+126A,+Centro,+Campina+Grande" target="_blank"
+                                class="ml-4 bg-brand-blue text-white hover:bg-brand-blue/90 px-4 py-2 rounded-lg font-bold text-sm transition-all">
+                                Ver Rota
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-brand-light p-7 rounded-2xl border border-slate-200 shadow-sm">
+                        <h3 class="text-lg font-black mb-5 flex items-center gap-2 text-brand-blue">
+                            <span class="material-symbols-outlined text-brand-orange">schedule</span> Horário
+                        </h3>
+                        <ul class="space-y-3 mb-7 text-sm">
+                            <li class="flex justify-between border-b border-slate-200 pb-2">
+                                <span class="text-slate-500">Segunda a Sexta</span>
+                                <span class="font-black text-brand-orange">07:00 – 17:30</span>
+                            </li>
+                            <li class="flex justify-between border-b border-slate-200 pb-2">
+                                <span class="text-slate-500">Sábado</span>
+                                <span class="font-black text-brand-orange">07:00 – 12:00</span>
+                            </li>
+                        </ul>
+                        <h3 class="text-lg font-black mb-5 flex items-center gap-2 text-brand-blue">
+                            <span class="material-symbols-outlined text-brand-orange">call</span> Contato
+                        </h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-center gap-3 bg-white p-3 rounded-lg border border-slate-200">
+                                <span class="material-symbols-outlined text-brand-blue">phone</span>
+                                <div>
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold">Telefone</p>
+                                    <p class="font-bold">(83) 3322-1010</p>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/5583981869199?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20*Loja%20Centro%20de%20Campina%20Grande*." target="_blank"
+                                class="flex items-center gap-3 bg-brand-orange/10 border border-brand-orange/30 p-3 rounded-lg hover:bg-brand-orange hover:text-white group transition-all">
+                                <span class="material-symbols-outlined text-brand-orange group-hover:text-white">chat</span>
+                                <div>
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold group-hover:text-white/80">WhatsApp</p>
+                                    <p class="font-bold text-brand-orange group-hover:text-white">(83) 98186-9199</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- === CATÓLÉ === -->
+                <div id="content-catole" class="unit-pane hidden grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2 relative h-[420px] rounded-2xl overflow-hidden shadow-xl">
+                        <img src="assets/unidade-catole.png" alt="Unidade Católé" class="w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 flex items-center gap-3 bg-white p-4 rounded-xl shadow-2xl">
+                            <div class="bg-brand-orange p-2 rounded-full text-white">
+                                <span class="material-symbols-outlined">location_on</span>
+                            </div>
+                            <div>
+                                <h3 class="font-black text-slate-900">Unidade Católé</h3>
+                                <p class="text-xs text-slate-500">R. Maestro H Villa Lobo, 28 – Católé</p>
+                            </div>
+                            <a href="https://maps.google.com/?q=R.+Maestro+H+Villa+Lobo,+28,+Catol%C3%A9,+Campina+Grande" target="_blank"
+                                class="ml-4 bg-brand-blue text-white hover:bg-brand-blue/90 px-4 py-2 rounded-lg font-bold text-sm transition-all">
+                                Ver Rota
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-brand-light p-7 rounded-2xl border border-slate-200 shadow-sm">
+                        <h3 class="text-lg font-black mb-5 flex items-center gap-2 text-brand-blue">
+                            <span class="material-symbols-outlined text-brand-orange">schedule</span> Horário
+                        </h3>
+                        <ul class="space-y-3 mb-7 text-sm">
+                            <li class="flex justify-between border-b border-slate-200 pb-2">
+                                <span class="text-slate-500">Segunda a Sexta</span>
+                                <span class="font-black text-brand-orange">08:00 – 18:00</span>
+                            </li>
+                            <li class="flex justify-between border-b border-slate-200 pb-2">
+                                <span class="text-slate-500">Sábado</span>
+                                <span class="font-black text-brand-orange">08:00 – 13:00</span>
+                            </li>
+                        </ul>
+                        <h3 class="text-lg font-black mb-5 flex items-center gap-2 text-brand-blue">
+                            <span class="material-symbols-outlined text-brand-orange">call</span> Contato
+                        </h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-center gap-3 bg-white p-3 rounded-lg border border-slate-200">
+                                <span class="material-symbols-outlined text-brand-blue">phone</span>
+                                <div>
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold">Telefone</p>
+                                    <p class="font-bold">(83) 3333-2020</p>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/5583981869199?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20*Loja%20Cat%C3%B3l%C3%A9%20de%20Campina%20Grande*." target="_blank"
+                                class="flex items-center gap-3 bg-brand-orange/10 border border-brand-orange/30 p-3 rounded-lg hover:bg-brand-orange hover:text-white group transition-all">
+                                <span class="material-symbols-outlined text-brand-orange group-hover:text-white">chat</span>
+                                <div>
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold group-hover:text-white/80">WhatsApp</p>
+                                    <p class="font-bold text-brand-orange group-hover:text-white">(83) 98186-9199</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- === OFICINA === -->
+                <div id="content-oficina" class="unit-pane hidden grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2 relative h-[420px] rounded-2xl overflow-hidden shadow-xl">
+                        <img src="assets/oficina-master.png" alt="Oficina Master" class="w-full h-full object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 flex items-center gap-3 bg-white p-4 rounded-xl shadow-2xl">
+                            <div class="bg-brand-orange p-2 rounded-full text-white">
+                                <span class="material-symbols-outlined">build</span>
+                            </div>
+                            <div>
+                                <h3 class="font-black text-slate-900">Oficina Master</h3>
+                                <p class="text-xs text-slate-500">R. João Suassuna, 130 – Centro (Anexo)</p>
+                            </div>
+                            <a href="https://maps.google.com/?q=R.+João+Suassuna,+130,+Centro,+Campina+Grande" target="_blank"
+                                class="ml-4 bg-brand-blue text-white hover:bg-brand-blue/90 px-4 py-2 rounded-lg font-bold text-sm transition-all">
+                                Ver Rota
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-brand-light p-7 rounded-2xl border border-slate-200 shadow-sm">
+                        <h3 class="text-lg font-black mb-5 flex items-center gap-2 text-brand-blue">
+                            <span class="material-symbols-outlined text-brand-orange">schedule</span> Horário
+                        </h3>
+                        <ul class="space-y-3 mb-7 text-sm">
+                            <li class="flex justify-between border-b border-slate-200 pb-2">
+                                <span class="text-slate-500">Segunda a Sexta</span>
+                                <span class="font-black text-brand-orange">07:00 – 17:00</span>
+                            </li>
+                            <li class="flex justify-between border-b border-slate-200 pb-2">
+                                <span class="text-slate-500">Sábado</span>
+                                <span class="font-black text-brand-orange">07:00 – 12:00</span>
+                            </li>
+                        </ul>
+                        <h3 class="text-lg font-black mb-5 flex items-center gap-2 text-brand-blue">
+                            <span class="material-symbols-outlined text-brand-orange">psychology_alt</span> Agendamento
+                        </h3>
+                        <p class="text-slate-500 text-sm mb-4">Mecânicos treinados diretamente pela fábrica para garantir a melhor performance da sua máquina.</p>
+                        <a href="https://wa.me/5583981869199?text=Ol%C3%A1!%20Gostaria%20de%20*agendar%20uma%20revis%C3%A3o*%20na%20Oficina%20Master%20da%20Moto%20Mania%20CG." target="_blank"
+                            class="flex items-center justify-center gap-2 w-full bg-brand-orange text-white py-3 rounded-xl font-bold hover:bg-orange-600 transition-all shadow shadow-brand-orange/30">
+                            <span class="material-symbols-outlined">event_available</span>
+                            Agendar Revisão
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== GALERIA ========== -->
+    <section class="py-16 bg-brand-light">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="text-brand-orange font-bold uppercase tracking-widest text-xs">Nosso Espaço</span>
+                <h2 class="text-3xl font-black text-brand-blue mt-2 mb-1">Ambiente Climatizado</h2>
+                <p class="text-slate-500">As melhores marcas do mercado, num showroom completo.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="aspect-square rounded-2xl overflow-hidden group"><img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="assets/unidade-centro.png" alt="Showroom Centro" /></div>
+                <div class="aspect-square rounded-2xl overflow-hidden group"><img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="assets/unidade-catole.png" alt="Showroom Católé" /></div>
+                <div class="aspect-square rounded-2xl overflow-hidden group md:translate-y-4"><img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="assets/oficina-master.png" alt="Oficina Master" /></div>
+                <div class="aspect-square rounded-2xl overflow-hidden group md:translate-y-4"><img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="assets/unidade-centro.png" alt="Detalhe Unidade" /></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HISTÓRIA ========== -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-orange/10 rounded-full blur-2xl"></div>
+                <div class="relative rounded-2xl overflow-hidden border-8 border-brand-light shadow-2xl rotate-2">
+                    <img class="w-full grayscale hover:grayscale-0 transition-all duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_KtZu9dq-vKAzUGiU6O_irf12A2J1jNgwqB3gunBms0iiatPYgb9WYB7F27k27TlxNk3Q_q_fH8SI_X_XvvfrMPAWDxOlg-5dDTlNpTTBmGxYUog3c9_ZM6yoXZCnJ9obSEx3dbTOFRRES86Jrsi3T9mq_aK4BA6pQdNpbBiz6I2Gwo9Rz3bR5_VL4gjC-ztZFtS6EwOCcZk0UxXYoHGs3PoYV33d2IM3UH9jIU51MjFBcjA3oOG7zs_6hvD4ANiY-H8piCS08_lD"
+                        alt="Equipe Moto Mania CG" />
+                </div>
+                <div class="absolute -bottom-6 -right-6 bg-brand-orange text-white p-6 rounded-2xl shadow-xl">
+                    <p class="text-4xl font-black">25+</p>
+                    <p class="text-xs font-bold uppercase tracking-widest">Anos de História</p>
+                </div>
+            </div>
+            <div>
+                <span class="text-brand-orange font-bold uppercase tracking-widest text-xs">Nossa Trajetória</span>
+                <h2 class="text-4xl font-black mt-2 mb-6 tracking-tight text-brand-blue">Qualidade, Tradição e Liberdade.</h2>
+                <div class="space-y-4 text-slate-500 leading-relaxed">
+                    <p>Fundada em 1998, a Moto Mania nasceu do sonho de apaixonados por liberdade e mecânica de precisão. O que começou como uma pequena loja no bairro do Católé rapidamente se tornou referência em atendimento e estoque de qualidade.</p>
+                    <p>Nossa missão é mais do que vender motocicletas; é realizar sonhos e garantir que cada quilômetro rodado seja sinônimo de segurança e prazer.</p>
+                    <p class="font-semibold text-slate-800 italic border-l-4 border-brand-orange pl-4">
+                        "Não vendemos apenas veículos, entregamos a chave para um novo estilo de vida."
+                    </p>
+                </div>
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <span class="flex items-center gap-2 px-4 py-2 bg-brand-blue/5 border border-brand-blue/20 rounded-lg text-sm font-bold text-brand-blue">
+                        <span class="material-symbols-outlined text-brand-blue">verified</span> Garantia Estendida
+                    </span>
+                    <span class="flex items-center gap-2 px-4 py-2 bg-brand-blue/5 border border-brand-blue/20 rounded-lg text-sm font-bold text-brand-blue">
+                        <span class="material-symbols-outlined text-brand-blue">handshake</span> Financiamento Próprio
+                    </span>
+                    <span class="flex items-center gap-2 px-4 py-2 bg-brand-blue/5 border border-brand-blue/20 rounded-lg text-sm font-bold text-brand-blue">
+                        <span class="material-symbols-outlined text-brand-blue">build</span> Oficina Master
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="hero-bg stripe-bg py-20 overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brand-orange/10 border border-brand-orange/30 rounded-3xl p-10 md:p-16 text-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 opacity-10 scale-150 rotate-12">
+                    <span class="material-symbols-outlined text-[300px] text-white">motorcycle</span>
+                </div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Pronto para sua próxima aventura?</h2>
+                    <p class="text-blue-200 text-lg mb-8">Fale agora com um de nossos consultores especialziados e encontre a moto perfeita.</p>
+                    <div class="flex flex-wrap gap-4 justify-center">
+                        <a href="https://wa.me/5583981869199?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Moto%20Mania%20CG%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20modelos%20dispon%C3%ADveis%20e%20condi%C3%A7%C3%B5es%20de%20pagamento." target="_blank"
+                            class="bg-brand-orange text-white px-8 py-4 rounded-xl font-black text-lg hover:bg-orange-600 transition-all flex items-center gap-3 shadow-lg shadow-brand-orange/30">
+                            <span class="material-symbols-outlined">chat</span> Falar no WhatsApp
+                        </a>
+                        <a href="index.html#catalogo"
+                            class="border-2 border-white/20 hover:border-brand-orange bg-white/5 hover:bg-brand-orange/10 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all">
+                            Ver Catálogo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-slate-950 text-slate-400 py-14">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-10 pb-10 border-b border-slate-800 mb-8">
+                <div class="flex flex-col gap-4 max-w-xs">
+                    <div class="flex items-center gap-3">
+                        <img src="assets/LogoMotomaniacg.jpg" alt="Moto Mania CG" class="h-10 w-auto rounded-md">
+                        <div>
+                            <p class="text-white font-black text-lg uppercase leading-tight">Moto Mania CG</p>
+                            <p class="text-brand-orange text-[10px] font-bold uppercase tracking-widest">Moto & Bike Elétrica</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-500 leading-relaxed">Paixão por motocicletas desde 1998. Qualidade e tradição que você pode confiar.</p>
+                </div>
+                <div class="flex flex-wrap gap-12 text-sm">
+                    <div>
+                        <p class="text-white font-bold mb-4 uppercase tracking-wider text-xs">Menu</p>
+                        <ul class="space-y-3">
+                            <li><a class="hover:text-brand-orange transition-colors" href="index.html#catalogo">Catálogo</a></li>
+                            <li><a class="hover:text-brand-orange transition-colors" href="unidades.html">Unidades</a></li>
+                            <li><a class="hover:text-brand-orange transition-colors" href="index.html#lojas">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="text-white font-bold mb-4 uppercase tracking-wider text-xs">Contato</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-brand-orange text-base">phone</span> (83) 3322-1010</li>
+                            <li class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-brand-orange text-base">chat</span>
+                                <a href="https://wa.me/5583981869199?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Moto%20Mania%20CG%20e%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas." target="_blank" class="hover:text-brand-orange transition-colors">(83) 98186-9199</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600">
+                <p>© 2025 Moto Mania CG. Todos os direitos reservados.</p>
+                <p>Imagens meramente ilustrativas.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const tabs = document.querySelectorAll('.tab-btn');
             const panes = document.querySelectorAll('.unit-pane');
-
             tabs.forEach(tab => {
                 tab.addEventListener('click', () => {
                     const targetId = tab.id.replace('tab-', 'content-');
-
-                    // Update button styles
                     tabs.forEach(t => {
-                        t.classList.remove('border-primary', 'text-primary');
-                        t.classList.add('border-transparent', 'text-slate-400', 'dark:text-slate-500');
+                        t.classList.remove('active', 'border-brand-orange', 'text-brand-orange');
+                        t.classList.add('border-transparent', 'text-slate-400');
                     });
-                    tab.classList.add('border-primary', 'text-primary');
-                    tab.classList.remove('border-transparent', 'text-slate-400', 'dark:text-slate-500');
-
-                    // Show content
+                    tab.classList.add('active', 'border-brand-orange', 'text-brand-orange');
+                    tab.classList.remove('border-transparent', 'text-slate-400');
                     panes.forEach(pane => {
                         pane.classList.add('hidden');
-                        if (pane.id === targetId) {
-                            pane.classList.remove('hidden');
-                        }
+                        if (pane.id === targetId) pane.classList.remove('hidden');
                     });
                 });
             });
         });
     </script>
 </body>
-
 </html>
