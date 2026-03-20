@@ -250,13 +250,28 @@
                 <button data-filter="triciclos" class="filter-btn px-7 py-2.5 rounded-full border-2 border-brand-blue/20 text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-sm transition-all">Triciclos / Quadris</button>
             </div>
 
-            <!-- Grid -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Mobile Slider Controls -->
+            <div class="flex justify-between items-center sm:hidden mb-4 px-2">
+                <span class="text-xs text-slate-400 font-bold uppercase tracking-widest flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">swipe</span> Deslize para ver mais
+                </span>
+                <div class="flex gap-2">
+                    <button class="w-10 h-10 rounded-full bg-white text-brand-blue flex items-center justify-center border text-lg border-slate-200 shadow hover:bg-brand-light transition" onclick="document.getElementById('catalog-container').scrollBy({left: -300, behavior: 'smooth'})">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button class="w-10 h-10 rounded-full bg-white text-brand-blue flex items-center justify-center border text-lg border-slate-200 shadow hover:bg-brand-light transition" onclick="document.getElementById('catalog-container').scrollBy({left: 300, behavior: 'smooth'})">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid (Carousel on Mobile) -->
+            <div id="catalog-container" class="grid grid-flow-col auto-cols-[85%] sm:auto-cols-auto sm:grid-flow-row sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 overflow-x-auto sm:overflow-visible snap-x snap-mandatory sm:snap-none pb-8 sm:pb-0 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
 
 
 
                 <!-- Card 2 — Maxus Duact -->
-                <div data-category="eletricas" class="catalog-card card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
+                <div data-category="eletricas" class="catalog-card snap-center card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
                     <a href="detalhes-duact-maxus.html" class="block relative overflow-hidden aspect-[4/3]">
                         <img alt="Maxus Duact" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 bg-slate-100"
                             src="assets/Manux%20Duact.webp" />
@@ -291,7 +306,7 @@
                 </div>
 
                 <!-- Card 3 — Sudu A3T -->
-                <div data-category="triciclos" class="catalog-card card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
+                <div data-category="triciclos" class="catalog-card snap-center card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
                     <a href="detalhes-sudu-a3t.html" class="block relative overflow-hidden aspect-[4/3]">
                         <img alt="Sudu A3T" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 bg-slate-100"
                             src="assets/Sudu%20A3T.webp" />
@@ -326,7 +341,7 @@
                 </div>
 
                 <!-- Card 4 — Duos Rider -->
-                <div data-category="eletricas" class="catalog-card card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
+                <div data-category="eletricas" class="catalog-card snap-center card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
                     <a href="detalhes-duos-rider.html" class="block relative overflow-hidden aspect-[4/3]">
                         <img alt="Duos Rider" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 bg-slate-100"
                             src="assets/Duos%20Rider.webp" />
@@ -361,7 +376,7 @@
                 </div>
 
                 <!-- Card 5 — Duos Eko-10 -->
-                <div data-category="triciclos" class="catalog-card card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
+                <div data-category="triciclos" class="catalog-card snap-center card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
                     <a href="detalhes-duos-eko10.html" class="block relative overflow-hidden aspect-[4/3]">
                         <img alt="Duos Eko-10" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 bg-slate-100"
                             src="assets/Duos%20Eko-10.webp" />
@@ -396,7 +411,7 @@
                 </div>
 
                 <!-- Card 6 — Duos Fenix -->
-                <div data-category="triciclos" class="catalog-card card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
+                <div data-category="triciclos" class="catalog-card snap-center card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
                     <a href="detalhes-duos-fenix.html" class="block relative overflow-hidden aspect-[4/3]">
                         <img alt="Duos Fenix" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 bg-slate-100"
                             src="assets/Duos%20Fenix.png" />
@@ -431,7 +446,7 @@
                 </div>
 
                 <!-- Card 7 — Sudu A2+ -->
-                <div data-category="eletricas" class="catalog-card card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
+                <div data-category="eletricas" class="catalog-card snap-center card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
                     <a href="detalhes-sudu-a2plus.html" class="block relative overflow-hidden aspect-[4/3]">
                         <img alt="Sudu A2+" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 bg-slate-100"
                             src="assets/Sudu%20A2+.webp" />
