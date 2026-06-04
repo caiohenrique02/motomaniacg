@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title id="page-title">Produto | Moto Mania CG</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>tailwind.config={theme:{extend:{colors:{"brand-blue":"#0d2b6e","brand-orange":"#f5600a","brand-light":"#f4f6fb"},fontFamily:{display:["Barlow","sans-serif"]}}}}</script>
+    <style>
+        *{font-family:'Barlow',sans-serif;}
+        .glass-nav{backdrop-filter:blur(16px);background:rgba(13,43,110,0.92);}
+        .nav-link{position:relative;color:rgba(255,255,255,.8);transition:color .2s;}
+        .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:#f5600a;transition:width .25s;}
+        .nav-link:hover{color:#fff;}.nav-link:hover::after{width:100%;}
+        .spec-row:nth-child(even){background-color:rgba(13,43,110,0.04);}
+        .thumb.active{border-color:#f5600a;}
+    </style>
+</head>
+<body class="bg-brand-light text-slate-900">
+
+    <!-- ========== HEADER ========== -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-3">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="assets/LogoMotomaniacg.jpg" alt="Moto Mania CG" class="h-11 w-auto rounded-md shadow-lg">
+                <div class="hidden sm:flex flex-col leading-tight">
+                    <span class="text-white text-lg font-black uppercase">Moto Mania</span>
+                    <span class="text-brand-orange text-[10px] font-bold uppercase tracking-widest">Moto & Bike Elétrica</span>
+                </div>
+            </a>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="nav-link text-sm font-semibold" href="index.html#catalogo">Catálogo</a>
+                <a class="nav-link text-sm font-semibold" href="index.html#unidades">Unidades</a>
+                <a class="nav-link text-sm font-semibold" href="index.html#contato">Contato</a>
+            </nav>
+            <a id="cta-whatsapp" href="#" target="_blank"
+                class="bg-brand-orange hover:bg-orange-600 text-white px-5 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg transition-all">
+                <span class="material-symbols-outlined text-base">chat</span> Consultar Preço
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Breadcrumb -->
+        <div class="bg-white border-b border-slate-100 px-4 py-3">
+            <div class="max-w-7xl mx-auto flex items-center gap-2 text-sm text-slate-400">
+                <a class="hover:text-brand-orange" href="index.html">Início</a>
+                <span class="material-symbols-outlined text-xs">chevron_right</span>
+                <a class="hover:text-brand-orange" href="index.html#catalogo">Catálogo</a>
+                <span class="material-symbols-outlined text-xs">chevron_right</span>
+                <span id="bc-modelo" class="font-bold text-brand-blue">Produto</span>
+            </div>
+        </div>
+
+        <!-- Conteúdo do produto (preenchido via JS) -->
+        <section class="bg-white py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Estado de erro (id inválido) -->
+                <div id="erro" class="hidden text-center py-20">
+                    <span class="material-symbols-outlined text-6xl text-slate-300">search_off</span>
+                    <h1 class="text-2xl font-black text-brand-blue mt-4 mb-2">Produto não encontrado</h1>
+                    <p class="text-slate-500 mb-6">O produto que você procura não está disponível.</p>
+                    <a href="index.html#catalogo" class="inline-flex items-center gap-2 bg-brand-orange text-white px-6 py-3 rounded-xl font-bold">
+                        <span class="material-symbols-outlined">arrow_back</span> Voltar ao catálogo
+                    </a>
+                </div>
+
+                <div id="produto" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+                    <!-- Galeria -->
+                    <div class="lg:col-span-7">
+                        <div class="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-xl bg-slate-100 mb-4">
+                            <img id="foto-principal" alt="" class="h-full w-full object-contain" src="" />
+                            <div class="absolute top-4 left-4 bg-brand-blue text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase">Sem CNH</div>
+                            <div class="absolute top-4 right-4 bg-green-500 text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase flex items-center gap-1">
+                                <span class="material-symbols-outlined text-xs">bolt</span> Elétrica
+                            </div>
+                        </div>
+                        <!-- Miniaturas -->
+                        <div id="thumbs" class="grid grid-cols-4 sm:grid-cols-5 gap-3"></div>
+                    </div>
+
+                    <!-- Infos -->
+                    <div class="lg:col-span-5 flex flex-col justify-center">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span id="badge-categoria" class="px-3 py-1 rounded-full bg-brand-blue/10 text-brand-blue text-xs font-bold uppercase"></span>
+                            <span class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold uppercase">Elétrica</span>
+                            <span class="px-3 py-1 rounded-full bg-brand-orange/10 text-brand-orange text-xs font-bold uppercase">Sem CNH</span>
+                        </div>
+                        <h1 id="modelo" class="text-4xl lg:text-5xl font-black text-brand-blue mb-3"></h1>
+
+                        <div class="grid grid-cols-2 gap-3 mb-7">
+                            <div class="p-4 bg-slate-50 border border-slate-100 rounded-xl">
+                                <span class="block text-xs text-slate-400 uppercase font-bold mb-1">Cor</span>
+                                <span id="cor" class="text-xl font-black text-brand-blue capitalize"></span>
+                            </div>
+                            <div class="p-4 bg-slate-50 border border-slate-100 rounded-xl">
+                                <span class="block text-xs text-slate-400 uppercase font-bold mb-1">Unidade</span>
+                                <span id="loja" class="text-base font-black text-brand-blue"></span>
+                            </div>
+                        </div>
+
+                        <!-- Texto placeholder (igual para todos por enquanto) -->
+                        <p class="text-slate-500 mb-7 leading-relaxed">
+                            Veículo elétrico ideal para mobilidade urbana — econômico, silencioso e que
+                            <strong class="text-brand-blue">não exige CNH</strong>. As especificações técnicas
+                            detalhadas deste modelo serão atualizadas em breve. Fale com um consultor para
+                            preço, disponibilidade e condições de financiamento.
+                        </p>
+
+                        <div class="flex flex-col gap-3">
+                            <a id="btn-whatsapp" href="#" target="_blank"
+                                class="flex items-center justify-center gap-3 bg-brand-orange hover:bg-orange-600 text-white py-4 rounded-xl font-black text-lg transition-all shadow-lg shadow-brand-orange/30">
+                                <span class="material-symbols-outlined">chat</span> Falar no WhatsApp
+                            </a>
+                            <a href="index.html#catalogo"
+                                class="flex items-center justify-center gap-2 border-2 border-brand-blue/20 hover:border-brand-orange text-brand-blue hover:text-brand-orange py-4 rounded-xl font-bold transition-all">
+                                <span class="material-symbols-outlined">arrow_back</span> Voltar ao catálogo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ficha técnica placeholder (igual para todos) -->
+                <div id="ficha" class="hidden max-w-3xl">
+                    <h2 class="text-2xl font-black text-brand-blue mb-5">Especificações</h2>
+                    <div class="rounded-2xl overflow-hidden border border-slate-100">
+                        <div class="spec-row flex justify-between px-5 py-3 text-sm"><span class="text-slate-500 font-medium">Motor</span><span class="font-bold text-brand-blue">A definir</span></div>
+                        <div class="spec-row flex justify-between px-5 py-3 text-sm"><span class="text-slate-500 font-medium">Bateria</span><span class="font-bold text-brand-blue">A definir</span></div>
+                        <div class="spec-row flex justify-between px-5 py-3 text-sm"><span class="text-slate-500 font-medium">Autonomia</span><span class="font-bold text-brand-blue">A definir</span></div>
+                        <div class="spec-row flex justify-between px-5 py-3 text-sm"><span class="text-slate-500 font-medium">Velocidade máxima</span><span class="font-bold text-brand-blue">A definir</span></div>
+                        <div class="spec-row flex justify-between px-5 py-3 text-sm"><span class="text-slate-500 font-medium">CNH</span><span class="font-bold text-green-600">Não exige</span></div>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-3">Imagens meramente ilustrativas. Dados técnicos serão atualizados.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-white border-t border-slate-100 text-slate-600 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500">
+            <p>© 2025 Moto Mania CG. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="produtos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get("id");
+            const p = window.getProduto ? window.getProduto(id) : null;
+
+            const erroBox = document.getElementById("erro");
+            const produtoBox = document.getElementById("produto");
+            const fichaBox = document.getElementById("ficha");
+
+            if (!p) {
+                erroBox.classList.remove("hidden");
+                return;
+            }
+
+            produtoBox.classList.remove("hidden");
+            fichaBox.classList.remove("hidden");
+
+            // Textos
+            document.getElementById("page-title").textContent = p.modelo + " " + p.cor + " | Moto Mania CG";
+            document.getElementById("bc-modelo").textContent = p.modelo;
+            document.getElementById("modelo").textContent = p.modelo;
+            document.getElementById("cor").textContent = p.cor;
+            document.getElementById("loja").textContent = p.loja;
+            document.getElementById("badge-categoria").textContent =
+                (window.CATEGORIAS_LABEL[p.categoria] || p.categoria || "Produto");
+
+            // Galeria
+            const principal = document.getElementById("foto-principal");
+            principal.src = window.fotoSrc(p.fotos[0]);
+            principal.alt = p.modelo + " " + p.cor;
+
+            const thumbsBox = document.getElementById("thumbs");
+            p.fotos.forEach((arquivo, i) => {
+                const btn = document.createElement("button");
+                btn.className = "thumb aspect-square rounded-xl overflow-hidden bg-slate-100 border-2 transition-all " +
+                    (i === 0 ? "active" : "border-transparent hover:border-brand-blue/30");
+                btn.innerHTML = '<img src="' + window.fotoSrc(arquivo) + '" alt="" loading="lazy" class="w-full h-full object-contain" />';
+                btn.addEventListener("click", () => {
+                    principal.src = window.fotoSrc(arquivo);
+                    thumbsBox.querySelectorAll(".thumb").forEach(t => {
+                        t.classList.remove("active");
+                        t.classList.add("border-transparent");
+                    });
+                    btn.classList.add("active");
+                    btn.classList.remove("border-transparent");
+                });
+                thumbsBox.appendChild(btn);
+            });
+
+            // WhatsApp
+            const waText = "Olá! Tenho interesse no(a) *" + p.modelo + " - " + p.cor +
+                "* que vi no site de vocês. Poderia me passar mais informações?";
+            const waHref = "https://wa.me/" + window.WHATSAPP_PADRAO + "?text=" + encodeURIComponent(waText);
+            document.getElementById("btn-whatsapp").href = waHref;
+            document.getElementById("cta-whatsapp").href = waHref;
+        });
+    </script>
+</body>
+</html>

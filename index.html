@@ -243,12 +243,8 @@
                 <p class="text-slate-500 max-w-2xl mx-auto text-lg">Modelos selecionados para quem busca performance, economia o versatilidade urbana.</p>
             </div>
 
-            <!-- Filter tabs -->
-            <div id="catalog-filters" class="flex flex-wrap justify-center gap-3 mb-14 scrollbar-hide overflow-x-auto">
-                <button data-filter="todas" class="filter-btn px-7 py-2.5 rounded-full bg-brand-blue text-white shadow-lg shadow-brand-blue/20 font-bold text-sm transition-all">Todas</button>
-                <button data-filter="eletricas" class="filter-btn px-7 py-2.5 rounded-full border-2 border-brand-blue/20 text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-sm transition-all">Elétricas</button>
-                <button data-filter="triciclos" class="filter-btn px-7 py-2.5 rounded-full border-2 border-brand-blue/20 text-brand-blue hover:bg-brand-blue hover:text-white font-bold text-sm transition-all">Triciclos / Quadris</button>
-            </div>
+            <!-- Filter tabs (gerados via JS a partir de produtos.js) -->
+            <div id="catalog-filters" class="flex flex-wrap justify-center gap-3 mb-14 scrollbar-hide overflow-x-auto"></div>
 
             <!-- Mobile Slider Controls -->
             <div class="flex justify-between items-center sm:hidden mb-4 px-2">
@@ -265,221 +261,12 @@
                 </div>
             </div>
 
-            <!-- Grid (Carousel on Mobile) -->
-            <div id="catalog-container" class="grid grid-flow-col auto-cols-[85%] sm:auto-cols-auto sm:grid-flow-row sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 overflow-x-auto sm:overflow-visible snap-x snap-mandatory sm:snap-none pb-8 sm:pb-0 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+            <!-- Grid (Carousel on Mobile) — cards gerados via JS a partir de produtos.js -->
+            <div id="catalog-container" class="grid grid-flow-col auto-cols-[85%] sm:auto-cols-auto sm:grid-flow-row sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 overflow-x-auto sm:overflow-visible snap-x snap-mandatory sm:snap-none pb-8 sm:pb-0 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0"></div>
 
+            <!-- Mensagem quando nenhum produto na categoria -->
+            <p id="catalog-empty" class="hidden text-center text-slate-400 font-medium py-12">Nenhum produto nesta categoria ainda.</p>
 
-
-                <!-- Card 2 — Maxus Duact -->
-                <div data-category="eletricas" class="catalog-card snap-center card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
-                    <a href="detalhes-duact-maxus.html" class="block relative overflow-hidden aspect-[3/2]">
-                        <img alt="Maxus Duact" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700 bg-slate-100"
-                            src="assets/Manux%20Duact.webp" />
-                        <div class="absolute top-4 left-4 bg-brand-blue text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow">
-                            Sem CNH
-                        </div>
-                    </a>
-                    <div class="p-7">
-                        <h3 class="text-xl font-black mb-1 text-brand-blue">Maxus Duact</h3>
-                        <p class="text-brand-orange font-black text-lg mb-5">Elétrica</p>
-                        <div class="space-y-2 mb-6 text-sm text-slate-500">
-                            <div class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-brand-blue text-base">battery_charging_full</span>
-                                <span class="font-medium">Autonomia: até 60km</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-brand-blue text-base">bolt</span>
-                                <span class="font-medium">Motor: 1000W | Bateria 60V20Ah</span>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-3">
-                            <a href="detalhes-duact-maxus.html"
-                                class="border-2 border-brand-blue/20 py-2.5 rounded-xl text-sm font-bold hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all text-brand-blue text-center">
-                                Detalhes
-                            </a>
-                            <a href="https://wa.me/5583981869199?text=Ol%C3%A1!%20Tenho%20interesse%20na%20*Maxus%20Duact%20El%C3%A9trica*%20que%20vi%20no%20site%20de%20voc%C3%AAs.%20Poderia%20me%20passar%20mais%20informa%C3%A7%C3%B5es%20sobre%20pre%C3%A7o%20e%20condi%C3%A7%C3%B5es%3F" target="_blank"
-                                class="bg-brand-orange text-white py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-1.5 shadow shadow-brand-orange/30 hover:bg-orange-600 transition-all">
-                                <span class="material-symbols-outlined text-sm">chat</span> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 — Sudu A3T -->
-                <div data-category="triciclos" class="catalog-card snap-center card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
-                    <a href="detalhes-sudu-a3t.html" class="block relative overflow-hidden aspect-[3/2]">
-                        <img alt="Sudu A3T" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700 bg-slate-100"
-                            src="assets/Sudu%20A3T.webp" />
-                        <div class="absolute top-4 left-4 bg-brand-blue text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow">
-                            Sem CNH
-                        </div>
-                    </a>
-                    <div class="p-7">
-                        <h3 class="text-xl font-black mb-1 text-brand-blue">Sudu A3T</h3>
-                        <p class="text-brand-orange font-black text-lg mb-5">Triciclo Elétrico</p>
-                        <div class="space-y-2 mb-6 text-sm text-slate-500">
-                            <div class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-brand-blue text-base">bolt</span>
-                                <span class="font-medium">Motor: 800W | Vel. Max: 32km/h</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-brand-blue text-base">shield_with_heart</span>
-                                <span class="font-medium">Bateria de Lítio Removível</span>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-3">
-                            <a href="detalhes-sudu-a3t.html"
-                                class="border-2 border-brand-blue/20 py-2.5 rounded-xl text-sm font-bold hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all text-brand-blue text-center">
-                                Detalhes
-                            </a>
-                            <a href="https://wa.me/5583981869199" target="_blank"
-                                class="bg-brand-orange text-white py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-1.5 shadow shadow-brand-orange/30 hover:bg-orange-600 transition-all">
-                                <span class="material-symbols-outlined text-sm">chat</span> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 4 — Duos Rider -->
-                <div data-category="eletricas" class="catalog-card snap-center card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
-                    <a href="detalhes-duos-rider.html" class="block relative overflow-hidden aspect-[3/2]">
-                        <img alt="Duos Rider" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700 bg-slate-100"
-                            src="assets/Duos%20Rider.webp" />
-                        <div class="absolute top-4 left-4 bg-brand-orange text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow">
-                            Bike Elétrica
-                        </div>
-                    </a>
-                    <div class="p-7">
-                        <h3 class="text-xl font-black mb-1 text-brand-blue">Duos Rider</h3>
-                        <p class="text-brand-orange font-black text-lg mb-5">Aro 29</p>
-                        <div class="space-y-2 mb-6 text-sm text-slate-500">
-                            <div class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-brand-blue text-base">bolt</span>
-                                <span class="font-medium">Motor: 350W</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-brand-blue text-base">settings</span>
-                                <span class="font-medium">Câmbio Shimano 7V</span>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-3">
-                            <a href="detalhes-duos-rider.html"
-                                class="border-2 border-brand-blue/20 py-2.5 rounded-xl text-sm font-bold hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all text-brand-blue text-center">
-                                Detalhes
-                            </a>
-                            <a href="https://wa.me/5583981869199?text=Ol%C3%A1!%20Tenho%20interesse%20na%20*Bike%20El%C3%A9trica%20Duos%20Rider*%20que%20vi%20no%20site%20de%20voc%C3%AAs.%20Poderia%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank"
-                                class="bg-brand-orange text-white py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-1.5 shadow shadow-brand-orange/30 hover:bg-orange-600 transition-all">
-                                <span class="material-symbols-outlined text-sm">chat</span> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 5 — Duos Eko-10 -->
-                <div data-category="triciclos" class="catalog-card snap-center card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
-                    <a href="detalhes-duos-eko10.html" class="block relative overflow-hidden aspect-[3/2]">
-                        <img alt="Duos Eko-10" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700 bg-slate-100"
-                            src="assets/Duos%20Eko-10.webp" />
-                        <div class="absolute top-4 left-4 bg-brand-blue text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow">
-                            Sem CNH
-                        </div>
-                    </a>
-                    <div class="p-7">
-                        <h3 class="text-xl font-black mb-1 text-brand-blue">Duos Eko-10</h3>
-                        <p class="text-brand-orange font-black text-lg mb-5">Triciclo Elétrico</p>
-                        <div class="space-y-2 mb-6 text-sm text-slate-500">
-                            <div class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-brand-blue text-base">bolt</span>
-                                <span class="font-medium">Motor: 1000W</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-brand-blue text-base">compare_arrows</span>
-                                <span class="font-medium">Marcha à ré</span>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-3">
-                            <a href="detalhes-duos-eko10.html"
-                                class="border-2 border-brand-blue/20 py-2.5 rounded-xl text-sm font-bold hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all text-brand-blue text-center">
-                                Detalhes
-                            </a>
-                            <a href="https://wa.me/5583981869199?text=Ol%C3%A1!%20Tenho%20interesse%20no%20*Triciclo%20Duos%20Eko-10*%20que%20vi%20no%20site%20de%20voc%C3%AAs.%20Poderia%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank"
-                                class="bg-brand-orange text-white py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-1.5 shadow shadow-brand-orange/30 hover:bg-orange-600 transition-all">
-                                <span class="material-symbols-outlined text-sm">chat</span> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 6 — Duos Fenix -->
-                <div data-category="triciclos" class="catalog-card snap-center card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
-                    <a href="detalhes-duos-fenix.html" class="block relative overflow-hidden aspect-[3/2]">
-                        <img alt="Duos Fenix" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700 bg-slate-100"
-                            src="assets/Duos%20Fenix.png" />
-                        <div class="absolute top-4 left-4 bg-brand-blue text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow">
-                            Familiar
-                        </div>
-                    </a>
-                    <div class="p-7">
-                        <h3 class="text-xl font-black mb-1 text-brand-blue">Duos Fenix</h3>
-                        <p class="text-brand-orange font-black text-lg mb-5">Triciclo Utilitário</p>
-                        <div class="space-y-2 mb-6 text-sm text-slate-500">
-                            <div class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-brand-blue text-base">supervisor_account</span>
-                                <span class="font-medium">Assento para 2 adultos</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-brand-blue text-base">bolt</span>
-                                <span class="font-medium">Motor: 750W</span>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-3">
-                            <a href="detalhes-duos-fenix.html"
-                                class="border-2 border-brand-blue/20 py-2.5 rounded-xl text-sm font-bold hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all text-brand-blue text-center">
-                                Detalhes
-                            </a>
-                            <a href="https://wa.me/5583981869199?text=Ol%C3%A1!%20Tenho%20interesse%20no%20*Triciclo%20Duos%20Fenix*%20que%20vi%20no%20site%20de%20voc%C3%AAs.%20Poderia%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank"
-                                class="bg-brand-orange text-white py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-1.5 shadow shadow-brand-orange/30 hover:bg-orange-600 transition-all">
-                                <span class="material-symbols-outlined text-sm">chat</span> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 7 — Sudu A2+ -->
-                <div data-category="eletricas" class="catalog-card snap-center card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md">
-                    <a href="detalhes-sudu-a2plus.html" class="block relative overflow-hidden aspect-[3/2]">
-                        <img alt="Sudu A2+" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700 bg-slate-100"
-                            src="assets/Sudu%20A2+.webp" />
-                        <div class="absolute top-4 left-4 bg-brand-blue text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow">
-                            Sem CNH
-                        </div>
-                    </a>
-                    <div class="p-7">
-                        <h3 class="text-xl font-black mb-1 text-brand-blue">Sudu A2+</h3>
-                        <p class="text-brand-orange font-black text-lg mb-5">Scooter Elétrica</p>
-                        <div class="space-y-2 mb-6 text-sm text-slate-500">
-                            <div class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-brand-blue text-base">bolt</span>
-                                <span class="font-medium">Motor: 1000W</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-brand-blue text-base">battery_charging_full</span>
-                                <span class="font-medium">Bateria Lítio Removível</span>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-3">
-                            <a href="detalhes-sudu-a2plus.html"
-                                class="border-2 border-brand-blue/20 py-2.5 rounded-xl text-sm font-bold hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all text-brand-blue text-center">
-                                Detalhes
-                            </a>
-                            <a href="https://wa.me/5583981869199?text=Ol%C3%A1!%20Tenho%20interesse%20na%20*Sudu%20A2%2B*%20que%20vi%20no%20site%20de%20voc%C3%AAs.%20Poderia%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank"
-                                class="bg-brand-orange text-white py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-1.5 shadow shadow-brand-orange/30 hover:bg-orange-600 transition-all">
-                                <span class="material-symbols-outlined text-sm">chat</span> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -923,32 +710,99 @@
     </script>
 </body>
 
+<!-- Banco de produtos (fonte única de dados) -->
+<script src="produtos.js"></script>
+
+<!-- Motor do catálogo: gera filtros + cards a partir de produtos.js -->
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const filterBtns = document.querySelectorAll(".filter-btn");
-        const cards = document.querySelectorAll(".catalog-card");
+        const container = document.getElementById("catalog-container");
+        const filtersBox = document.getElementById("catalog-filters");
+        const emptyMsg = document.getElementById("catalog-empty");
+        if (!container || !filtersBox) return;
+
+        const produtos = window.PRODUTOS || [];
+
+        // Classes dos botões de filtro
+        const BTN_BASE = "filter-btn px-7 py-2.5 rounded-full font-bold text-sm transition-all";
+        const BTN_ON = "bg-brand-blue text-white shadow-lg shadow-brand-blue/20";
+        const BTN_OFF = "border-2 border-brand-blue/20 text-brand-blue hover:bg-brand-blue hover:text-white";
+
+        // ---- Monta um card ----
+        function montarCard(p) {
+            const capa = window.fotoSrc(p.fotos[0]);
+            const waText = "Olá! Tenho interesse no(a) *" + p.modelo + " - " + p.cor +
+                "* que vi no site de vocês. Poderia me passar mais informações?";
+            const waHref = "https://wa.me/" + window.WHATSAPP_PADRAO + "?text=" + encodeURIComponent(waText);
+            const detalhesHref = "detalhes-produto.html?id=" + encodeURIComponent(p.id);
+            const catLabel = (window.CATEGORIAS_LABEL[p.categoria] || p.categoria || "")
+                .replace(/ \/.*$/, ""); // só a 1ª palavra no badge
+
+            const card = document.createElement("div");
+            card.className = "catalog-card snap-center card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md flex flex-col";
+            card.setAttribute("data-category", p.categoria || "");
+
+            card.innerHTML =
+                '<a href="' + detalhesHref + '" class="block relative overflow-hidden aspect-[3/2] bg-slate-100">' +
+                    '<img alt="' + p.modelo + '" loading="lazy" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700" src="' + capa + '" />' +
+                    '<div class="absolute top-4 left-4 bg-brand-blue text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow">Sem CNH</div>' +
+                '</a>' +
+                '<div class="p-7 flex flex-col flex-1">' +
+                    '<h3 class="text-xl font-black mb-1 text-brand-blue">' + p.modelo + '</h3>' +
+                    '<p class="text-brand-orange font-black text-lg mb-4 capitalize">' + p.cor + '</p>' +
+                    '<div class="space-y-2 mb-6 text-sm text-slate-500">' +
+                        '<div class="flex items-center gap-2">' +
+                            '<span class="material-symbols-outlined text-brand-blue text-base">storefront</span>' +
+                            '<span class="font-medium">' + p.loja + '</span>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="grid grid-cols-2 gap-3 mt-auto">' +
+                        '<a href="' + detalhesHref + '" class="border-2 border-brand-blue/20 py-2.5 rounded-xl text-sm font-bold hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all text-brand-blue text-center">Detalhes</a>' +
+                        '<a href="' + waHref + '" target="_blank" class="bg-brand-orange text-white py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-1.5 shadow shadow-brand-orange/30 hover:bg-orange-600 transition-all"><span class="material-symbols-outlined text-sm">chat</span> WhatsApp</a>' +
+                    '</div>' +
+                '</div>';
+            return card;
+        }
+
+        // ---- Renderiza todos os cards ----
+        produtos.forEach(p => container.appendChild(montarCard(p)));
+
+        // ---- Monta os filtros (só categorias que têm produto) ----
+        const catsPresentes = window.CATEGORIAS_ORDEM.filter(cat =>
+            produtos.some(p => p.categoria === cat)
+        );
+        const filtros = [{ value: "todas", label: "Todas" }].concat(
+            catsPresentes.map(cat => ({ value: cat, label: window.CATEGORIAS_LABEL[cat] || cat }))
+        );
+
+        filtros.forEach((f, i) => {
+            const btn = document.createElement("button");
+            btn.setAttribute("data-filter", f.value);
+            btn.textContent = f.label;
+            btn.className = BTN_BASE + " " + (i === 0 ? BTN_ON : BTN_OFF);
+            filtersBox.appendChild(btn);
+        });
+
+        const filterBtns = filtersBox.querySelectorAll(".filter-btn");
+        const cards = container.querySelectorAll(".catalog-card");
+
+        function aplicarFiltro(valor) {
+            let visiveis = 0;
+            cards.forEach(card => {
+                const ok = valor === "todas" || card.getAttribute("data-category") === valor;
+                card.classList.toggle("hidden", !ok);
+                if (ok) visiveis++;
+            });
+            if (emptyMsg) emptyMsg.classList.toggle("hidden", visiveis > 0);
+        }
 
         filterBtns.forEach(btn => {
             btn.addEventListener("click", () => {
-                // Reset all buttons
                 filterBtns.forEach(b => {
-                    b.classList.remove("bg-brand-blue", "text-white", "shadow-lg", "shadow-brand-blue/20");
-                    b.classList.add("border-2", "border-brand-blue/20", "text-brand-blue");
+                    b.className = BTN_BASE + " " + BTN_OFF;
                 });
-                
-                // Activate clicked button
-                btn.classList.add("bg-brand-blue", "text-white", "shadow-lg", "shadow-brand-blue/20");
-                btn.classList.remove("border-2", "border-brand-blue/20", "text-brand-blue");
-
-                const filterValue = btn.getAttribute("data-filter");
-
-                cards.forEach(card => {
-                    if (filterValue === "todas" || card.getAttribute("data-category") === filterValue) {
-                        card.classList.remove("hidden");
-                    } else {
-                        card.classList.add("hidden");
-                    }
-                });
+                btn.className = BTN_BASE + " " + BTN_ON;
+                aplicarFiltro(btn.getAttribute("data-filter"));
             });
         });
     });
