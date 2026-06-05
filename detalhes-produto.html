@@ -89,7 +89,15 @@
                             <span class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold uppercase">Elétrica</span>
                             <span class="px-3 py-1 rounded-full bg-brand-orange/10 text-brand-orange text-xs font-bold uppercase">Sem CNH</span>
                         </div>
-                        <h1 id="modelo" class="text-4xl lg:text-5xl font-black text-brand-blue mb-3"></h1>
+                        <h1 id="modelo" class="text-4xl lg:text-5xl font-black text-brand-blue mb-4"></h1>
+
+                        <!-- Seletor de cores (só aparece quando há +1 cor) -->
+                        <div id="cores-bloco" class="hidden mb-6">
+                            <span class="block text-xs text-slate-400 uppercase font-bold mb-2">
+                                Escolha a cor <span id="cor-selecionada" class="text-brand-orange capitalize"></span>
+                            </span>
+                            <div id="cores-seletor" class="flex flex-wrap gap-2"></div>
+                        </div>
 
                         <div class="grid grid-cols-2 gap-3 mb-7">
                             <div class="p-4 bg-slate-50 border border-slate-100 rounded-xl">
@@ -102,13 +110,8 @@
                             </div>
                         </div>
 
-                        <!-- Texto placeholder (igual para todos por enquanto) -->
-                        <p class="text-slate-500 mb-7 leading-relaxed">
-                            Veículo elétrico ideal para mobilidade urbana — econômico, silencioso e que
-                            <strong class="text-brand-blue">não exige CNH</strong>. As especificações técnicas
-                            detalhadas deste modelo serão atualizadas em breve. Fale com um consultor para
-                            preço, disponibilidade e condições de financiamento.
-                        </p>
+                        <!-- Descrição do modelo (vem de produtos.js) -->
+                        <p id="descricao" class="text-slate-500 mb-7 leading-relaxed"></p>
 
                         <div class="flex flex-col gap-3">
                             <a id="btn-whatsapp" href="#" target="_blank"
@@ -123,17 +126,11 @@
                     </div>
                 </div>
 
-                <!-- Ficha técnica placeholder (igual para todos) -->
+                <!-- Ficha técnica (preenchida via JS a partir de produtos.js) -->
                 <div id="ficha" class="hidden max-w-3xl">
                     <h2 class="text-2xl font-black text-brand-blue mb-5">Especificações</h2>
-                    <div class="rounded-2xl overflow-hidden border border-slate-100">
-                        <div class="spec-row flex justify-between px-5 py-3 text-sm"><span class="text-slate-500 font-medium">Motor</span><span class="font-bold text-brand-blue">A definir</span></div>
-                        <div class="spec-row flex justify-between px-5 py-3 text-sm"><span class="text-slate-500 font-medium">Bateria</span><span class="font-bold text-brand-blue">A definir</span></div>
-                        <div class="spec-row flex justify-between px-5 py-3 text-sm"><span class="text-slate-500 font-medium">Autonomia</span><span class="font-bold text-brand-blue">A definir</span></div>
-                        <div class="spec-row flex justify-between px-5 py-3 text-sm"><span class="text-slate-500 font-medium">Velocidade máxima</span><span class="font-bold text-brand-blue">A definir</span></div>
-                        <div class="spec-row flex justify-between px-5 py-3 text-sm"><span class="text-slate-500 font-medium">CNH</span><span class="font-bold text-green-600">Não exige</span></div>
-                    </div>
-                    <p class="text-xs text-slate-400 mt-3">Imagens meramente ilustrativas. Dados técnicos serão atualizados.</p>
+                    <div id="specs-container" class="rounded-2xl overflow-hidden border border-slate-100"></div>
+                    <p class="text-xs text-slate-400 mt-3">Imagens meramente ilustrativas. Especificações de referência — confirme os detalhes finais com a loja.</p>
                 </div>
 
             </div>
@@ -152,58 +149,122 @@
         document.addEventListener("DOMContentLoaded", () => {
             const params = new URLSearchParams(window.location.search);
             const id = params.get("id");
-            const p = window.getProduto ? window.getProduto(id) : null;
+            const res = window.getModelo ? window.getModelo(id) : null;
 
             const erroBox = document.getElementById("erro");
             const produtoBox = document.getElementById("produto");
             const fichaBox = document.getElementById("ficha");
 
-            if (!p) {
+            if (!res) {
                 erroBox.classList.remove("hidden");
                 return;
             }
 
+            const m = res.modelo;
             produtoBox.classList.remove("hidden");
             fichaBox.classList.remove("hidden");
 
-            // Textos
-            document.getElementById("page-title").textContent = p.modelo + " " + p.cor + " | Moto Mania CG";
-            document.getElementById("bc-modelo").textContent = p.modelo;
-            document.getElementById("modelo").textContent = p.modelo;
-            document.getElementById("cor").textContent = p.cor;
-            document.getElementById("loja").textContent = p.loja;
-            document.getElementById("badge-categoria").textContent =
-                (window.CATEGORIAS_LABEL[p.categoria] || p.categoria || "Produto");
-
-            // Galeria
+            // Elementos
             const principal = document.getElementById("foto-principal");
-            principal.src = window.fotoSrc(p.fotos[0]);
-            principal.alt = p.modelo + " " + p.cor;
-
             const thumbsBox = document.getElementById("thumbs");
-            p.fotos.forEach((arquivo, i) => {
-                const btn = document.createElement("button");
-                btn.className = "thumb aspect-square rounded-xl overflow-hidden bg-slate-100 border-2 transition-all " +
-                    (i === 0 ? "active" : "border-transparent hover:border-brand-blue/30");
-                btn.innerHTML = '<img src="' + window.fotoSrc(arquivo) + '" alt="" loading="lazy" class="w-full h-full object-contain" />';
-                btn.addEventListener("click", () => {
-                    principal.src = window.fotoSrc(arquivo);
-                    thumbsBox.querySelectorAll(".thumb").forEach(t => {
-                        t.classList.remove("active");
-                        t.classList.add("border-transparent");
-                    });
-                    btn.classList.add("active");
-                    btn.classList.remove("border-transparent");
-                });
-                thumbsBox.appendChild(btn);
-            });
+            const elModelo = document.getElementById("modelo");
+            const elCor = document.getElementById("cor");
+            const elLoja = document.getElementById("loja");
+            const elDesc = document.getElementById("descricao");
+            const elCorSel = document.getElementById("cor-selecionada");
+            const btnWhats = document.getElementById("btn-whatsapp");
+            const ctaWhats = document.getElementById("cta-whatsapp");
 
-            // WhatsApp
-            const waText = "Olá! Tenho interesse no(a) *" + p.modelo + " - " + p.cor +
-                "* que vi no site de vocês. Poderia me passar mais informações?";
-            const waHref = "https://wa.me/" + window.WHATSAPP_PADRAO + "?text=" + encodeURIComponent(waText);
-            document.getElementById("btn-whatsapp").href = waHref;
-            document.getElementById("cta-whatsapp").href = waHref;
+            // Conteúdo fixo do modelo
+            elModelo.textContent = m.modelo;
+            document.getElementById("bc-modelo").textContent = m.modelo;
+            elDesc.textContent = m.descricao || "";
+            document.getElementById("badge-categoria").textContent =
+                (window.CATEGORIAS_LABEL[m.categoria] || m.categoria || "Produto");
+
+            // Ficha técnica (igual para todas as cores do modelo)
+            const specsBox = document.getElementById("specs-container");
+            let linhas = (window.SPECS_ORDEM || [])
+                .filter(s => m.specs && m.specs[s.chave])
+                .map(s => '<div class="spec-row flex justify-between px-5 py-3 text-sm gap-4">' +
+                    '<span class="text-slate-500 font-medium">' + s.label + '</span>' +
+                    '<span class="font-bold text-brand-blue text-right">' + m.specs[s.chave] + '</span></div>')
+                .join("");
+            linhas += '<div class="spec-row flex justify-between px-5 py-3 text-sm gap-4">' +
+                '<span class="text-slate-500 font-medium">CNH</span>' +
+                '<span class="font-bold text-green-600 text-right">Não exige</span></div>';
+            specsBox.innerHTML = linhas;
+
+            // Se duas cores têm o mesmo nome, mostra a loja pra diferenciar
+            function labelCor(c) {
+                const repetida = m.cores.filter(x => x.cor === c.cor).length > 1;
+                if (!repetida) return c.cor;
+                const curta = c.loja.split("–")[0].split("-")[0].trim();
+                return c.cor + " · " + curta;
+            }
+
+            // Aplica uma cor (galeria + textos + whatsapp)
+            function selecionarCor(idx) {
+                const c = m.cores[idx];
+
+                // Textos da cor
+                elCor.textContent = c.cor;
+                elLoja.textContent = c.loja;
+                elCorSel.textContent = m.cores.length > 1 ? "— " + c.cor : "";
+                document.getElementById("page-title").textContent = m.modelo + " " + c.cor + " | Moto Mania CG";
+
+                // Galeria
+                principal.src = window.fotoSrc(c.fotos[0]);
+                principal.alt = m.modelo + " " + c.cor;
+                thumbsBox.innerHTML = "";
+                c.fotos.forEach((arquivo, i) => {
+                    const btn = document.createElement("button");
+                    btn.className = "thumb aspect-square rounded-xl overflow-hidden bg-slate-100 border-2 transition-all " +
+                        (i === 0 ? "active" : "border-transparent hover:border-brand-blue/30");
+                    btn.innerHTML = '<img src="' + window.fotoSrc(arquivo) + '" alt="" loading="lazy" class="w-full h-full object-contain" />';
+                    btn.addEventListener("click", () => {
+                        principal.src = window.fotoSrc(arquivo);
+                        thumbsBox.querySelectorAll(".thumb").forEach(t => {
+                            t.classList.remove("active");
+                            t.classList.add("border-transparent");
+                        });
+                        btn.classList.add("active");
+                        btn.classList.remove("border-transparent");
+                    });
+                    thumbsBox.appendChild(btn);
+                });
+
+                // WhatsApp
+                const waText = "Olá! Tenho interesse no(a) *" + m.modelo + " - " + c.cor +
+                    "* que vi no site de vocês. Poderia me passar mais informações?";
+                const waHref = "https://wa.me/" + window.WHATSAPP_PADRAO + "?text=" + encodeURIComponent(waText);
+                btnWhats.href = waHref;
+                ctaWhats.href = waHref;
+
+                // Marca o botão de cor ativo
+                document.querySelectorAll(".cor-btn").forEach((b, i) => {
+                    const ativo = i === idx;
+                    b.className = "cor-btn px-4 py-2 rounded-xl text-sm font-bold border-2 transition-all " +
+                        (ativo ? "bg-brand-blue text-white border-brand-blue shadow-lg shadow-brand-blue/20"
+                               : "bg-white text-brand-blue border-brand-blue/20 hover:border-brand-orange");
+                });
+            }
+
+            // Monta os botões de cor (só quando há mais de uma)
+            if (m.cores.length > 1) {
+                const seletor = document.getElementById("cores-seletor");
+                m.cores.forEach((c, idx) => {
+                    const btn = document.createElement("button");
+                    btn.className = "cor-btn px-4 py-2 rounded-xl text-sm font-bold border-2 transition-all bg-white text-brand-blue border-brand-blue/20 hover:border-brand-orange";
+                    btn.textContent = labelCor(c);
+                    btn.addEventListener("click", () => selecionarCor(idx));
+                    seletor.appendChild(btn);
+                });
+                document.getElementById("cores-bloco").classList.remove("hidden");
+            }
+
+            // Cor inicial (corIndex vem de link legado ?id=numero; senão a 1ª)
+            selecionarCor(res.corIndex || 0);
         });
     </script>
 </body>

@@ -721,39 +721,53 @@
         const emptyMsg = document.getElementById("catalog-empty");
         if (!container || !filtersBox) return;
 
-        const produtos = window.PRODUTOS || [];
+        const modelos = window.MODELOS || [];
 
         // Classes dos botões de filtro
         const BTN_BASE = "filter-btn px-7 py-2.5 rounded-full font-bold text-sm transition-all";
         const BTN_ON = "bg-brand-blue text-white shadow-lg shadow-brand-blue/20";
         const BTN_OFF = "border-2 border-brand-blue/20 text-brand-blue hover:bg-brand-blue hover:text-white";
 
-        // ---- Monta um card ----
-        function montarCard(p) {
-            const capa = window.fotoSrc(p.fotos[0]);
-            const waText = "Olá! Tenho interesse no(a) *" + p.modelo + " - " + p.cor +
+        // ---- Monta um card (um por MODELO) ----
+        function montarCard(m) {
+            const corCapa = m.cores[0];
+            const capa = window.fotoSrc(corCapa.fotos[0]);
+            const nCores = m.cores.length;
+            // Linha de cor/variações: nome da cor (1) ou "N cores disponíveis" (vários)
+            const linhaCor = nCores > 1
+                ? (nCores + " cores disponíveis")
+                : corCapa.cor;
+            // Lojas onde o modelo aparece (sem repetir)
+            const lojas = [];
+            m.cores.forEach(c => { if (lojas.indexOf(c.loja) < 0) lojas.push(c.loja); });
+            const linhaLoja = lojas.length > 1 ? "Campina Grande e Esperança" : lojas[0];
+
+            const waText = "Olá! Tenho interesse no(a) *" + m.modelo +
                 "* que vi no site de vocês. Poderia me passar mais informações?";
             const waHref = "https://wa.me/" + window.WHATSAPP_PADRAO + "?text=" + encodeURIComponent(waText);
-            const detalhesHref = "detalhes-produto.html?id=" + encodeURIComponent(p.id);
-            const catLabel = (window.CATEGORIAS_LABEL[p.categoria] || p.categoria || "")
-                .replace(/ \/.*$/, ""); // só a 1ª palavra no badge
+            const detalhesHref = "detalhes-produto.html?id=" + encodeURIComponent(m.id);
 
             const card = document.createElement("div");
             card.className = "catalog-card snap-center card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md flex flex-col";
-            card.setAttribute("data-category", p.categoria || "");
+            card.setAttribute("data-category", m.categoria || "");
+
+            const badgeCores = nCores > 1
+                ? '<div class="absolute top-4 right-4 bg-brand-orange text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow flex items-center gap-1"><span class="material-symbols-outlined text-xs">palette</span>' + nCores + ' cores</div>'
+                : '';
 
             card.innerHTML =
                 '<a href="' + detalhesHref + '" class="block relative overflow-hidden aspect-[3/2] bg-slate-100">' +
-                    '<img alt="' + p.modelo + '" loading="lazy" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700" src="' + capa + '" />' +
+                    '<img alt="' + m.modelo + '" loading="lazy" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700" src="' + capa + '" />' +
                     '<div class="absolute top-4 left-4 bg-brand-blue text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow">Sem CNH</div>' +
+                    badgeCores +
                 '</a>' +
                 '<div class="p-7 flex flex-col flex-1">' +
-                    '<h3 class="text-xl font-black mb-1 text-brand-blue">' + p.modelo + '</h3>' +
-                    '<p class="text-brand-orange font-black text-lg mb-4 capitalize">' + p.cor + '</p>' +
+                    '<h3 class="text-xl font-black mb-1 text-brand-blue">' + m.modelo + '</h3>' +
+                    '<p class="text-brand-orange font-black text-lg mb-4 capitalize">' + linhaCor + '</p>' +
                     '<div class="space-y-2 mb-6 text-sm text-slate-500">' +
                         '<div class="flex items-center gap-2">' +
                             '<span class="material-symbols-outlined text-brand-blue text-base">storefront</span>' +
-                            '<span class="font-medium">' + p.loja + '</span>' +
+                            '<span class="font-medium">' + linhaLoja + '</span>' +
                         '</div>' +
                     '</div>' +
                     '<div class="grid grid-cols-2 gap-3 mt-auto">' +
@@ -765,11 +779,11 @@
         }
 
         // ---- Renderiza todos os cards ----
-        produtos.forEach(p => container.appendChild(montarCard(p)));
+        modelos.forEach(m => container.appendChild(montarCard(m)));
 
         // ---- Monta os filtros (só categorias que têm produto) ----
         const catsPresentes = window.CATEGORIAS_ORDEM.filter(cat =>
-            produtos.some(p => p.categoria === cat)
+            modelos.some(m => m.categoria === cat)
         );
         const filtros = [{ value: "todas", label: "Todas" }].concat(
             catsPresentes.map(cat => ({ value: cat, label: window.CATEGORIAS_LABEL[cat] || cat }))
