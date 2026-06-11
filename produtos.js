@@ -42,317 +42,1032 @@ window.fotoSrc = function (arquivo) {
 
 window.MODELOS = [
     {
-        id: "triciclo-duos-eko-10",
-        modelo: "Triciclo Duos Eko-10",
-        categoria: "triciclos",
-        lugares: 1,
-        descricao: "O Triciclo Elétrico Duos Eko-10 une a estabilidade de três rodas com a praticidade de não exigir CNH nem emplacamento. Com motor de 1000W, marcha à ré, alarme e bagageiro amplo, é ideal para o dia a dia urbano com total segurança e conforto.",
-        specs: {
-            motor: "1000W brushless (traseiro)",
-            bateria: "Lítio 60V 20Ah",
-            autonomia: "Até 45 km por carga",
-            velocidade: "25 km/h (3 níveis)",
-            freios: "Disco hidráulico dianteiro + tambor traseiro",
-            suspensao: "Dianteira e traseira",
-            pneus: "Aro 10\" tubeless",
-            capacidade: "150 kg",
-            tempoCarga: "6 a 8 horas"
+        "id": "triciclo-duos-eko-10",
+        "modelo": "Triciclo Duos Eko-10",
+        "categoria": "triciclos",
+        "lugares": 1,
+        "descricao": "O Triciclo Elétrico Duos Eko-10 une a estabilidade de três rodas com a praticidade de não exigir CNH nem emplacamento. Com motor de 1000W, marcha à ré, alarme e bagageiro amplo, é ideal para o dia a dia urbano com total segurança e conforto.",
+        "specs": {
+            "motor": "1000W brushless (traseiro)",
+            "bateria": "Lítio 60V 20Ah",
+            "autonomia": "Até 45 km por carga",
+            "velocidade": "25 km/h (3 níveis)",
+            "freios": "Disco hidráulico dianteiro + tambor traseiro",
+            "suspensao": "Dianteira e traseira",
+            "pneus": "Aro 10\" tubeless",
+            "capacidade": "150 kg",
+            "tempoCarga": "6 a 8 horas"
         },
-        cores: [
-            { cor: "Vermelho", loja: "Shopping Luiza Motta", fotos: ["1.jpeg", "1 (1).jpeg", "1 (2).jpeg"], ref: 1 }
+        "cores": [
+            {
+                "cor": "Vermelho",
+                "loja": "Shopping Luiza Motta",
+                "fotos": [
+                    "1.jpeg",
+                    "1 (1).jpeg",
+                    "1 (2).jpeg"
+                ],
+                "ref": 1
+            }
         ]
     },
     {
-        id: "eko-7",
-        modelo: "Eko 7",
-        categoria: "motos",
-        descricao: "A Scooter Elétrica Duos Eko 7 é um ciclomotor leve e econômico, autopropelido (sem CNH e sem emplacamento). Com farol LED, painel digital, alarme e setas, oferece até 50 km de autonomia — uma opção estilosa e prática para trajetos urbanos do dia a dia.",
-        specs: {
-            motor: "600W",
-            bateria: "Chumbo 48V 20Ah",
-            autonomia: "Até 50 km por carga",
-            velocidade: "32 km/h",
-            freios: "Tambor dianteiro e traseiro",
-            suspensao: "Dianteira e traseira",
-            pneus: "Aro 12\"",
-            capacidade: "120 kg",
-            tempoCarga: "7 a 8 horas"
+        "id": "eko-7",
+        "modelo": "Eko 7",
+        "categoria": "motos",
+        "descricao": "A Scooter Elétrica Duos Eko 7 é um ciclomotor leve e econômico, autopropelido (sem CNH e sem emplacamento). Com farol LED, painel digital, alarme e setas, oferece até 50 km de autonomia — uma opção estilosa e prática para trajetos urbanos do dia a dia.",
+        "specs": {
+            "motor": "600W",
+            "bateria": "Chumbo 48V 20Ah",
+            "autonomia": "Até 50 km por carga",
+            "velocidade": "32 km/h",
+            "freios": "Tambor dianteiro e traseiro",
+            "suspensao": "Dianteira e traseira",
+            "pneus": "Aro 12\"",
+            "capacidade": "120 kg",
+            "tempoCarga": "7 a 8 horas"
         },
-        cores: [
-            { cor: "Verde", loja: "Shopping Luiza Motta", fotos: ["2 (1).jpeg", "2 (2).jpeg"], ref: 2 }
+        "cores": [
+            {
+                "cor": "Verde",
+                "loja": "Shopping Luiza Motta",
+                "fotos": [
+                    "2 (1).jpeg",
+                    "2 (2).jpeg"
+                ],
+                "ref": 2
+            }
         ]
     },
     {
-        id: "raptor-pro",
-        modelo: "Raptor Pro",
-        categoria: "motos",
-        descricao: "A Trixx Raptor Pro 1000W é uma scooter elétrica robusta e equipada, isenta de CNH e emplacamento. Traz cartão NFC, alarme antifurto, piloto automático, freio dianteiro a disco hidráulico e 3 níveis de velocidade. Combina visual agressivo e ótimo custo-benefício para a mobilidade urbana.",
-        specs: {
-            motor: "1000W brushless",
-            bateria: "Chumbo 60V 20Ah",
-            autonomia: "40 a 50 km por carga",
-            velocidade: "32 km/h (3 níveis)",
-            freios: "Disco hidráulico dianteiro + tambor traseiro",
-            suspensao: "Hidráulica dianteira + amortecedor traseiro",
-            pneus: "Aro 10\" tubeless",
-            capacidade: "150 kg",
-            tempoCarga: "7 a 9 horas"
+        "id": "raptor-pro",
+        "modelo": "Raptor Pro",
+        "categoria": "motos",
+        "descricao": "A Trixx Raptor Pro 1000W é uma scooter elétrica robusta e equipada, isenta de CNH e emplacamento. Traz cartão NFC, alarme antifurto, piloto automático, freio dianteiro a disco hidráulico e 3 níveis de velocidade. Combina visual agressivo e ótimo custo-benefício para a mobilidade urbana.",
+        "specs": {
+            "motor": "1000W brushless",
+            "bateria": "Chumbo 60V 20Ah",
+            "autonomia": "40 a 50 km por carga",
+            "velocidade": "32 km/h (3 níveis)",
+            "freios": "Disco hidráulico dianteiro + tambor traseiro",
+            "suspensao": "Hidráulica dianteira + amortecedor traseiro",
+            "pneus": "Aro 10\" tubeless",
+            "capacidade": "150 kg",
+            "tempoCarga": "7 a 9 horas"
         },
-        cores: [
-            { cor: "Branca", loja: "Shopping Luiza Motta", fotos: ["3 (1).jpeg", "3 (2).jpeg"], ref: 3 },
-            { cor: "Verde camaleão", loja: "Anthenor Navarro – Esperança", fotos: ["19 (1).jpeg", "19 (2).jpeg"], ref: 19 }
+        "cores": [
+            {
+                "cor": "Branca",
+                "loja": "Shopping Luiza Motta",
+                "fotos": [
+                    "3 (1).jpeg",
+                    "3 (2).jpeg"
+                ],
+                "ref": 3
+            },
+            {
+                "cor": "Verde camaleão",
+                "loja": "Anthenor Navarro – Esperança",
+                "fotos": [
+                    "19 (1).jpeg",
+                    "19 (2).jpeg"
+                ],
+                "ref": 19
+            }
         ]
     },
     {
-        id: "jet-1000w",
-        modelo: "JET 1000W",
-        categoria: "motos",
-        destaque: true,
-        descricao: "A Scooter Elétrica JET 1000W (MotoChefe) é autopropelida — sem CNH e sem emplacamento — com bateria de lítio removível para carregar onde quiser. Oferece banco duplo, baú traseiro, farol Full LED, marcha à ré e alarme antifurto. Resistente à chuva, é prática, econômica e ideal para o trânsito urbano.",
-        specs: {
-            motor: "1000W",
-            bateria: "Lítio 60V 20Ah (removível)",
-            autonomia: "Até 45 km por carga",
-            velocidade: "32 km/h",
-            freios: "Disco hidráulico (dianteiro e traseiro)",
-            suspensao: "Amortecedor duplo dianteiro + traseira dupla",
-            pneus: "Aro 10\" sem câmara",
-            capacidade: "180 kg",
-            tempoCarga: "Até 5 horas (carregador turbo)"
+        "id": "jet-1000w",
+        "modelo": "JET 1000W",
+        "categoria": "motos",
+        "destaque": true,
+        "descricao": "A Scooter Elétrica JET 1000W (MotoChefe) é autopropelida — sem CNH e sem emplacamento — com bateria de lítio removível para carregar onde quiser. Oferece banco duplo, baú traseiro, farol Full LED, marcha à ré e alarme antifurto. Resistente à chuva, é prática, econômica e ideal para o trânsito urbano.",
+        "specs": {
+            "motor": "1000W",
+            "bateria": "Lítio 60V 20Ah (removível)",
+            "autonomia": "Até 45 km por carga",
+            "velocidade": "32 km/h",
+            "freios": "Disco hidráulico (dianteiro e traseiro)",
+            "suspensao": "Amortecedor duplo dianteiro + traseira dupla",
+            "pneus": "Aro 10\" sem câmara",
+            "capacidade": "180 kg",
+            "tempoCarga": "Até 5 horas (carregador turbo)"
         },
-        cores: [
-            { cor: "Preta", loja: "Shopping Luiza Motta", fotos: ["4 (1).jpeg", "4 (2).jpeg", "4 (3).jpeg", "4 (4).jpeg"], ref: 4 },
-            { cor: "Prata", loja: "Anthenor Navarro – Esperança", fotos: ["9 (1).jpeg", "9 (2).jpeg"], ref: 9 }
+        "cores": [
+            {
+                "cor": "Preta",
+                "loja": "Shopping Luiza Motta",
+                "fotos": [
+                    "4 (1).jpeg",
+                    "4 (2).jpeg",
+                    "4 (3).jpeg",
+                    "4 (4).jpeg"
+                ],
+                "ref": 4
+            },
+            {
+                "cor": "Prata",
+                "loja": "Anthenor Navarro – Esperança",
+                "fotos": [
+                    "9 (1).jpeg",
+                    "9 (2).jpeg"
+                ],
+                "ref": 9
+            },
+            {
+                "cor": "Branca",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.27 (1).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.27.jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.28 (4).jpeg"
+                ]
+            }
         ]
     },
     {
-        id: "maxus-duact-litio",
-        modelo: "Maxus Duact Lítio",
-        categoria: "motos",
-        destaque: true,
-        descricao: "A Maxus Duact é uma scooter elétrica a lítio pensada para a mobilidade urbana sem complicação: dispensa CNH e emplacamento. Com motor de 1000W, painel digital, alarme antifurto, tecnologia de cartão de aproximação (NFC) e baú integrado, une autonomia generosa e conforto no dia a dia.",
-        specs: {
-            motor: "1000W (torque 60 Nm)",
-            bateria: "Lítio 60V 20Ah (removível)",
-            autonomia: "Até 80 km por carga",
-            velocidade: "32 km/h",
-            freios: "Disco hidráulico ventilado (dianteiro e traseiro)",
-            suspensao: "Amortecedores reguláveis (DuactLink)",
-            pneus: "Aro 10\" tubeless",
-            capacidade: "150 kg",
-            tempoCarga: "6 horas"
+        "id": "maxus-duact-litio",
+        "modelo": "Maxus Duact Lítio",
+        "categoria": "motos",
+        "destaque": true,
+        "descricao": "A Maxus Duact é uma scooter elétrica a lítio pensada para a mobilidade urbana sem complicação: dispensa CNH e emplacamento. Com motor de 1000W, painel digital, alarme antifurto, tecnologia de cartão de aproximação (NFC) e baú integrado, une autonomia generosa e conforto no dia a dia.",
+        "specs": {
+            "motor": "1000W (torque 60 Nm)",
+            "bateria": "Lítio 60V 20Ah (removível)",
+            "autonomia": "Até 80 km por carga",
+            "velocidade": "32 km/h",
+            "freios": "Disco hidráulico ventilado (dianteiro e traseiro)",
+            "suspensao": "Amortecedores reguláveis (DuactLink)",
+            "pneus": "Aro 10\" tubeless",
+            "capacidade": "150 kg",
+            "tempoCarga": "6 horas"
         },
-        cores: [
-            { cor: "Verde", loja: "Shopping Luiza Motta", fotos: ["5 (1).jpeg", "5 (2).jpeg"], ref: 5 },
-            { cor: "Vermelha", loja: "Anthenor Navarro – Esperança", fotos: ["10 (1).jpeg", "10 (2).jpeg"], ref: 10 },
-            { cor: "Azul escuro", loja: "Anthenor Navarro – Esperança", fotos: ["11 (1).jpeg", "11 (2).jpeg"], ref: 11 },
-            { cor: "Rosê", loja: "Anthenor Navarro – Esperança", fotos: ["12 (1).jpeg", "12 (2).jpeg"], ref: 12 },
-            { cor: "Verde", loja: "Anthenor Navarro – Esperança", fotos: ["13 (1).jpeg", "13 (2).jpeg", "13 (3).jpeg"], ref: 13 }
+        "cores": [
+            {
+                "cor": "Verde",
+                "loja": "Shopping Luiza Motta",
+                "fotos": [
+                    "5 (1).jpeg",
+                    "5 (2).jpeg"
+                ],
+                "ref": 5
+            },
+            {
+                "cor": "Vermelha",
+                "loja": "Anthenor Navarro – Esperança",
+                "fotos": [
+                    "10 (1).jpeg",
+                    "10 (2).jpeg"
+                ],
+                "ref": 10
+            },
+            {
+                "cor": "Azul escuro",
+                "loja": "Anthenor Navarro – Esperança",
+                "fotos": [
+                    "11 (1).jpeg",
+                    "11 (2).jpeg"
+                ],
+                "ref": 11
+            },
+            {
+                "cor": "Rosê",
+                "loja": "Anthenor Navarro – Esperança",
+                "fotos": [
+                    "12 (1).jpeg",
+                    "12 (2).jpeg"
+                ],
+                "ref": 12
+            },
+            {
+                "cor": "Verde",
+                "loja": "Anthenor Navarro – Esperança",
+                "fotos": [
+                    "13 (1).jpeg",
+                    "13 (2).jpeg",
+                    "13 (3).jpeg"
+                ],
+                "ref": 13
+            },
+            {
+                "cor": "Prata",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.26 (3).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.58 (1).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.58 (2).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.58 (3).jpeg"
+                ]
+            },
+            {
+                "cor": "Preto",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.55 (1).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.55 (2).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.55.jpeg"
+                ]
+            },
+            {
+                "cor": "Azul",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.57.jpeg"
+                ]
+            }
         ]
     },
     {
-        id: "monaco-2026",
-        modelo: "Mônaco 2026",
-        categoria: "motos",
-        descricao: "A Conduzza Mônaco 2026 é uma scooter elétrica de visual moderno e linhas elegantes, com iluminação full LED, painel digital com tecnologia NFC e baú interno sob o banco. Motor de 1000W e bateria de 72V entregam desempenho estável no trânsito urbano, sem exigir CNH nem emplacamento.",
-        specs: {
-            motor: "1000W",
-            bateria: "72V 20Ah",
-            autonomia: "Até 80 km por carga",
-            velocidade: "32 km/h",
-            freios: "Disco hidráulico dianteiro e traseiro",
-            suspensao: "Hidráulica dianteira e traseira",
-            pneus: "Aro 10\" tubeless (3.5-10)",
-            capacidade: "150 kg",
-            tempoCarga: "6 a 8 horas"
+        "id": "monaco-2026",
+        "modelo": "Mônaco 2026",
+        "categoria": "motos",
+        "descricao": "A Conduzza Mônaco 2026 é uma scooter elétrica de visual moderno e linhas elegantes, com iluminação full LED, painel digital com tecnologia NFC e baú interno sob o banco. Motor de 1000W e bateria de 72V entregam desempenho estável no trânsito urbano, sem exigir CNH nem emplacamento.",
+        "specs": {
+            "motor": "1000W",
+            "bateria": "72V 20Ah",
+            "autonomia": "Até 80 km por carga",
+            "velocidade": "32 km/h",
+            "freios": "Disco hidráulico dianteiro e traseiro",
+            "suspensao": "Hidráulica dianteira e traseira",
+            "pneus": "Aro 10\" tubeless (3.5-10)",
+            "capacidade": "150 kg",
+            "tempoCarga": "6 a 8 horas"
         },
-        cores: [
-            { cor: "Branca", loja: "Shopping Luiza Motta", fotos: ["6 (1).jpeg", "6 (2).jpeg", "6 (3).jpeg", "6 (4).jpeg"], ref: 6 }
+        "cores": [
+            {
+                "cor": "Branca",
+                "loja": "Shopping Luiza Motta",
+                "fotos": [
+                    "6 (1).jpeg",
+                    "6 (2).jpeg",
+                    "6 (3).jpeg",
+                    "6 (4).jpeg"
+                ],
+                "ref": 6
+            },
+            {
+                "cor": "Prata",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.53.02 (1).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.53.03 (2).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.50.58 (1).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.50.59 (1).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.53.02.jpeg"
+                ]
+            }
         ]
     },
     {
-        id: "triciclo-bonmad-1000w",
-        modelo: "Triciclo Bonmad 1000W",
-        categoria: "triciclos",
-        lugares: 3,
-        descricao: "O Triciclo Elétrico Bonmad 1000W combina a estabilidade de três rodas com a liberdade de não exigir CNH nem emplacamento. Com cesta frontal, banco com garupa para até 3 pessoas e bateria de lítio removível, é uma opção prática tanto para a família quanto para pequenas entregas no dia a dia urbano.",
-        specs: {
-            motor: "1000W",
-            bateria: "Lítio 60V 20Ah (removível)",
-            autonomia: "Até 55 km por carga",
-            velocidade: "32 km/h",
-            freios: "Disco hidráulico traseiro",
-            suspensao: "Dianteira + roda de segurança",
-            pneus: "Aro 10\" liga leve",
-            capacidade: "150 kg (até 3 pessoas)",
-            tempoCarga: "5 a 6 horas"
+        "id": "triciclo-bonmad-1000w",
+        "modelo": "Triciclo Bonmad 1000W",
+        "categoria": "triciclos",
+        "lugares": 3,
+        "descricao": "O Triciclo Elétrico Bonmad 1000W combina a estabilidade de três rodas com a liberdade de não exigir CNH nem emplacamento. Com cesta frontal, banco com garupa para até 3 pessoas e bateria de lítio removível, é uma opção prática tanto para a família quanto para pequenas entregas no dia a dia urbano.",
+        "specs": {
+            "motor": "1000W",
+            "bateria": "Lítio 60V 20Ah (removível)",
+            "autonomia": "Até 55 km por carga",
+            "velocidade": "32 km/h",
+            "freios": "Disco hidráulico traseiro",
+            "suspensao": "Dianteira + roda de segurança",
+            "pneus": "Aro 10\" liga leve",
+            "capacidade": "150 kg (até 3 pessoas)",
+            "tempoCarga": "5 a 6 horas"
         },
-        cores: [
-            { cor: "Preto", loja: "Shopping Luiza Motta", fotos: ["7 (1).jpeg", "7 (2).jpeg"], ref: 7 }
+        "cores": [
+            {
+                "cor": "Preto",
+                "loja": "Shopping Luiza Motta",
+                "fotos": [
+                    "7 (1).jpeg",
+                    "7 (2).jpeg"
+                ],
+                "ref": 7
+            },
+            {
+                "cor": "Azul",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.28.jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.29 (2).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.29 (3).jpeg"
+                ]
+            }
         ]
     },
     {
-        id: "yoo-y200-350w",
-        modelo: "Yoo Y200 350W",
-        categoria: "patinetes",
-        descricao: "A Yoo Y200 350W é uma bicicleta/patinete elétrico autopropelido fabricado no Brasil, homologado pelo CONTRAN e que dispensa CNH e emplacamento. Com farol LED, buzina, painel digital, cestinha frontal e dois assentos, é ideal para deslocamentos urbanos curtos e econômicos.",
-        specs: {
-            motor: "350W 48V (picos de 500W)",
-            bateria: "Chumbo 48V 12Ah",
-            autonomia: "Até 30 km por carga",
-            velocidade: "25 a 32 km/h",
-            freios: "Tambor 110mm com corte automático",
-            suspensao: "Dianteira e traseira",
-            pneus: "Aro 14\" tubeless",
-            capacidade: "120 kg",
-            tempoCarga: "6 a 8 horas"
+        "id": "yoo-y200-350w",
+        "modelo": "Yoo Y200 350W",
+        "categoria": "patinetes",
+        "descricao": "A Yoo Y200 350W é uma bicicleta/patinete elétrico autopropelido fabricado no Brasil, homologado pelo CONTRAN e que dispensa CNH e emplacamento. Com farol LED, buzina, painel digital, cestinha frontal e dois assentos, é ideal para deslocamentos urbanos curtos e econômicos.",
+        "specs": {
+            "motor": "350W 48V (picos de 500W)",
+            "bateria": "Chumbo 48V 12Ah",
+            "autonomia": "Até 30 km por carga",
+            "velocidade": "25 a 32 km/h",
+            "freios": "Tambor 110mm com corte automático",
+            "suspensao": "Dianteira e traseira",
+            "pneus": "Aro 14\" tubeless",
+            "capacidade": "120 kg",
+            "tempoCarga": "6 a 8 horas"
         },
-        cores: [
-            { cor: "Faixa Vermelha", loja: "Shopping Luiza Motta", fotos: ["8 (1).jpeg", "8 (2).jpeg"], ref: 8 }
+        "cores": [
+            {
+                "cor": "Faixa Vermelha",
+                "loja": "Shopping Luiza Motta",
+                "fotos": [
+                    "8 (1).jpeg",
+                    "8 (2).jpeg"
+                ],
+                "ref": 8
+            }
         ]
     },
     {
-        id: "gts-500w",
-        modelo: "GTS 500W",
-        categoria: "motos",
-        descricao: "A GTS 500W é uma das scooters elétricas urbanas mais populares do Brasil para quem quer mobilidade sem CNH, placa ou IPVA. Com visual retrô, faróis de LED e painel digital, encara o dia a dia da cidade com conforto e economia em trajetos curtos e médios.",
-        specs: {
-            motor: "500W brushless",
-            bateria: "Chumbo 48V 12Ah",
-            autonomia: "30 a 40 km por carga",
-            velocidade: "32 km/h",
-            freios: "Tambor dianteiro e traseiro",
-            suspensao: "Telescópica dianteira + dupla traseira",
-            pneus: "Aro 14\"",
-            capacidade: "120 kg",
-            tempoCarga: "6 a 8 horas"
+        "id": "gts-500w",
+        "modelo": "GTS 500W",
+        "categoria": "motos",
+        "descricao": "A GTS 500W é uma das scooters elétricas urbanas mais populares do Brasil para quem quer mobilidade sem CNH, placa ou IPVA. Com visual retrô, faróis de LED e painel digital, encara o dia a dia da cidade com conforto e economia em trajetos curtos e médios.",
+        "specs": {
+            "motor": "500W brushless",
+            "bateria": "Chumbo 48V 12Ah",
+            "autonomia": "30 a 40 km por carga",
+            "velocidade": "32 km/h",
+            "freios": "Tambor dianteiro e traseiro",
+            "suspensao": "Telescópica dianteira + dupla traseira",
+            "pneus": "Aro 14\"",
+            "capacidade": "120 kg",
+            "tempoCarga": "6 a 8 horas"
         },
-        cores: [
-            { cor: "Branca com rosa", loja: "Anthenor Navarro – Esperança", fotos: ["14 (1).jpeg", "14 (2).jpeg"], ref: 14 }
+        "cores": [
+            {
+                "cor": "Branca com rosa",
+                "loja": "Anthenor Navarro – Esperança",
+                "fotos": [
+                    "14 (1).jpeg",
+                    "14 (2).jpeg"
+                ],
+                "ref": 14
+            }
         ]
     },
     {
-        id: "centry-mini-500w",
-        modelo: "Centry Mini 500W",
-        categoria: "patinetes",
-        descricao: "A Centry Mini 500W é uma scooter elétrica compacta pensada para a mobilidade urbana leve do dia a dia, sem necessidade de CNH. Tamanho reduzido, fácil de guardar e econômica, é ideal para trajetos curtos na cidade.",
-        specs: {
-            motor: "500W",
-            bateria: "Chumbo 48V 12Ah",
-            autonomia: "25 a 35 km por carga",
-            velocidade: "32 km/h",
-            freios: "Tambor dianteiro e traseiro",
-            suspensao: "Dianteira e traseira",
-            pneus: "Aro 12\" a 14\"",
-            capacidade: "120 kg",
-            tempoCarga: "6 a 8 horas"
+        "id": "centry-mini-500w",
+        "modelo": "Centry Mini 500W",
+        "categoria": "patinetes",
+        "descricao": "A Centry Mini 500W é uma scooter elétrica compacta pensada para a mobilidade urbana leve do dia a dia, sem necessidade de CNH. Tamanho reduzido, fácil de guardar e econômica, é ideal para trajetos curtos na cidade.",
+        "specs": {
+            "motor": "500W",
+            "bateria": "Chumbo 48V 12Ah",
+            "autonomia": "25 a 35 km por carga",
+            "velocidade": "32 km/h",
+            "freios": "Tambor dianteiro e traseiro",
+            "suspensao": "Dianteira e traseira",
+            "pneus": "Aro 12\" a 14\"",
+            "capacidade": "120 kg",
+            "tempoCarga": "6 a 8 horas"
         },
-        cores: [
-            { cor: "Azul", loja: "Anthenor Navarro – Esperança", fotos: ["15 (1).jpeg", "15 (2).jpeg"], ref: 15 }
+        "cores": [
+            {
+                "cor": "Azul",
+                "loja": "Anthenor Navarro – Esperança",
+                "fotos": [
+                    "15 (1).jpeg",
+                    "15 (2).jpeg"
+                ],
+                "ref": 15
+            }
         ]
     },
     {
-        id: "bonmad-500w",
-        modelo: "Bonmad 500W",
-        categoria: "motos",
-        descricao: "A Bonmad 500W é uma scooter elétrica robusta de quadro em aço carbono, com cestinha frontal, faróis e luz de freio em LED e painel eletrônico. Anda sem CNH, placa ou IPVA. O sistema E-ABS e os três níveis de velocidade trazem mais segurança e controle ao condutor.",
-        specs: {
-            motor: "500W",
-            bateria: "Chumbo 48V 12Ah (removível)",
-            autonomia: "Até 50 km por carga",
-            velocidade: "32 km/h (3 níveis)",
-            freios: "Tambor com sistema E-ABS",
-            suspensao: "Dianteira + dupla traseira",
-            pneus: "Aro 14\"",
-            capacidade: "150 kg",
-            tempoCarga: "6 a 8 horas"
+        "id": "bonmad-500w",
+        "modelo": "Bonmad 500W",
+        "categoria": "motos",
+        "descricao": "A Bonmad 500W é uma scooter elétrica robusta de quadro em aço carbono, com cestinha frontal, faróis e luz de freio em LED e painel eletrônico. Anda sem CNH, placa ou IPVA. O sistema E-ABS e os três níveis de velocidade trazem mais segurança e controle ao condutor.",
+        "specs": {
+            "motor": "500W",
+            "bateria": "Chumbo 48V 12Ah (removível)",
+            "autonomia": "Até 50 km por carga",
+            "velocidade": "32 km/h (3 níveis)",
+            "freios": "Tambor com sistema E-ABS",
+            "suspensao": "Dianteira + dupla traseira",
+            "pneus": "Aro 14\"",
+            "capacidade": "150 kg",
+            "tempoCarga": "6 a 8 horas"
         },
-        cores: [
-            { cor: "Verde", loja: "Anthenor Navarro – Esperança", fotos: ["16 (1).jpeg", "16 (2).jpeg", "16 (3).jpeg"], ref: 16 }
+        "cores": [
+            {
+                "cor": "Verde",
+                "loja": "Anthenor Navarro – Esperança",
+                "fotos": [
+                    "16 (1).jpeg",
+                    "16 (2).jpeg",
+                    "16 (3).jpeg"
+                ],
+                "ref": 16
+            }
         ]
     },
     {
-        id: "cruiser-1000w-rio-south",
-        modelo: "Cruiser 1000W Rio South",
-        categoria: "motos",
-        descricao: "A Rio South Cruiser 1000W é uma scooter elétrica autopropelida de maior potência, com bateria de lítio removível — ideal para quem quer mais torque em subidas e conforto no trajeto urbano, sem CNH, placa ou IPVA. Une presença, faróis full LED e porta-objetos traseiro à praticidade da recarga em tomada comum.",
-        specs: {
-            motor: "1000W",
-            bateria: "Lítio 60V 20Ah (removível)",
-            autonomia: "40 a 50 km por carga",
-            velocidade: "32 km/h",
-            freios: "Disco dianteiro e traseiro",
-            suspensao: "Dianteira + traseira dupla",
-            pneus: "Aro 12\" a 14\"",
-            capacidade: "150 kg",
-            tempoCarga: "4 a 6 horas"
+        "id": "cruiser-1000w-rio-south",
+        "modelo": "Cruiser 1000W Rio South",
+        "categoria": "motos",
+        "descricao": "A Rio South Cruiser 1000W é uma scooter elétrica autopropelida de maior potência, com bateria de lítio removível — ideal para quem quer mais torque em subidas e conforto no trajeto urbano, sem CNH, placa ou IPVA. Une presença, faróis full LED e porta-objetos traseiro à praticidade da recarga em tomada comum.",
+        "specs": {
+            "motor": "1000W",
+            "bateria": "Lítio 60V 20Ah (removível)",
+            "autonomia": "40 a 50 km por carga",
+            "velocidade": "32 km/h",
+            "freios": "Disco dianteiro e traseiro",
+            "suspensao": "Dianteira + traseira dupla",
+            "pneus": "Aro 12\" a 14\"",
+            "capacidade": "150 kg",
+            "tempoCarga": "4 a 6 horas"
         },
-        cores: [
-            { cor: "Chumbo", loja: "Anthenor Navarro – Esperança", fotos: ["17 (1).jpeg", "17 (3).jpeg", "17 (4).jpeg"], ref: 17 }
+        "cores": [
+            {
+                "cor": "Chumbo",
+                "loja": "Anthenor Navarro – Esperança",
+                "fotos": [
+                    "17 (1).jpeg",
+                    "17 (3).jpeg",
+                    "17 (4).jpeg"
+                ],
+                "ref": 17
+            }
         ]
     },
     {
-        id: "agile-raphynus-1000w-litio",
-        modelo: "Agile Raphynus 1000W Lítio",
-        categoria: "motos",
-        novidade: true,
-        descricao: "A Agile Raphynus 1000W é a versão mais potente da linha Agile, ideal para o dia a dia urbano sem necessidade de CNH. Com motor de 1000W e bateria de lítio removível, oferece arranque firme e autonomia confortável. O acabamento preto com banco marrom dá um visual elegante ao banco duplo com encosto de garupa.",
-        specs: {
-            motor: "1000W",
-            bateria: "Lítio 60V 20Ah (removível)",
-            autonomia: "Até 45 km por carga",
-            velocidade: "32 km/h",
-            freios: "Tambor dianteiro e traseiro",
-            suspensao: "Duplo amortecedor (dianteiro e traseiro)",
-            pneus: "Aro 14\"",
-            capacidade: "150 kg",
-            tempoCarga: "6 a 8 horas"
+        "id": "agile-raphynus-1000w-litio",
+        "modelo": "Agile Raphynus 1000W Lítio",
+        "categoria": "motos",
+        "novidade": true,
+        "descricao": "A Agile Raphynus 1000W é a versão mais potente da linha Agile, ideal para o dia a dia urbano sem necessidade de CNH. Com motor de 1000W e bateria de lítio removível, oferece arranque firme e autonomia confortável. O acabamento preto com banco marrom dá um visual elegante ao banco duplo com encosto de garupa.",
+        "specs": {
+            "motor": "1000W",
+            "bateria": "Lítio 60V 20Ah (removível)",
+            "autonomia": "Até 45 km por carga",
+            "velocidade": "32 km/h",
+            "freios": "Tambor dianteiro e traseiro",
+            "suspensao": "Duplo amortecedor (dianteiro e traseiro)",
+            "pneus": "Aro 14\"",
+            "capacidade": "150 kg",
+            "tempoCarga": "6 a 8 horas"
         },
-        cores: [
-            { cor: "Preta com banco marrom", loja: "Anthenor Navarro – Esperança", fotos: ["18 (1).jpeg", "18 (2).jpeg"], ref: 18 }
+        "cores": [
+            {
+                "cor": "Preta com banco marrom",
+                "loja": "Anthenor Navarro – Esperança",
+                "fotos": [
+                    "18 (1).jpeg",
+                    "18 (2).jpeg"
+                ],
+                "ref": 18
+            }
         ]
     },
     {
-        id: "sudu-a5",
-        modelo: "Sudu A5",
-        categoria: "motos",
-        novidade: true,
-        descricao: "A Sudu A5 é a scooter elétrica premium da Sudu, autopropelida e dispensando emplacamento e CNH. Com motor de 1000W, bateria de lítio de 60V 20Ah e até 60 km de autonomia, entrega desempenho e economia para o uso urbano. Freios a disco hidráulicos e banco para duas pessoas garantem segurança e conforto.",
-        specs: {
-            motor: "1000W",
-            bateria: "Lítio 60V 20Ah (removível)",
-            autonomia: "Até 60 km por carga",
-            velocidade: "32 km/h",
-            freios: "Disco hidráulico (dianteiro e traseiro)",
-            suspensao: "Amortecimento hidráulico",
-            pneus: "Aro 10\" a 12\"",
-            capacidade: "150 kg",
-            tempoCarga: "7 a 8 horas"
+        "id": "sudu-a5",
+        "modelo": "Sudu A5",
+        "categoria": "motos",
+        "novidade": true,
+        "descricao": "A Sudu A5 é a scooter elétrica premium da Sudu, autopropelida e dispensando emplacamento e CNH. Com motor de 1000W, bateria de lítio de 60V 20Ah e até 60 km de autonomia, entrega desempenho e economia para o uso urbano. Freios a disco hidráulicos e banco para duas pessoas garantem segurança e conforto.",
+        "specs": {
+            "motor": "1000W",
+            "bateria": "Lítio 60V 20Ah (removível)",
+            "autonomia": "Até 60 km por carga",
+            "velocidade": "32 km/h",
+            "freios": "Disco hidráulico (dianteiro e traseiro)",
+            "suspensao": "Amortecimento hidráulico",
+            "pneus": "Aro 10\" a 12\"",
+            "capacidade": "150 kg",
+            "tempoCarga": "7 a 8 horas"
         },
-        cores: [
-            { cor: "Azul", loja: "Anthenor Navarro – Esperança", fotos: ["20 (1).jpeg", "20 (2).jpeg"], ref: 20 }
+        "cores": [
+            {
+                "cor": "Azul",
+                "loja": "Anthenor Navarro – Esperança",
+                "fotos": [
+                    "20 (1).jpeg",
+                    "20 (2).jpeg"
+                ],
+                "ref": 20
+            },
+            {
+                "cor": "Prata",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.22 (1).jpeg"
+                ]
+            },
+            {
+                "cor": "Vinho",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.31 (2).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.31.jpeg"
+                ]
+            }
         ]
     },
     {
-        id: "triciclo-sousa",
-        modelo: "Triciclo Sousa",
-        categoria: "triciclos",
-        novidade: true,
-        descricao: "O Triciclo Elétrico Sousa é um modelo nacional projetado para mobilidade segura e acessível, com estabilidade de três rodas e marcha à ré. Motor de 600W e bateria selada de 48V garantem autonomia de até 45 km, ideal para deslocamentos urbanos do dia a dia. Chassi em aço-carbono robusto.",
-        specs: {
-            motor: "600W 48V (torque 125 Nm)",
-            bateria: "Chumbo 48V 20Ah",
-            autonomia: "40 a 45 km por carga",
-            velocidade: "32 km/h",
-            freios: "Disco dianteiro + tambor traseiro (com ré)",
-            suspensao: "Amortecedor traseiro",
-            pneus: "Aro 16\" (3.0)",
-            capacidade: "150 kg",
-            tempoCarga: "6 a 8 horas"
+        "id": "triciclo-sousa",
+        "modelo": "Triciclo Sousa",
+        "categoria": "triciclos",
+        "novidade": true,
+        "descricao": "O Triciclo Elétrico Sousa é um modelo nacional projetado para mobilidade segura e acessível, com estabilidade de três rodas e marcha à ré. Motor de 600W e bateria selada de 48V garantem autonomia de até 45 km, ideal para deslocamentos urbanos do dia a dia. Chassi em aço-carbono robusto.",
+        "specs": {
+            "motor": "600W 48V (torque 125 Nm)",
+            "bateria": "Chumbo 48V 20Ah",
+            "autonomia": "40 a 45 km por carga",
+            "velocidade": "32 km/h",
+            "freios": "Disco dianteiro + tambor traseiro (com ré)",
+            "suspensao": "Amortecedor traseiro",
+            "pneus": "Aro 16\" (3.0)",
+            "capacidade": "150 kg",
+            "tempoCarga": "6 a 8 horas"
         },
-        cores: [
-            { cor: "Vermelho", loja: "Anthenor Navarro – Esperança", fotos: ["21 (1).jpeg", "21 (2).jpeg"], ref: 21 }
+        "cores": [
+            {
+                "cor": "Vermelho",
+                "loja": "Anthenor Navarro – Esperança",
+                "fotos": [
+                    "21 (1).jpeg",
+                    "21 (2).jpeg"
+                ],
+                "ref": 21
+            }
         ]
+    },
+    {
+        "id": "gts-pro-500w",
+        "modelo": "GTS Pro 500W",
+        "categoria": "motos",
+        "cores": [
+            {
+                "cor": "Branca",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.22 (3).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.23 (2).jpeg"
+                ]
+            },
+            {
+                "cor": "Branca e rosa",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.54.51.jpeg"
+                ]
+            }
+        ],
+        "descricao": "",
+        "specs": {}
+    },
+    {
+        "id": "sudu-a2-plus",
+        "modelo": "Sudu A2+",
+        "categoria": "motos",
+        "cores": [
+            {
+                "cor": "Bege",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.53.03.jpeg"
+                ]
+            },
+            {
+                "cor": "Branca",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.29.jpeg"
+                ]
+            },
+            {
+                "cor": "Preto",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.36 (2).jpeg"
+                ]
+            },
+            {
+                "cor": "Vinho",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.31 (1).jpeg"
+                ]
+            }
+        ],
+        "descricao": "",
+        "specs": {}
+    },
+    {
+        "id": "triciclo-sudu-a3t",
+        "modelo": "Triciclo Sudu A3T",
+        "categoria": "triciclos",
+        "cores": [
+            {
+                "cor": "Branca",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.50.55 (1).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.50.55 (2).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.53.03 (1).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.53.04 (2).jpeg"
+                ]
+            },
+            {
+                "cor": "Branco com vinho",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.50.56.jpeg"
+                ]
+            },
+            {
+                "cor": "Cinza",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.50.54.jpeg"
+                ]
+            },
+            {
+                "cor": "Cinza e azul",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.50.54 (1).jpeg"
+                ]
+            },
+            {
+                "cor": "Grafite",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.50.55.jpeg"
+                ]
+            }
+        ],
+        "descricao": "",
+        "specs": {}
+    },
+    {
+        "id": "triciclo-fenix-litio",
+        "modelo": "Triciclo Fênix Lítio",
+        "categoria": "triciclos",
+        "cores": [
+            {
+                "cor": "Branca",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.50.53 (1).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.50.53.jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.54 (2).jpeg"
+                ]
+            },
+            {
+                "cor": "Preto",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.50.52.jpeg"
+                ]
+            },
+            {
+                "cor": "Verde",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.59.jpeg"
+                ]
+            },
+            {
+                "cor": "Vermelho",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.54.jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.55 (3).jpeg"
+                ]
+            },
+            {
+                "cor": "Vinho",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.51.08.jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.51.09.jpeg"
+                ]
+            }
+        ],
+        "descricao": "",
+        "specs": {}
+    },
+    {
+        "id": "triciclo-fenix-chumbo",
+        "modelo": "Triciclo Fênix Chumbo",
+        "categoria": "triciclos",
+        "cores": [
+            {
+                "cor": "Branca",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.50.53 (2).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.54 (3).jpeg"
+                ]
+            },
+            {
+                "cor": "Preto",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.50.52 (1).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.50.52 (2).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.24 (1).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.24.jpeg"
+                ]
+            },
+            {
+                "cor": "Vermelho",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.36.jpeg"
+                ]
+            },
+            {
+                "cor": "Vinho",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.51.08 (1).jpeg"
+                ]
+            }
+        ],
+        "descricao": "",
+        "specs": {}
+    },
+    {
+        "id": "triciclo-raphynus",
+        "modelo": "Triciclo Raphynus",
+        "categoria": "triciclos",
+        "cores": [
+            {
+                "cor": "Preto",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.53.01 (1).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.53.01 (3).jpeg"
+                ]
+            }
+        ],
+        "descricao": "",
+        "specs": {}
+    },
+    {
+        "id": "triciclo-alpha",
+        "modelo": "Triciclo Alpha",
+        "categoria": "triciclos",
+        "cores": [
+            {
+                "cor": "Vermelho",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.34 (1).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.34.jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.36 (1).jpeg"
+                ]
+            },
+            {
+                "cor": "Preto",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.34 (2).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.53.01 (2).jpeg"
+                ]
+            },
+            {
+                "cor": "Grafite",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.34 (3).jpeg"
+                ]
+            }
+        ],
+        "descricao": "",
+        "specs": {}
+    },
+    {
+        "id": "triciclo-ved-litio",
+        "modelo": "Triciclo Ved Lítio",
+        "categoria": "triciclos",
+        "cores": [
+            {
+                "cor": "Prata",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.37.jpeg"
+                ]
+            }
+        ],
+        "descricao": "",
+        "specs": {}
+    },
+    {
+        "id": "patinete-vexor-flow-350w",
+        "modelo": "Patinete Vexor Flow 350W",
+        "categoria": "patinetes",
+        "cores": [
+            {
+                "cor": "Preto",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.32 (1).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.32.jpeg"
+                ]
+            }
+        ],
+        "descricao": "",
+        "specs": {}
+    },
+    {
+        "id": "patinete-zetto-vexor",
+        "modelo": "Patinete Zetto Vexor",
+        "categoria": "patinetes",
+        "cores": [
+            {
+                "cor": "Preto",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.50.57 (1).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.50.57 (2).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.50.57 (3).jpeg"
+                ]
+            }
+        ],
+        "descricao": "",
+        "specs": {}
+    },
+    {
+        "id": "quadriciclo-emobi",
+        "modelo": "Quadriciclo E-mobi",
+        "categoria": "quadriciclos",
+        "cores": [
+            {
+                "cor": "Vermelho",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.28 (2).jpeg"
+                ]
+            }
+        ],
+        "descricao": "",
+        "specs": {}
+    },
+    {
+        "id": "quadriciclo-ecross-1000w",
+        "modelo": "Quadriciclo e-Cross 1000W",
+        "categoria": "quadriciclos",
+        "cores": [
+            {
+                "cor": "Vinho",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.51.09 (2).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.51.09 (3).jpeg"
+                ]
+            },
+            {
+                "cor": "Cinza",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.53.04.jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.53.05.jpeg"
+                ]
+            }
+        ],
+        "descricao": "",
+        "specs": {}
+    },
+    {
+        "id": "tazzo",
+        "modelo": "Tazzo",
+        "categoria": "motos",
+        "cores": [
+            {
+                "cor": "Vermelho",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.51.10 (1).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.27 (3).jpeg"
+                ]
+            },
+            {
+                "cor": "Azul claro",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.57 (2).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.57 (4).jpeg"
+                ]
+            }
+        ],
+        "descricao": "",
+        "specs": {}
+    },
+    {
+        "id": "zenvo",
+        "modelo": "Zenvo",
+        "categoria": "motos",
+        "cores": [
+            {
+                "cor": "Prata",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.50.59.jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.26.jpeg"
+                ]
+            },
+            {
+                "cor": "Cinza",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.26 (1).jpeg"
+                ]
+            }
+        ],
+        "descricao": "",
+        "specs": {}
+    },
+    {
+        "id": "grok",
+        "modelo": "Grok",
+        "categoria": "motos",
+        "cores": [
+            {
+                "cor": "Vermelho",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.27 (2).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.27 (4).jpeg"
+                ]
+            }
+        ],
+        "descricao": "",
+        "specs": {}
+    },
+    {
+        "id": "bicicleta-brave-x-pro",
+        "modelo": "Bicicleta Brave X Pro",
+        "categoria": "bikes",
+        "cores": [
+            {
+                "cor": "Preto",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.53 (2).jpeg"
+                ]
+            }
+        ],
+        "descricao": "",
+        "specs": {}
+    },
+    {
+        "id": "bike-sousa",
+        "modelo": "Bike Sousa",
+        "categoria": "bikes",
+        "cores": [
+            {
+                "cor": "Vermelho",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.52.33 (1).jpeg"
+                ]
+            }
+        ],
+        "descricao": "",
+        "specs": {}
+    },
+    {
+        "id": "drift-homem-aranha",
+        "modelo": "Drift Homem Aranha",
+        "categoria": "drifts",
+        "cores": [
+            {
+                "cor": "Vermelho",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.50.56 (1).jpeg"
+                ]
+            }
+        ],
+        "descricao": "",
+        "specs": {}
+    },
+    {
+        "id": "drift-rosa-galaxia",
+        "modelo": "Drift Rosa Galáxia",
+        "categoria": "drifts",
+        "cores": [
+            {
+                "cor": "Rosa galáxia",
+                "loja": "",
+                "fotos": [
+                    "WhatsApp Image 2026-06-01 at 14.50.57.jpeg"
+                ]
+            }
+        ],
+        "descricao": "",
+        "specs": {}
     }
 ];
 
@@ -373,10 +1088,12 @@ window.SPECS_ORDEM = [
 window.CATEGORIAS_LABEL = {
     motos: "Motos / Scooters",
     triciclos: "Triciclos",
+    quadriciclos: "Quadriciclos",
+    bikes: "Bikes Elétricas",
     patinetes: "Patinetes",
     drifts: "Drifts"
 };
-window.CATEGORIAS_ORDEM = ["motos", "triciclos", "patinetes", "drifts"];
+window.CATEGORIAS_ORDEM = ["motos", "triciclos", "quadriciclos", "bikes", "patinetes", "drifts"];
 
 // Número de WhatsApp padrão para o botão de interesse
 window.WHATSAPP_PADRAO = "5583981869199";
