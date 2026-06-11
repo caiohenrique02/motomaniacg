@@ -243,29 +243,63 @@
                 <p class="text-slate-500 max-w-2xl mx-auto text-lg">Modelos selecionados para quem busca performance, economia o versatilidade urbana.</p>
             </div>
 
-            <!-- Filter tabs (gerados via JS a partir de produtos.js) -->
-            <div id="catalog-filters" class="flex flex-wrap justify-center gap-3 mb-14 scrollbar-hide overflow-x-auto"></div>
+            <!-- ===== Busca por nome ===== -->
+            <div class="relative mb-5 max-w-xl mx-auto">
+                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+                <input id="catalog-search" type="text" autocomplete="off" placeholder="Buscar modelo (ex: Sudu, Fênix, 1000W...)"
+                    class="w-full pl-12 pr-4 py-3.5 rounded-2xl border-2 border-slate-200 bg-white text-brand-blue font-medium placeholder:text-slate-400 focus:border-brand-orange focus:ring-0 transition-colors shadow-sm" />
+            </div>
 
-            <!-- Mobile Slider Controls -->
-            <div class="flex justify-between items-center sm:hidden mb-4 px-2">
-                <span class="text-xs text-slate-400 font-bold uppercase tracking-widest flex items-center gap-1">
-                    <span class="material-symbols-outlined text-sm">swipe</span> Deslize para ver mais
-                </span>
-                <div class="flex gap-2">
-                    <button class="w-10 h-10 rounded-full bg-white text-brand-blue flex items-center justify-center border text-lg border-slate-200 shadow hover:bg-brand-light transition" onclick="document.getElementById('catalog-container').scrollBy({left: -300, behavior: 'smooth'})">
-                        <span class="material-symbols-outlined">chevron_left</span>
+            <!-- ===== Toolbar: contagem + filtros (mobile) ===== -->
+            <div class="flex items-center justify-between gap-4 mb-5">
+                <p class="text-sm text-slate-500">
+                    <span id="catalog-count" class="font-black text-brand-blue text-base">0</span> modelos
+                </p>
+                <div class="flex items-center gap-3">
+                    <button id="filter-clear" class="hidden text-sm font-bold text-slate-400 hover:text-brand-orange transition-colors items-center gap-1">
+                        <span class="material-symbols-outlined text-base">close</span> Limpar
                     </button>
-                    <button class="w-10 h-10 rounded-full bg-white text-brand-blue flex items-center justify-center border text-lg border-slate-200 shadow hover:bg-brand-light transition" onclick="document.getElementById('catalog-container').scrollBy({left: 300, behavior: 'smooth'})">
-                        <span class="material-symbols-outlined">chevron_right</span>
+                    <button id="filter-toggle" class="lg:hidden inline-flex items-center gap-2 bg-brand-blue text-white px-5 py-2.5 rounded-full font-bold text-sm shadow-lg shadow-brand-blue/20">
+                        <span class="material-symbols-outlined text-base">tune</span> Filtros
+                        <span id="filter-badge" class="hidden bg-brand-orange text-white text-[10px] font-black w-5 h-5 rounded-full items-center justify-center">0</span>
                     </button>
                 </div>
             </div>
 
-            <!-- Grid (Carousel on Mobile) — cards gerados via JS a partir de produtos.js -->
-            <div id="catalog-container" class="grid grid-flow-col auto-cols-[85%] sm:auto-cols-auto sm:grid-flow-row sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 overflow-x-auto sm:overflow-visible snap-x snap-mandatory sm:snap-none pb-8 sm:pb-0 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0"></div>
+            <!-- Chips de filtros ativos -->
+            <div id="active-chips" class="flex flex-wrap gap-2 mb-6 empty:mb-0"></div>
 
-            <!-- Mensagem quando nenhum produto na categoria -->
-            <p id="catalog-empty" class="hidden text-center text-slate-400 font-medium py-12">Nenhum produto nesta categoria ainda.</p>
+            <!-- Layout: sidebar de filtros + grid de produtos -->
+            <div class="lg:grid lg:grid-cols-[250px_1fr] lg:gap-10 lg:items-start">
+
+                <!-- Overlay (mobile) -->
+                <div id="filter-overlay" class="hidden fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[60] lg:hidden"></div>
+
+                <!-- Painel de filtros: sidebar no desktop, drawer lateral no mobile -->
+                <aside id="filter-panel"
+                    class="fixed lg:sticky top-0 lg:top-24 left-0 z-[70] lg:z-0 h-full lg:h-auto w-80 max-w-[85%] lg:w-auto lg:max-w-none
+                           bg-white lg:bg-transparent p-6 lg:p-0 shadow-2xl lg:shadow-none overflow-y-auto lg:overflow-visible
+                           -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-out lg:max-h-[calc(100vh-7rem)]">
+                    <!-- Cabeçalho do drawer (só mobile) -->
+                    <div class="flex items-center justify-between mb-6 lg:hidden">
+                        <span class="font-black text-brand-blue text-lg flex items-center gap-2"><span class="material-symbols-outlined">tune</span> Filtros</span>
+                        <button id="filter-close" class="w-9 h-9 flex items-center justify-center bg-slate-100 rounded-full text-slate-500">
+                            <span class="material-symbols-outlined text-base">close</span>
+                        </button>
+                    </div>
+                    <div id="filter-facets"></div>
+                    <!-- Botão aplicar (só mobile) -->
+                    <button id="filter-apply" class="lg:hidden w-full mt-6 bg-brand-orange text-white py-3.5 rounded-xl font-black shadow-lg shadow-brand-orange/30">
+                        Ver modelos
+                    </button>
+                </aside>
+
+                <!-- Grid de produtos — cards gerados via JS a partir de produtos.js -->
+                <div class="min-w-0">
+                    <div id="catalog-container" class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
+                    <p id="catalog-empty" class="hidden text-center text-slate-400 font-medium py-16">Nenhum modelo encontrado com esses filtros.</p>
+                </div>
+            </div>
 
         </div>
     </section>
@@ -556,6 +590,31 @@
     </footer>
 
 
+<!-- ========== BARRA DO COMPARADOR ========== -->
+    <div id="compare-bar" class="hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-[80] bg-brand-blue text-white rounded-2xl shadow-2xl shadow-brand-blue/40 px-5 py-3 flex items-center gap-4 max-w-[92vw]">
+        <span class="text-sm font-bold flex items-center gap-2">
+            <span class="material-symbols-outlined text-base">balance</span>
+            <span id="compare-count">0</span>/3 para comparar
+        </span>
+        <button id="compare-open" class="bg-brand-orange hover:bg-orange-600 text-white px-4 py-2 rounded-xl text-sm font-black transition-all">Comparar</button>
+        <button id="compare-clear" class="w-8 h-8 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full transition-colors" title="Limpar seleção">
+            <span class="material-symbols-outlined text-base">close</span>
+        </button>
+    </div>
+
+    <!-- ========== MODAL DO COMPARADOR ========== -->
+    <div id="compare-modal" class="hidden fixed inset-0 z-[90] bg-slate-900/60 backdrop-blur-sm overflow-y-auto p-3 sm:p-6">
+        <div class="bg-white w-full max-w-4xl mx-auto rounded-3xl shadow-2xl my-4">
+            <div class="flex items-center justify-between p-5 border-b border-slate-100 sticky top-0 bg-white rounded-t-3xl z-10">
+                <h3 class="text-xl font-black text-brand-blue flex items-center gap-2"><span class="material-symbols-outlined">balance</span> Comparar modelos</h3>
+                <button id="compare-modal-close" class="w-9 h-9 flex items-center justify-center bg-slate-100 hover:bg-slate-200 rounded-full text-slate-500 transition-colors">
+                    <span class="material-symbols-outlined text-base">close</span>
+                </button>
+            </div>
+            <div id="compare-content" class="p-3 sm:p-5"></div>
+        </div>
+    </div>
+
 <!-- ========== WHATSAPP MODAL ========== -->
     <div id="wa-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
         <div class="bg-white w-[90%] max-w-md rounded-3xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300 p-6 relative">
@@ -713,112 +772,355 @@
 <!-- Banco de produtos (fonte única de dados) -->
 <script src="produtos.js"></script>
 
-<!-- Motor do catálogo: gera filtros + cards a partir de produtos.js -->
+<!-- Motor do catálogo: gera filtros multifaceta + cards a partir de produtos.js -->
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const container = document.getElementById("catalog-container");
-        const filtersBox = document.getElementById("catalog-filters");
-        const emptyMsg = document.getElementById("catalog-empty");
-        if (!container || !filtersBox) return;
+        const facetsBox = document.getElementById("filter-facets");
+        const emptyMsg  = document.getElementById("catalog-empty");
+        const countEl   = document.getElementById("catalog-count");
+        const chipsBox  = document.getElementById("active-chips");
+        const clearBtn  = document.getElementById("filter-clear");
+        const badge     = document.getElementById("filter-badge");
+        if (!container || !facetsBox) return;
 
         const modelos = window.MODELOS || [];
 
-        // Classes dos botões de filtro
-        const BTN_BASE = "filter-btn px-7 py-2.5 rounded-full font-bold text-sm transition-all";
-        const BTN_ON = "bg-brand-blue text-white shadow-lg shadow-brand-blue/20";
-        const BTN_OFF = "border-2 border-brand-blue/20 text-brand-blue hover:bg-brand-blue hover:text-white";
+        // ---------- Parsers de specs (derivam as facetas automaticamente) ----------
+        function tipoBateria(m) {
+            const b = ((m.specs && m.specs.bateria) || "").toLowerCase();
+            if (/l[ií]tio/.test(b)) return "Lítio";
+            if (/chumbo/.test(b))   return "Chumbo";
+            return null;
+        }
+        function bateriaRemovivel(m) {
+            const b = ((m.specs && m.specs.bateria) || "").toLowerCase();
+            if (!b) return null;
+            return /remov[ií]vel/.test(b) ? "Removível" : "Fixa";
+        }
+        function temNovidade(m) { return m.novidade === true; }
+        function temDestaque(m) { return m.destaque === true; }
+        function nLugares(m) { return m.lugares || 2; }
+        function lugaresLabel(m) { const n = nLugares(m); return n === 1 ? "1 lugar" : n + " lugares"; }
+        // normaliza p/ busca (minúsculo, sem acento)
+        const norm = (s) => (s || "").toString().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+        function potenciaW(m) {
+            const mo = (m.specs && m.specs.motor) || "";
+            const x = mo.match(/(\d+)\s*W/i);
+            return x ? parseInt(x[1], 10) : null;
+        }
+        function potenciaLabel(m) { const p = potenciaW(m); return p ? p + "W" : null; }
+        function autonomiaKm(m) {
+            const a = (m.specs && m.specs.autonomia) || "";
+            const nums = (a.match(/\d+/g) || []).map(Number);
+            return nums.length ? Math.max.apply(null, nums) : null;
+        }
+        function autonomiaLabel(m) {
+            const k = autonomiaKm(m);
+            if (k == null) return null;
+            if (k <= 40) return "Até 40 km";
+            if (k <= 60) return "41 a 60 km";
+            return "Mais de 60 km";
+        }
+        function unidades(m) {
+            const out = [];
+            (m.cores || []).forEach(c => { if (c.loja && out.indexOf(c.loja) < 0) out.push(c.loja); });
+            return out;
+        }
 
-        // ---- Monta um card (um por MODELO) ----
+        // ---------- Definição das facetas ----------
+        const FACETS = [
+            { key: "categoria", label: "Tipo de veículo",   get: m => [m.categoria], display: v => (window.CATEGORIAS_LABEL[v] || v), order: window.CATEGORIAS_ORDEM },
+            { key: "lugares",   label: "Lugares",           get: m => [lugaresLabel(m)],   sort: "num" },
+            { key: "potencia",  label: "Potência do motor", get: m => [potenciaLabel(m)],  sort: "num" },
+            { key: "autonomia", label: "Autonomia",         get: m => [autonomiaLabel(m)], order: ["Até 40 km", "41 a 60 km", "Mais de 60 km"] },
+            { key: "bateria",   label: "Bateria",           get: m => [tipoBateria(m)] },
+            { key: "removivel", label: "Bateria removível", get: m => [bateriaRemovivel(m)], order: ["Removível", "Fixa"] }
+        ];
+
+        // Estado dos filtros: { facetKey: Set(valores marcados) } + toggle de novidades
+        const state = {};
+        FACETS.forEach(f => state[f.key] = new Set());
+        let novidadeOnly = false;
+        let novToggleEl = null;
+        let busca = "";                 // termo de busca normalizado
+        const compareSet = new Set();   // ids selecionados p/ comparar (máx. 3)
+
+        const valsOf = (f, m) => (f.get(m) || []).filter(Boolean);
+        function casaBusca(m) {
+            if (!busca) return true;
+            if (norm(m.modelo).indexOf(busca) >= 0) return true;
+            return (m.cores || []).some(c => norm(c.cor).indexOf(busca) >= 0);
+        }
+        const passa = (m) => {
+            if (novidadeOnly && !temNovidade(m)) return false;
+            if (!casaBusca(m)) return false;
+            return FACETS.every(f => state[f.key].size === 0 || valsOf(f, m).some(v => state[f.key].has(v)));
+        };
+
+        // ---------- Cards ----------
+        const chip = (txt) => '<span class="inline-flex items-center bg-brand-light text-brand-blue text-[10px] sm:text-xs font-bold px-2 py-1 rounded-md">' + txt + '</span>';
+
         function montarCard(m) {
             const corCapa = m.cores[0];
             const capa = window.fotoSrc(corCapa.fotos[0]);
             const nCores = m.cores.length;
-            // Linha de cor/variações: nome da cor (1) ou "N cores disponíveis" (vários)
-            const linhaCor = nCores > 1
-                ? (nCores + " cores disponíveis")
-                : corCapa.cor;
-            // Lojas onde o modelo aparece (sem repetir)
-            const lojas = [];
-            m.cores.forEach(c => { if (lojas.indexOf(c.loja) < 0) lojas.push(c.loja); });
-            const linhaLoja = lojas.length > 1 ? "Campina Grande e Esperança" : lojas[0];
+            const linhaCor = nCores > 1 ? (nCores + " cores") : corCapa.cor;
 
-            const waText = "Olá! Tenho interesse no(a) *" + m.modelo +
-                "* que vi no site de vocês. Poderia me passar mais informações?";
+            const waText = "Olá! Tenho interesse no(a) *" + m.modelo + "* que vi no site de vocês. Poderia me passar mais informações?";
             const waHref = "https://wa.me/" + window.WHATSAPP_PADRAO + "?text=" + encodeURIComponent(waText);
             const detalhesHref = "detalhes-produto.html?id=" + encodeURIComponent(m.id);
 
-            const card = document.createElement("div");
-            card.className = "catalog-card snap-center card-hover group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md flex flex-col";
-            card.setAttribute("data-category", m.categoria || "");
+            const k = autonomiaKm(m);
+            const specChips = [tipoBateria(m), k ? ("Até " + k + " km") : null, potenciaLabel(m)]
+                .filter(Boolean).slice(0, 3).map(chip).join("");
 
             const badgeCores = nCores > 1
-                ? '<div class="absolute top-4 right-4 bg-brand-orange text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow flex items-center gap-1"><span class="material-symbols-outlined text-xs">palette</span>' + nCores + ' cores</div>'
+                ? '<div class="absolute top-3 right-3 bg-brand-orange text-white text-[9px] sm:text-[10px] font-black px-2 py-1 rounded-full uppercase tracking-wider shadow flex items-center gap-1"><span class="material-symbols-outlined text-[11px]">palette</span>' + nCores + '</div>'
                 : '';
 
+            const card = document.createElement("div");
+            card.className = "catalog-card card-hover group bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-100 shadow-md flex flex-col";
+
             card.innerHTML =
-                '<a href="' + detalhesHref + '" class="block relative overflow-hidden aspect-[3/2] bg-slate-100">' +
+                '<a href="' + detalhesHref + '" class="block relative overflow-hidden aspect-[4/3] bg-slate-100">' +
                     '<img alt="' + m.modelo + '" loading="lazy" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700" src="' + capa + '" />' +
-                    '<div class="absolute top-4 left-4 bg-brand-blue text-white text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider shadow">Sem CNH</div>' +
+                    '<div class="absolute top-3 left-3 flex flex-col gap-1.5 items-start">' +
+                        (temNovidade(m) ? '<span class="bg-brand-orange text-white text-[9px] sm:text-[10px] font-black px-2 py-1 rounded-full uppercase tracking-wider shadow flex items-center gap-1"><span class="material-symbols-outlined text-[11px]">auto_awesome</span>Novidade</span>' : '') +
+                        (temDestaque(m) ? '<span class="bg-amber-400 text-brand-blue text-[9px] sm:text-[10px] font-black px-2 py-1 rounded-full uppercase tracking-wider shadow flex items-center gap-1"><span class="material-symbols-outlined text-[11px]">star</span>Destaque</span>' : '') +
+                        '<span class="bg-brand-blue text-white text-[9px] sm:text-[10px] font-black px-2 py-1 rounded-full uppercase tracking-wider shadow">Sem CNH</span>' +
+                    '</div>' +
                     badgeCores +
                 '</a>' +
-                '<div class="p-7 flex flex-col flex-1">' +
-                    '<h3 class="text-xl font-black mb-1 text-brand-blue">' + m.modelo + '</h3>' +
-                    '<p class="text-brand-orange font-black text-lg mb-4 capitalize">' + linhaCor + '</p>' +
-                    '<div class="space-y-2 mb-6 text-sm text-slate-500">' +
-                        '<div class="flex items-center gap-2">' +
-                            '<span class="material-symbols-outlined text-brand-blue text-base">storefront</span>' +
-                            '<span class="font-medium">' + linhaLoja + '</span>' +
-                        '</div>' +
-                    '</div>' +
-                    '<div class="grid grid-cols-2 gap-3 mt-auto">' +
-                        '<a href="' + detalhesHref + '" class="border-2 border-brand-blue/20 py-2.5 rounded-xl text-sm font-bold hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all text-brand-blue text-center">Detalhes</a>' +
+                '<div class="p-4 sm:p-5 flex flex-col flex-1">' +
+                    '<h3 class="text-base sm:text-lg font-black mb-0.5 text-brand-blue leading-tight">' + m.modelo + '</h3>' +
+                    '<p class="text-brand-orange font-black text-sm sm:text-base mb-3 capitalize">' + linhaCor + '</p>' +
+                    '<div class="flex flex-wrap gap-1.5 mb-4">' + specChips + '</div>' +
+                    '<div class="flex flex-col gap-2 mt-auto">' +
                         '<a href="' + waHref + '" target="_blank" class="bg-brand-orange text-white py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-1.5 shadow shadow-brand-orange/30 hover:bg-orange-600 transition-all"><span class="material-symbols-outlined text-sm">chat</span> WhatsApp</a>' +
+                        '<a href="' + detalhesHref + '" class="border-2 border-brand-blue/20 py-2.5 rounded-xl text-sm font-bold hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all text-brand-blue text-center">Ver detalhes</a>' +
+                        '<button type="button" class="compare-btn text-xs font-bold text-slate-400 hover:text-brand-blue flex items-center justify-center gap-1 transition-colors mt-1" data-id="' + m.id + '"><span class="material-symbols-outlined text-sm">add</span> Comparar</button>' +
                     '</div>' +
                 '</div>';
             return card;
         }
 
-        // ---- Renderiza todos os cards ----
-        modelos.forEach(m => container.appendChild(montarCard(m)));
+        const pares = modelos.map(m => ({ m: m, el: montarCard(m) }));
+        pares.forEach(p => container.appendChild(p.el));
 
-        // ---- Monta os filtros (só categorias que têm produto) ----
-        const catsPresentes = window.CATEGORIAS_ORDEM.filter(cat =>
-            modelos.some(m => m.categoria === cat)
-        );
-        const filtros = [{ value: "todas", label: "Todas" }].concat(
-            catsPresentes.map(cat => ({ value: cat, label: window.CATEGORIAS_LABEL[cat] || cat }))
-        );
-
-        filtros.forEach((f, i) => {
-            const btn = document.createElement("button");
-            btn.setAttribute("data-filter", f.value);
-            btn.textContent = f.label;
-            btn.className = BTN_BASE + " " + (i === 0 ? BTN_ON : BTN_OFF);
-            filtersBox.appendChild(btn);
-        });
-
-        const filterBtns = filtersBox.querySelectorAll(".filter-btn");
-        const cards = container.querySelectorAll(".catalog-card");
-
-        function aplicarFiltro(valor) {
-            let visiveis = 0;
-            cards.forEach(card => {
-                const ok = valor === "todas" || card.getAttribute("data-category") === valor;
-                card.classList.toggle("hidden", !ok);
-                if (ok) visiveis++;
-            });
-            if (emptyMsg) emptyMsg.classList.toggle("hidden", visiveis > 0);
+        // ---------- Construção da UI de filtros ----------
+        function valoresFaceta(f) {
+            const counts = {};
+            modelos.forEach(m => valsOf(f, m).forEach(v => { counts[v] = (counts[v] || 0) + 1; }));
+            let vals = Object.keys(counts);
+            if (f.order)            vals.sort((a, b) => (f.order.indexOf(a) < 0 ? 99 : f.order.indexOf(a)) - (f.order.indexOf(b) < 0 ? 99 : f.order.indexOf(b)));
+            else if (f.sort === "num") vals.sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+            else                    vals.sort();
+            return vals.map(v => ({ v: v, count: counts[v] }));
         }
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener("click", () => {
-                filterBtns.forEach(b => {
-                    b.className = BTN_BASE + " " + BTN_OFF;
+        function novStyle() {
+            if (!novToggleEl) return;
+            novToggleEl.className = "w-full mb-5 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-black text-sm transition-all " +
+                (novidadeOnly
+                    ? "bg-brand-orange text-white shadow-lg shadow-brand-orange/30"
+                    : "border-2 border-brand-orange/40 text-brand-orange hover:bg-brand-orange/10");
+        }
+
+        function renderFacets() {
+            facetsBox.innerHTML = "";
+            // Toggle de novidades (só aparece se algum modelo for novidade)
+            if (modelos.some(temNovidade)) {
+                novToggleEl = document.createElement("button");
+                novToggleEl.innerHTML = '<span class="material-symbols-outlined text-base">auto_awesome</span> Só novidades';
+                novToggleEl.addEventListener("click", () => { novidadeOnly = !novidadeOnly; novStyle(); aplicar(); });
+                novStyle();
+                facetsBox.appendChild(novToggleEl);
+            }
+            FACETS.forEach(f => {
+                const vals = valoresFaceta(f);
+                if (vals.length <= 1) return; // não mostra faceta com uma opção só
+                const wrap = document.createElement("div");
+                wrap.className = "border-b border-slate-100 pb-4 mb-4";
+                let html = '<p class="font-black text-brand-blue text-xs uppercase tracking-widest mb-3">' + f.label + '</p><div class="space-y-2">';
+                vals.forEach(o => {
+                    const disp = f.display ? f.display(o.v) : o.v;
+                    const checked = state[f.key].has(o.v) ? "checked" : "";
+                    html +=
+                        '<label class="flex items-center gap-2.5 text-sm text-slate-600 cursor-pointer hover:text-brand-blue">' +
+                            '<input type="checkbox" data-facet="' + f.key + '" data-value="' + String(o.v).replace(/"/g, "&quot;") + '" ' + checked + ' class="rounded border-slate-300 text-brand-orange focus:ring-brand-orange focus:ring-offset-0">' +
+                            '<span class="flex-1 capitalize">' + disp + '</span>' +
+                            '<span class="text-xs text-slate-300 font-medium">' + o.count + '</span>' +
+                        '</label>';
                 });
-                btn.className = BTN_BASE + " " + BTN_ON;
-                aplicarFiltro(btn.getAttribute("data-filter"));
+                html += "</div>";
+                wrap.innerHTML = html;
+                facetsBox.appendChild(wrap);
             });
+        }
+
+        function syncChecks() {
+            facetsBox.querySelectorAll('input[type=checkbox]').forEach(cb => {
+                cb.checked = state[cb.dataset.facet] && state[cb.dataset.facet].has(cb.dataset.value);
+            });
+        }
+
+        function renderChips() {
+            chipsBox.innerHTML = "";
+            let n = 0;
+            if (busca) {
+                n++;
+                const c = document.createElement("button");
+                c.className = "inline-flex items-center gap-1.5 bg-slate-700 text-white text-xs font-bold pl-3 pr-2 py-1.5 rounded-full hover:bg-slate-800 transition-colors";
+                c.innerHTML = '“' + searchInput.value + '”<span class="material-symbols-outlined text-sm">close</span>';
+                c.addEventListener("click", () => { searchInput.value = ""; busca = ""; aplicar(); });
+                chipsBox.appendChild(c);
+            }
+            if (novidadeOnly) {
+                n++;
+                const c = document.createElement("button");
+                c.className = "inline-flex items-center gap-1.5 bg-brand-orange text-white text-xs font-bold pl-3 pr-2 py-1.5 rounded-full hover:bg-orange-600 transition-colors";
+                c.innerHTML = 'Novidades<span class="material-symbols-outlined text-sm">close</span>';
+                c.addEventListener("click", () => { novidadeOnly = false; novStyle(); aplicar(); });
+                chipsBox.appendChild(c);
+            }
+            FACETS.forEach(f => {
+                state[f.key].forEach(v => {
+                    n++;
+                    const disp = f.display ? f.display(v) : v;
+                    const c = document.createElement("button");
+                    c.className = "inline-flex items-center gap-1.5 bg-brand-blue text-white text-xs font-bold capitalize pl-3 pr-2 py-1.5 rounded-full hover:bg-blue-900 transition-colors";
+                    c.innerHTML = disp + '<span class="material-symbols-outlined text-sm">close</span>';
+                    c.addEventListener("click", () => { state[f.key].delete(v); syncChecks(); aplicar(); });
+                    chipsBox.appendChild(c);
+                });
+            });
+            if (n > 0) {
+                badge.textContent = n;
+                badge.classList.remove("hidden"); badge.classList.add("flex");
+                clearBtn.classList.remove("hidden"); clearBtn.classList.add("flex");
+            } else {
+                badge.classList.add("hidden"); badge.classList.remove("flex");
+                clearBtn.classList.add("hidden"); clearBtn.classList.remove("flex");
+            }
+        }
+
+        function aplicar() {
+            let vis = 0;
+            pares.forEach(p => { const ok = passa(p.m); p.el.classList.toggle("hidden", !ok); if (ok) vis++; });
+            countEl.textContent = vis;
+            emptyMsg.classList.toggle("hidden", vis > 0);
+            renderChips();
+        }
+
+        // ---------- Listeners ----------
+        facetsBox.addEventListener("change", (e) => {
+            const cb = e.target.closest('input[type=checkbox]');
+            if (!cb) return;
+            const set = state[cb.dataset.facet];
+            if (!set) return;
+            if (cb.checked) set.add(cb.dataset.value); else set.delete(cb.dataset.value);
+            aplicar();
         });
+
+        clearBtn.addEventListener("click", () => {
+            FACETS.forEach(f => state[f.key].clear());
+            novidadeOnly = false; novStyle();
+            searchInput.value = ""; busca = "";
+            syncChecks(); aplicar();
+        });
+
+        // ---------- Busca ----------
+        const searchInput = document.getElementById("catalog-search");
+        if (searchInput) {
+            searchInput.addEventListener("input", () => { busca = norm(searchInput.value).trim(); aplicar(); });
+        }
+
+        // ---------- Comparador ----------
+        const compareBar    = document.getElementById("compare-bar");
+        const compareCount  = document.getElementById("compare-count");
+        const compareOpen   = document.getElementById("compare-open");
+        const compareClear  = document.getElementById("compare-clear");
+        const compareModal  = document.getElementById("compare-modal");
+        const compareClose  = document.getElementById("compare-modal-close");
+        const compareBox    = document.getElementById("compare-content");
+
+        function updateCompareButtons() {
+            container.querySelectorAll(".compare-btn").forEach(b => {
+                const on = compareSet.has(b.dataset.id);
+                b.innerHTML = on
+                    ? '<span class="material-symbols-outlined text-sm">check_circle</span> Comparando'
+                    : '<span class="material-symbols-outlined text-sm">add</span> Comparar';
+                b.classList.toggle("text-brand-orange", on);
+                b.classList.toggle("text-slate-400", !on);
+            });
+        }
+
+        function updateBar() {
+            const n = compareSet.size;
+            compareBar.classList.toggle("hidden", n === 0);
+            compareCount.textContent = n;
+            const poucos = n < 2;
+            compareOpen.disabled = poucos;
+            compareOpen.classList.toggle("opacity-50", poucos);
+            compareOpen.classList.toggle("cursor-not-allowed", poucos);
+        }
+
+        function buildCompare() {
+            const ms = [...compareSet].map(id => modelos.find(x => x.id === id)).filter(Boolean);
+            const linha = (label, vals) => {
+                let r = '<tr class="border-t border-slate-100"><td class="p-3 font-bold text-slate-500 sticky left-0 bg-white whitespace-nowrap">' + label + '</td>';
+                vals.forEach(v => r += '<td class="p-3 text-center font-medium text-brand-blue align-top">' + (v || "—") + '</td>');
+                return r + '</tr>';
+            };
+            let html = '<div class="overflow-x-auto"><table class="w-full text-sm border-collapse min-w-[480px]"><thead><tr><th class="sticky left-0 bg-white z-10"></th>';
+            ms.forEach(m => {
+                const capa = window.fotoSrc(m.cores[0].fotos[0]);
+                html += '<th class="p-3 align-top text-center min-w-[140px]">' +
+                    '<div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-2"><img src="' + capa + '" class="w-full h-full object-contain"></div>' +
+                    '<a href="detalhes-produto.html?id=' + encodeURIComponent(m.id) + '" class="font-black text-brand-blue hover:text-brand-orange block leading-tight">' + m.modelo + '</a>' +
+                    '</th>';
+            });
+            html += '</tr></thead><tbody>';
+            html += linha("Categoria", ms.map(m => window.CATEGORIAS_LABEL[m.categoria] || m.categoria));
+            html += linha("Lugares", ms.map(m => lugaresLabel(m)));
+            (window.SPECS_ORDEM || []).forEach(s => html += linha(s.label, ms.map(m => (m.specs && m.specs[s.chave]) || null)));
+            html += linha("CNH", ms.map(() => '<span class="text-green-600 font-bold">Não exige</span>'));
+            html += '</tbody></table></div>';
+            return html;
+        }
+
+        const openCompare  = () => { compareBox.innerHTML = buildCompare(); compareModal.classList.remove("hidden"); document.body.style.overflow = "hidden"; };
+        const closeCompare = () => { compareModal.classList.add("hidden"); document.body.style.overflow = ""; };
+
+        container.addEventListener("click", (e) => {
+            const b = e.target.closest(".compare-btn");
+            if (!b) return;
+            e.preventDefault();
+            const id = b.dataset.id;
+            if (compareSet.has(id)) compareSet.delete(id);
+            else { if (compareSet.size >= 3) return; compareSet.add(id); }
+            updateCompareButtons(); updateBar();
+        });
+
+        compareOpen.addEventListener("click", () => { if (compareSet.size >= 2) openCompare(); });
+        compareClose.addEventListener("click", closeCompare);
+        compareModal.addEventListener("click", (e) => { if (e.target === compareModal) closeCompare(); });
+        compareClear.addEventListener("click", () => { compareSet.clear(); updateCompareButtons(); updateBar(); });
+
+        // Drawer no mobile
+        const panel   = document.getElementById("filter-panel");
+        const overlay = document.getElementById("filter-overlay");
+        const openDrawer  = () => { overlay.classList.remove("hidden"); panel.classList.remove("-translate-x-full"); document.body.style.overflow = "hidden"; };
+        const closeDrawer = () => { overlay.classList.add("hidden");    panel.classList.add("-translate-x-full");    document.body.style.overflow = ""; };
+        document.getElementById("filter-toggle").addEventListener("click", openDrawer);
+        document.getElementById("filter-close").addEventListener("click", closeDrawer);
+        document.getElementById("filter-apply").addEventListener("click", closeDrawer);
+        overlay.addEventListener("click", closeDrawer);
+
+        // Init
+        renderFacets();
+        aplicar();
     });
 </script>
 

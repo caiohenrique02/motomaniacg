@@ -13,6 +13,12 @@
      id        -> slug único (vai na URL: detalhes-produto.html?id=slug)
      modelo    -> nome do modelo (título / card)
      categoria -> "motos" | "triciclos" | "patinetes" | "drifts"  (filtro)
+     novidade  -> (opcional) true = mostra selo "Novidade" no card e entra
+                  no filtro "Só novidades". Basta apagar a linha quando
+                  o modelo deixar de ser lançamento.
+     destaque  -> (opcional) true = selo "Destaque" no card (carro-chefe).
+     lugares   -> (opcional) nº de pessoas (1, 2, 3...). Quando omitido o
+                  site assume 2. Gera o filtro "Lugares".
      descricao -> texto comercial que aparece no detalhe
      specs     -> ficha técnica (objeto; campos vazios não aparecem)
      cores     -> lista de variações de cor. Cada cor tem:
@@ -39,6 +45,7 @@ window.MODELOS = [
         id: "triciclo-duos-eko-10",
         modelo: "Triciclo Duos Eko-10",
         categoria: "triciclos",
+        lugares: 1,
         descricao: "O Triciclo Elétrico Duos Eko-10 une a estabilidade de três rodas com a praticidade de não exigir CNH nem emplacamento. Com motor de 1000W, marcha à ré, alarme e bagageiro amplo, é ideal para o dia a dia urbano com total segurança e conforto.",
         specs: {
             motor: "1000W brushless (traseiro)",
@@ -100,6 +107,7 @@ window.MODELOS = [
         id: "jet-1000w",
         modelo: "JET 1000W",
         categoria: "motos",
+        destaque: true,
         descricao: "A Scooter Elétrica JET 1000W (MotoChefe) é autopropelida — sem CNH e sem emplacamento — com bateria de lítio removível para carregar onde quiser. Oferece banco duplo, baú traseiro, farol Full LED, marcha à ré e alarme antifurto. Resistente à chuva, é prática, econômica e ideal para o trânsito urbano.",
         specs: {
             motor: "1000W",
@@ -121,6 +129,7 @@ window.MODELOS = [
         id: "maxus-duact-litio",
         modelo: "Maxus Duact Lítio",
         categoria: "motos",
+        destaque: true,
         descricao: "A Maxus Duact é uma scooter elétrica a lítio pensada para a mobilidade urbana sem complicação: dispensa CNH e emplacamento. Com motor de 1000W, painel digital, alarme antifurto, tecnologia de cartão de aproximação (NFC) e baú integrado, une autonomia generosa e conforto no dia a dia.",
         specs: {
             motor: "1000W (torque 60 Nm)",
@@ -165,6 +174,7 @@ window.MODELOS = [
         id: "triciclo-bonmad-1000w",
         modelo: "Triciclo Bonmad 1000W",
         categoria: "triciclos",
+        lugares: 3,
         descricao: "O Triciclo Elétrico Bonmad 1000W combina a estabilidade de três rodas com a liberdade de não exigir CNH nem emplacamento. Com cesta frontal, banco com garupa para até 3 pessoas e bateria de lítio removível, é uma opção prática tanto para a família quanto para pequenas entregas no dia a dia urbano.",
         specs: {
             motor: "1000W",
@@ -250,7 +260,7 @@ window.MODELOS = [
             motor: "500W",
             bateria: "Chumbo 48V 12Ah (removível)",
             autonomia: "Até 50 km por carga",
-            velocidade: "35 km/h (3 níveis)",
+            velocidade: "32 km/h (3 níveis)",
             freios: "Tambor com sistema E-ABS",
             suspensao: "Dianteira + dupla traseira",
             pneus: "Aro 14\"",
@@ -285,12 +295,13 @@ window.MODELOS = [
         id: "agile-raphynus-1000w-litio",
         modelo: "Agile Raphynus 1000W Lítio",
         categoria: "motos",
+        novidade: true,
         descricao: "A Agile Raphynus 1000W é a versão mais potente da linha Agile, ideal para o dia a dia urbano sem necessidade de CNH. Com motor de 1000W e bateria de lítio removível, oferece arranque firme e autonomia confortável. O acabamento preto com banco marrom dá um visual elegante ao banco duplo com encosto de garupa.",
         specs: {
             motor: "1000W",
             bateria: "Lítio 60V 20Ah (removível)",
             autonomia: "Até 45 km por carga",
-            velocidade: "35 km/h",
+            velocidade: "32 km/h",
             freios: "Tambor dianteiro e traseiro",
             suspensao: "Duplo amortecedor (dianteiro e traseiro)",
             pneus: "Aro 14\"",
@@ -305,6 +316,7 @@ window.MODELOS = [
         id: "sudu-a5",
         modelo: "Sudu A5",
         categoria: "motos",
+        novidade: true,
         descricao: "A Sudu A5 é a scooter elétrica premium da Sudu, autopropelida e dispensando emplacamento e CNH. Com motor de 1000W, bateria de lítio de 60V 20Ah e até 60 km de autonomia, entrega desempenho e economia para o uso urbano. Freios a disco hidráulicos e banco para duas pessoas garantem segurança e conforto.",
         specs: {
             motor: "1000W",
@@ -325,12 +337,13 @@ window.MODELOS = [
         id: "triciclo-sousa",
         modelo: "Triciclo Sousa",
         categoria: "triciclos",
+        novidade: true,
         descricao: "O Triciclo Elétrico Sousa é um modelo nacional projetado para mobilidade segura e acessível, com estabilidade de três rodas e marcha à ré. Motor de 600W e bateria selada de 48V garantem autonomia de até 45 km, ideal para deslocamentos urbanos do dia a dia. Chassi em aço-carbono robusto.",
         specs: {
             motor: "600W 48V (torque 125 Nm)",
             bateria: "Chumbo 48V 20Ah",
             autonomia: "40 a 45 km por carga",
-            velocidade: "35 km/h",
+            velocidade: "32 km/h",
             freios: "Disco dianteiro + tambor traseiro (com ré)",
             suspensao: "Amortecedor traseiro",
             pneus: "Aro 16\" (3.0)",
