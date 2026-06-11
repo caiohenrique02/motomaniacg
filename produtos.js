@@ -208,7 +208,10 @@ window.MODELOS = [
                 "loja": "Shopping Luiza Motta",
                 "fotos": [
                     "5 (1).jpeg",
-                    "5 (2).jpeg"
+                    "5 (2).jpeg",
+                    "13 (1).jpeg",
+                    "13 (2).jpeg",
+                    "13 (3).jpeg"
                 ],
                 "ref": 5
             },
@@ -238,16 +241,6 @@ window.MODELOS = [
                     "12 (2).jpeg"
                 ],
                 "ref": 12
-            },
-            {
-                "cor": "Verde",
-                "loja": "Anthenor Navarro – Esperança",
-                "fotos": [
-                    "13 (1).jpeg",
-                    "13 (2).jpeg",
-                    "13 (3).jpeg"
-                ],
-                "ref": 13
             },
             {
                 "cor": "Prata",

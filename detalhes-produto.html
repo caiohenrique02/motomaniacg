@@ -241,12 +241,9 @@
                 else if (e.key === "ArrowRight") nextFoto();
             });
 
-            // Se duas cores têm o mesmo nome, numera pra diferenciar (sem citar a unidade)
-            function labelCor(c, idx) {
-                const repetida = m.cores.filter(x => x.cor === c.cor).length > 1;
-                if (!repetida) return c.cor;
-                const pos = m.cores.filter((x, i) => x.cor === c.cor && i <= idx).length;
-                return c.cor + " " + pos;
+            // Nome da cor, simples (sem número e sem citar unidade)
+            function labelCor(c) {
+                return c.cor;
             }
 
             // Aplica uma cor (galeria + textos + whatsapp)
