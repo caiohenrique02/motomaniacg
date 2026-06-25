@@ -259,11 +259,11 @@ window.MODELOS = [
         "id": "monaco-2026",
         "modelo": "Mônaco 2026",
         "categoria": "motos",
-        "descricao": "A Conduzza Mônaco 2026 é uma scooter elétrica autopropelida que dispensa CNH e emplacamento. Com motor de 1000W, bateria 72V/20Ah e iluminação Full LED com painel digital, oferece até 80 km de autonomia para a mobilidade urbana do dia a dia. Acionamento triplo (chave, controle e TAG) e botão de ré fazem dela uma das mais completas da categoria.",
+        "descricao": "A Conduzza Mônaco 2026 é uma scooter elétrica autopropelida que dispensa CNH e emplacamento. Com motor de 1000W, bateria 72V/20Ah e iluminação Full LED com painel digital, oferece até 100 km de autonomia para a mobilidade urbana do dia a dia. Acionamento triplo (chave, controle e TAG) e botão de ré fazem dela uma das mais completas da categoria.",
         "specs": {
             "motor": "1000W brushless",
             "bateria": "72V 20Ah",
-            "autonomia": "Até 80 km por carga",
+            "autonomia": "Até 100 km por carga",
             "velocidade": "32 km/h",
             "freios": "Disco hidráulico dianteiro e traseiro",
             "suspensao": "Hidráulica dianteira e traseira",
@@ -491,7 +491,7 @@ window.MODELOS = [
             "suspensao": "Hidráulica (dianteira e traseira)",
             "pneus": "Aro 10\" a 12\" (tubeless)",
             "capacidade": "150 kg",
-            "tempoCarga": "7 a 8 horas"
+            "tempoCarga": "5 a 6 horas"
         },
         "cores": [
             {
@@ -579,31 +579,10 @@ window.MODELOS = [
         "categoria": "motos",
         "cores": [
             {
-                "cor": "Bege",
-                "loja": "",
-                "fotos": [
-                    "WhatsApp Image 2026-06-01 at 14.53.03.jpeg"
-                ]
-            },
-            {
                 "cor": "Branca",
                 "loja": "",
                 "fotos": [
                     "WhatsApp Image 2026-06-01 at 14.52.29.jpeg"
-                ]
-            },
-            {
-                "cor": "Preto",
-                "loja": "",
-                "fotos": [
-                    "WhatsApp Image 2026-06-01 at 14.52.36 (2).jpeg"
-                ]
-            },
-            {
-                "cor": "Vinho",
-                "loja": "",
-                "fotos": [
-                    "WhatsApp Image 2026-06-01 at 14.52.31 (1).jpeg"
                 ]
             }
         ],
@@ -616,7 +595,7 @@ window.MODELOS = [
             "freios": "Tambor dianteiro e traseiro",
             "suspensao": "Dianteira hidráulica + traseira por mola",
             "pneus": "Aro 10\" (60/100-10 tubeless)",
-            "capacidade": "120 kg",
+            "capacidade": "100 kg",
             "tempoCarga": "5 a 6 horas"
         }
     },
@@ -755,13 +734,13 @@ window.MODELOS = [
         "descricao": "Triciclo elétrico Alpha robusto com motor de 1000W e marcha à ré, ideal para quem busca potência e praticidade sem CNH. Freio dianteiro a disco hidráulico, suspensão hidráulica e piloto automático garantem rodar firme e confortável. Painel digital, alarme antifurto e acionamento por cartão NFC.",
         "specs": {
             "motor": "1000W (3 níveis de velocidade)",
-            "bateria": "Chumbo 60V 20Ah (1200Wh)",
+            "bateria": "Chumbo 48V 20Ah",
             "autonomia": "30 a 40 km por carga",
             "velocidade": "32 km/h",
             "freios": "Disco hidráulico dianteiro (150mm) + tambor traseiro",
             "suspensao": "Dianteira hidráulica (bengala 35mm) + duplo amortecedor traseiro",
             "pneus": "Aro 10\" alumínio (3.00-10 tubeless)",
-            "capacidade": "Até 200 kg",
+            "capacidade": "Até 120 kg",
             "tempoCarga": "7 a 9 horas"
         }
     },
@@ -925,11 +904,11 @@ window.MODELOS = [
                 "fotos": []
             }
         ],
-        "descricao": "Scooter elétrica urbana Tazzo (Veloster) com motor de 1000W e bateria de lítio removível, autopropelida e isenta de CNH e emplacamento. Conta com painel digital, faróis em LED e autonomia de até 60-70 km por carga, ideal para o trajeto diário na cidade. Freios a disco hidráulicos e pneus tubeless para conforto e segurança.",
+        "descricao": "Scooter elétrica urbana Tazzo (Veloster) com motor de 1000W e bateria de lítio removível, autopropelida e isenta de CNH e emplacamento. Conta com painel digital, faróis em LED e autonomia de até 65 km por carga, ideal para o trajeto diário na cidade. Freios a disco hidráulicos e pneus tubeless para conforto e segurança.",
         "specs": {
             "motor": "1000W (60V)",
             "bateria": "Lítio 60V 24Ah (removível)",
-            "autonomia": "60 a 70 km por carga",
+            "autonomia": "Até 65 km por carga",
             "velocidade": "32 km/h",
             "freios": "Disco hidráulico dianteiro (265mm) e traseiro (220mm)",
             "suspensao": "Hidráulica dianteira e traseira",
@@ -1057,16 +1036,16 @@ window.MODELOS = [
                 ]
             }
         ],
-        "descricao": "Carrinho triciclo drift elétrico infantil com tema do Homem-Aranha, diversão garantida para a criançada. Possui rodas traseiras que deslizam para fazer manobras de drift, luzes de LED e velocidade baixa e segura. Indicado para crianças (confira a faixa etária e o peso máximo na unidade).",
+        "descricao": "Triciclo elétrico infantil drift com tema Homem Aranha. Motor de 250W nas rodas com sistema hoverboard-drift e bateria de lítio 36V recarregável. Rodas de 8 polegadas com deslize independente, LEDs coloridos e suspensão dupla. Indicado para até 65 kg — confirme a faixa etária adequada na unidade.",
         "specs": {
-            "motor": "2 motores nas rodas traseiras (120 a 250W)",
-            "bateria": "12V/24V recarregável",
-            "autonomia": "Cerca de 45 a 60 min de uso",
-            "velocidade": "5 a 8 km/h (baixa e segura)",
-            "freios": "Freio dianteiro/eletrônico",
-            "suspensao": "",
-            "pneus": "Rodas de PU (traseiras giratórias para drift)",
-            "capacidade": "Peso máx. até 50 kg",
+            "motor": "250W (sistema hoverboard-drift)",
+            "bateria": "Lítio 36V 4.4Ah",
+            "autonomia": "40 min a 1h30 de uso",
+            "velocidade": "até 15 km/h",
+            "freios": "",
+            "suspensao": "Amortecedor duplo",
+            "pneus": "Aro 8\"",
+            "capacidade": "até 65 kg",
             "tempoCarga": "3 a 5 horas"
         }
     },
@@ -1083,16 +1062,16 @@ window.MODELOS = [
                 ]
             }
         ],
-        "descricao": "Carrinho triciclo drift elétrico infantil na cor rosa galáxia, ideal para quem adora velocidade e manobras divertidas. Rodas traseiras deslizantes para drift, luzes de LED e velocidade reduzida e segura. Recarregável e fácil de usar (confira a faixa etária e o peso máximo na unidade).",
+        "descricao": "Triciclo elétrico infantil drift na cor rosa galáxia. Motor de 350W com sistema hoverboard-drift e bateria de lítio 36V recarregável. Rodas de 8 polegadas com deslize independente, LEDs coloridos e suspensão dupla. Indicado para até 65 kg — confirme a faixa etária adequada na unidade.",
         "specs": {
-            "motor": "2 motores nas rodas traseiras (120 a 250W)",
-            "bateria": "12V/24V recarregável",
-            "autonomia": "Cerca de 45 a 60 min de uso",
-            "velocidade": "5 a 8 km/h (baixa e segura)",
-            "freios": "Freio dianteiro/eletrônico",
-            "suspensao": "",
-            "pneus": "Rodas de PU (traseiras giratórias para drift)",
-            "capacidade": "Peso máx. até 50 kg",
+            "motor": "350W (sistema hoverboard-drift)",
+            "bateria": "Lítio 36V 4.4Ah",
+            "autonomia": "40 min a 1h30 de uso",
+            "velocidade": "até 30 km/h",
+            "freios": "",
+            "suspensao": "Amortecedor duplo",
+            "pneus": "Aro 8\"",
+            "capacidade": "até 65 kg",
             "tempoCarga": "3 a 5 horas"
         }
     }
