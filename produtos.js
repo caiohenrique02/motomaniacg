@@ -239,7 +239,6 @@ window.MODELOS = [
                 "cor": "Prata",
                 "loja": "",
                 "fotos": [
-                    "WhatsApp Image 2026-06-01 at 14.52.26 (3).jpeg",
                     "WhatsApp Image 2026-06-01 at 14.52.58 (1).jpeg",
                     "WhatsApp Image 2026-06-01 at 14.52.58 (2).jpeg",
                     "WhatsApp Image 2026-06-01 at 14.52.58 (3).jpeg"
@@ -252,13 +251,6 @@ window.MODELOS = [
                     "WhatsApp Image 2026-06-01 at 14.52.55 (1).jpeg",
                     "WhatsApp Image 2026-06-01 at 14.52.55 (2).jpeg",
                     "WhatsApp Image 2026-06-01 at 14.52.55.jpeg"
-                ]
-            },
-            {
-                "cor": "Azul",
-                "loja": "",
-                "fotos": [
-                    "WhatsApp Image 2026-06-01 at 14.52.57.jpeg"
                 ]
             }
         ]
@@ -456,35 +448,6 @@ window.MODELOS = [
         ]
     },
     {
-        "id": "cruiser-1000w-rio-south",
-        "modelo": "Cruiser 1000W Rio South",
-        "categoria": "motos",
-        "descricao": "A scooter elétrica Cruiser 1000W (Rio South) é um autopropelido sem CNH e sem emplacamento, ideal para a cidade. Com motor de 1000W e bateria de lítio 60V 20Ah removível, entrega 40 a 50 km de autonomia, painel digital e iluminação LED. Freios a disco e suspensão completa garantem conforto e segurança no uso urbano.",
-        "specs": {
-            "motor": "1000W brushless",
-            "bateria": "Lítio 60V 20Ah (removível)",
-            "autonomia": "40 a 50 km por carga",
-            "velocidade": "32 km/h",
-            "freios": "Disco dianteiro e traseiro",
-            "suspensao": "Dianteira + traseira dupla",
-            "pneus": "Aro 12\" a 14\"",
-            "capacidade": "150 kg",
-            "tempoCarga": "4 a 6 horas"
-        },
-        "cores": [
-            {
-                "cor": "Chumbo",
-                "loja": "Anthenor Navarro – Esperança",
-                "fotos": [
-                    "17 (1).jpeg",
-                    "17 (3).jpeg",
-                    "17 (4).jpeg"
-                ],
-                "ref": 17
-            }
-        ]
-    },
-    {
         "id": "agile-raphynus-1000w-litio",
         "modelo": "Agile Raphynus 1000W Lítio",
         "categoria": "motos",
@@ -505,7 +468,10 @@ window.MODELOS = [
             {
                 "cor": "Preta com banco marrom",
                 "loja": "Anthenor Navarro – Esperança",
-                "fotos": [],
+                "fotos": [
+                    "17 (1).jpeg",
+                    "17 (4).jpeg"
+                ],
                 "ref": 18
             }
         ]
@@ -536,13 +502,6 @@ window.MODELOS = [
                     "18 (2).jpeg"
                 ],
                 "ref": 20
-            },
-            {
-                "cor": "Prata",
-                "loja": "",
-                "fotos": [
-                    "WhatsApp Image 2026-06-01 at 14.52.22 (1).jpeg"
-                ]
             },
             {
                 "cor": "Vinho",
@@ -667,16 +626,6 @@ window.MODELOS = [
         "categoria": "triciclos",
         "cores": [
             {
-                "cor": "Branca",
-                "loja": "",
-                "fotos": [
-                    "WhatsApp Image 2026-06-01 at 14.50.55 (1).jpeg",
-                    "WhatsApp Image 2026-06-01 at 14.50.55 (2).jpeg",
-                    "WhatsApp Image 2026-06-01 at 14.53.03 (1).jpeg",
-                    "WhatsApp Image 2026-06-01 at 14.53.04 (2).jpeg"
-                ]
-            },
-            {
                 "cor": "Branco com vinho",
                 "loja": "",
                 "fotos": [
@@ -684,24 +633,10 @@ window.MODELOS = [
                 ]
             },
             {
-                "cor": "Cinza",
-                "loja": "",
-                "fotos": [
-                    "WhatsApp Image 2026-06-01 at 14.50.54.jpeg"
-                ]
-            },
-            {
-                "cor": "Cinza e azul",
+                "cor": "Azul",
                 "loja": "",
                 "fotos": [
                     "WhatsApp Image 2026-06-01 at 14.50.54 (1).jpeg"
-                ]
-            },
-            {
-                "cor": "Grafite",
-                "loja": "",
-                "fotos": [
-                    "WhatsApp Image 2026-06-01 at 14.50.55.jpeg"
                 ]
             }
         ],
@@ -730,8 +665,6 @@ window.MODELOS = [
                     "WhatsApp Image 2026-06-01 at 14.50.53 (1).jpeg",
                     "WhatsApp Image 2026-06-01 at 14.50.53.jpeg",
                     "WhatsApp Image 2026-06-01 at 14.52.54 (2).jpeg",
-                    "20 (1).jpeg",
-                    "20 (2).jpeg",
                     "21 (1).jpeg",
                     "21 (2).jpeg",
                     "WhatsApp Image 2026-06-01 at 14.50.53 (2).jpeg",
@@ -746,14 +679,9 @@ window.MODELOS = [
                     "WhatsApp Image 2026-06-01 at 14.50.52 (1).jpeg",
                     "WhatsApp Image 2026-06-01 at 14.50.52 (2).jpeg",
                     "WhatsApp Image 2026-06-01 at 14.52.24 (1).jpeg",
-                    "WhatsApp Image 2026-06-01 at 14.52.24.jpeg"
-                ]
-            },
-            {
-                "cor": "Verde",
-                "loja": "",
-                "fotos": [
-                    "WhatsApp Image 2026-06-01 at 14.52.59.jpeg"
+                    "WhatsApp Image 2026-06-01 at 14.52.24.jpeg",
+                    "20 (1).jpeg",
+                    "20 (2).jpeg"
                 ]
             },
             {
@@ -762,13 +690,6 @@ window.MODELOS = [
                 "fotos": [
                     "WhatsApp Image 2026-06-01 at 14.52.54.jpeg",
                     "WhatsApp Image 2026-06-01 at 14.52.55 (3).jpeg",
-                    "WhatsApp Image 2026-06-01 at 14.52.36.jpeg"
-                ]
-            },
-            {
-                "cor": "Vinho",
-                "loja": "",
-                "fotos": [
                     "WhatsApp Image 2026-06-01 at 14.51.08.jpeg",
                     "WhatsApp Image 2026-06-01 at 14.51.09.jpeg",
                     "WhatsApp Image 2026-06-01 at 14.51.08 (1).jpeg"
@@ -828,21 +749,6 @@ window.MODELOS = [
                     "WhatsApp Image 2026-06-01 at 14.52.34 (1).jpeg",
                     "WhatsApp Image 2026-06-01 at 14.52.34.jpeg",
                     "WhatsApp Image 2026-06-01 at 14.52.36 (1).jpeg"
-                ]
-            },
-            {
-                "cor": "Preto",
-                "loja": "",
-                "fotos": [
-                    "WhatsApp Image 2026-06-01 at 14.52.34 (2).jpeg",
-                    "WhatsApp Image 2026-06-01 at 14.53.01 (2).jpeg"
-                ]
-            },
-            {
-                "cor": "Grafite",
-                "loja": "",
-                "fotos": [
-                    "WhatsApp Image 2026-06-01 at 14.52.34 (3).jpeg"
                 ]
             }
         ],
@@ -1038,18 +944,11 @@ window.MODELOS = [
         "categoria": "motos",
         "cores": [
             {
-                "cor": "Prata",
-                "loja": "",
-                "fotos": [
-                    "WhatsApp Image 2026-06-01 at 14.50.59.jpeg",
-                    "WhatsApp Image 2026-06-01 at 14.52.26.jpeg"
-                ]
-            },
-            {
                 "cor": "Cinza",
                 "loja": "",
                 "fotos": [
-                    "WhatsApp Image 2026-06-01 at 14.52.26 (1).jpeg"
+                    "WhatsApp Image 2026-06-01 at 14.52.26 (1).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.52.26.jpeg"
                 ]
             }
         ],
