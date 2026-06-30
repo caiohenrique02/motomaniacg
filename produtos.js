@@ -98,6 +98,15 @@ window.MODELOS = [
                     "2 (2).jpeg"
                 ],
                 "ref": 2
+            },
+            {
+                "cor": "Vermelha",
+                "loja": "",
+                "fotos": [
+                    "eko7-vermelho-1.jpeg",
+                    "eko7-vermelho-2.jpeg",
+                    "eko7-vermelho-3.jpeg"
+                ]
             }
         ]
     },
@@ -126,6 +135,15 @@ window.MODELOS = [
                     "3 (2).jpeg"
                 ],
                 "ref": 3
+            },
+            {
+                "cor": "Vermelha",
+                "loja": "",
+                "fotos": [
+                    "raptor-pro-vermelho-1.jpeg",
+                    "raptor-pro-vermelho-2.jpeg",
+                    "raptor-pro-vermelho-3.jpeg"
+                ]
             }
         ]
     },
@@ -293,6 +311,14 @@ window.MODELOS = [
                     "WhatsApp Image 2026-06-01 at 14.50.59 (1).jpeg",
                     "WhatsApp Image 2026-06-01 at 14.53.02.jpeg"
                 ]
+            },
+            {
+                "cor": "Vermelha",
+                "loja": "",
+                "fotos": [
+                    "monaco-vermelho-1.jpeg",
+                    "monaco-vermelho-2.jpeg"
+                ]
             }
         ]
     },
@@ -411,8 +437,10 @@ window.MODELOS = [
                 "cor": "Azul",
                 "loja": "Anthenor Navarro – Esperança",
                 "fotos": [
+                    "centry-mini-azul-1.jpeg",
                     "15 (1).jpeg",
-                    "15 (2).jpeg"
+                    "15 (2).jpeg",
+                    "WhatsApp Image 2026-06-01 at 14.53.00 (3).jpeg"
                 ],
                 "ref": 15
             }
@@ -473,6 +501,14 @@ window.MODELOS = [
                     "17 (4).jpeg"
                 ],
                 "ref": 18
+            },
+            {
+                "cor": "Branca com preto",
+                "loja": "",
+                "fotos": [
+                    "agile-raphynus-branca-preto-1.jpeg",
+                    "agile-raphynus-branca-preto-2.jpeg"
+                ]
             }
         ]
     },
@@ -534,7 +570,10 @@ window.MODELOS = [
             {
                 "cor": "Vermelho",
                 "loja": "Anthenor Navarro – Esperança",
-                "fotos": [],
+                "fotos": [
+                    "sousa-vermelho-1.jpeg",
+                    "sousa-vermelho-2.jpeg"
+                ],
                 "ref": 21
             }
         ]
@@ -545,18 +584,11 @@ window.MODELOS = [
         "categoria": "motos",
         "cores": [
             {
-                "cor": "Branca",
+                "cor": "Cinza",
                 "loja": "",
                 "fotos": [
-                    "WhatsApp Image 2026-06-01 at 14.52.22 (3).jpeg",
-                    "WhatsApp Image 2026-06-01 at 14.52.23 (2).jpeg"
-                ]
-            },
-            {
-                "cor": "Branca e rosa",
-                "loja": "",
-                "fotos": [
-                    "WhatsApp Image 2026-06-01 at 14.54.51.jpeg"
+                    "gts-pro-cinza-1.jpeg",
+                    "gts-pro-cinza-2.jpeg"
                 ]
             }
         ],
@@ -579,10 +611,12 @@ window.MODELOS = [
         "categoria": "motos",
         "cores": [
             {
-                "cor": "Branca",
+                "cor": "Verde",
                 "loja": "",
                 "fotos": [
-                    "WhatsApp Image 2026-06-01 at 14.52.29.jpeg"
+                    "sudu-a2-verde-1.jpeg",
+                    "sudu-a2-verde-2.jpeg",
+                    "sudu-a2-verde-3.jpeg"
                 ]
             }
         ],
@@ -771,6 +805,34 @@ window.MODELOS = [
         }
     },
     {
+        "id": "etrek-chumbo",
+        "modelo": "E-Trek Chumbo",
+        "categoria": "motos",
+        "descricao": "Scooter elétrica urbana Duos E-Trek com bateria de chumbo, design compacto e cestinha frontal de série. Autopropelida, isenta de CNH e emplacamento, ideal para o dia a dia na cidade com economia e praticidade. Banco duplo com encosto traseiro, farol LED e painel digital.",
+        "specs": {
+            "motor": "800W brushless 48V",
+            "bateria": "Chumbo 48V 20Ah",
+            "autonomia": "30 a 40 km por carga",
+            "velocidade": "32 km/h",
+            "freios": "Tambor dianteiro e traseiro",
+            "suspensao": "Dianteira e traseira",
+            "pneus": "Aro 14\"",
+            "capacidade": "120 kg",
+            "tempoCarga": "6 a 8 horas"
+        },
+        "cores": [
+            {
+                "cor": "Azul",
+                "loja": "",
+                "fotos": [
+                    "etrek-chumbo-azul-1.jpeg",
+                    "etrek-chumbo-azul-2.jpeg",
+                    "etrek-chumbo-azul-3.jpeg"
+                ]
+            }
+        ]
+    },
+    {
         "id": "patinete-vexor-flow-350w",
         "modelo": "Patinete Vexor Flow 350W",
         "categoria": "patinetes",
@@ -894,21 +956,20 @@ window.MODELOS = [
         "categoria": "motos",
         "cores": [
             {
-                "cor": "Vermelho",
+                "cor": "Vermelha",
                 "loja": "",
-                "fotos": []
-            },
-            {
-                "cor": "Azul claro",
-                "loja": "",
-                "fotos": []
+                "fotos": [
+                    "tazzo-vermelho-1.jpeg",
+                    "tazzo-vermelho-2.jpeg",
+                    "tazzo-vermelho-3.jpeg"
+                ]
             }
         ],
-        "descricao": "Scooter elétrica urbana Tazzo (Veloster) com motor de 1000W e bateria de lítio removível, autopropelida e isenta de CNH e emplacamento. Conta com painel digital, faróis em LED e autonomia de até 65 km por carga, ideal para o trajeto diário na cidade. Freios a disco hidráulicos e pneus tubeless para conforto e segurança.",
+        "descricao": "Scooter elétrica urbana Tazzo (Veloster) com motor de 1000W e bateria de lítio removível, autopropelida e isenta de CNH e emplacamento. Conta com painel digital, faróis em LED e autonomia de 60 a 70 km por carga, ideal para o trajeto diário na cidade. Freios a disco hidráulicos e pneus tubeless para conforto e segurança.",
         "specs": {
-            "motor": "1000W (60V)",
-            "bateria": "Lítio 60V 24Ah (removível)",
-            "autonomia": "Até 65 km por carga",
+            "motor": "1000W brushless 60V",
+            "bateria": "Lítio LMFP 60V 24Ah (removível, 11,5 kg)",
+            "autonomia": "60 a 70 km por carga",
             "velocidade": "32 km/h",
             "freios": "Disco hidráulico dianteiro (265mm) e traseiro (220mm)",
             "suspensao": "Hidráulica dianteira e traseira",
