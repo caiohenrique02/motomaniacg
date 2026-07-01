@@ -296,7 +296,7 @@
 
                 <!-- Grid de produtos — cards gerados via JS a partir de produtos.js -->
                 <div class="min-w-0">
-                    <div id="catalog-container" class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
+                    <div id="catalog-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
                     <p id="catalog-empty" class="hidden text-center text-slate-400 font-medium py-16">Nenhum modelo encontrado com esses filtros.</p>
                 </div>
             </div>
@@ -923,7 +923,7 @@
             card.className = "catalog-card card-hover group bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-100 shadow-md flex flex-col";
 
             card.innerHTML =
-                '<a href="' + detalhesHref + '" class="block relative overflow-hidden aspect-[4/3] bg-slate-100">' +
+                '<a href="' + detalhesHref + '" class="block relative overflow-hidden aspect-square bg-white">' +
                     '<img alt="' + m.modelo + '" loading="lazy" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700" src="' + capa + '" />' +
                     '<div class="absolute top-3 left-3 flex flex-col gap-1.5 items-start">' +
                         (temNovidade(m) ? '<span class="bg-brand-orange text-white text-[9px] sm:text-[10px] font-black px-2 py-1 rounded-full uppercase tracking-wider shadow flex items-center gap-1"><span class="material-symbols-outlined text-[11px]">auto_awesome</span>Novidade</span>' : '') +
