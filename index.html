@@ -298,6 +298,12 @@
                 <div class="min-w-0">
                     <div id="catalog-container" class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
                     <p id="catalog-empty" class="hidden text-center text-slate-400 font-medium py-16">Nenhum modelo encontrado com esses filtros.</p>
+                    <div id="catalog-loadmore-wrap" class="hidden text-center mt-8">
+                        <button id="catalog-loadmore" type="button"
+                            class="inline-flex items-center gap-2 border-2 border-brand-blue/20 text-brand-blue px-8 py-3.5 rounded-xl font-black hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all">
+                            Ver mais modelos <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -350,8 +356,8 @@
                 <!-- Unidade Centro -->
                 <div class="group bg-white border border-slate-200 p-8 rounded-[2rem] hover:border-brand-orange/30 transition-all backdrop-blur-md flex flex-col gap-8 shadow-xl">
                     <div class="w-full h-56 rounded-2xl overflow-hidden shadow-lg border border-slate-100">
-                        <img alt="Unidade Centro - Moto Mania CG" class="w-full h-full object-cover object-center"
-                            src="assets/fachada-centro.jpg" />
+                        <img alt="Unidade Centro - Moto Mania CG" class="w-full h-full object-cover"
+                            style="object-position: 50% 25%" src="assets/fachada-centro.jpg" />
                     </div>
                     <div class="flex flex-col flex-1">
                         <div class="flex items-center gap-2 text-brand-orange font-bold text-xs mb-3 uppercase tracking-[0.2em]">
@@ -391,9 +397,9 @@
 
                 <!-- Unidade Catolé -->
                 <div class="group bg-white border border-slate-200 p-8 rounded-[2rem] hover:border-brand-orange/30 transition-all backdrop-blur-md flex flex-col gap-8 shadow-xl">
-                    <div class="w-full h-56 rounded-2xl overflow-hidden shadow-lg border border-slate-100">
-                        <img alt="Unidade Católé - Moto Mania CG" class="w-full h-full object-cover object-top"
-                            src="assets/fachada-catole.jpg" />
+                    <div class="w-full h-64 rounded-2xl overflow-hidden shadow-lg border border-slate-100">
+                        <img alt="Unidade Católé - Moto Mania CG" class="w-full h-full object-cover"
+                            style="object-position: 50% 44%" src="assets/fachada-catole.jpg" />
                     </div>
                     <div class="flex flex-col flex-1">
                         <div class="flex items-center gap-2 text-brand-orange font-bold text-xs mb-3 uppercase tracking-[0.2em]">
@@ -822,9 +828,13 @@
         const chipsBox  = document.getElementById("active-chips");
         const clearBtn  = document.getElementById("filter-clear");
         const badge     = document.getElementById("filter-badge");
+        const loadMoreWrap = document.getElementById("catalog-loadmore-wrap");
+        const loadMoreBtn  = document.getElementById("catalog-loadmore");
         if (!container || !facetsBox) return;
 
         const modelos = window.MODELOS || [];
+        const CATALOG_PAGE_SIZE = 8;
+        let visibleCount = CATALOG_PAGE_SIZE;
 
         // ---------- Parsers de specs (derivam as facetas automaticamente) ----------
         function tipoBateria(m) {
@@ -923,8 +933,8 @@
             card.className = "catalog-card card-hover group bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-100 shadow-md flex flex-col";
 
             card.innerHTML =
-                '<a href="' + detalhesHref + '" class="block relative overflow-hidden aspect-[4/3] bg-slate-100">' +
-                    '<img alt="' + m.modelo + '" loading="lazy" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700" src="' + capa + '" />' +
+                '<a href="' + detalhesHref + '" class="block relative overflow-hidden aspect-[3/4] bg-slate-100">' +
+                    '<img alt="' + m.modelo + '" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="' + capa + '" />' +
                     '<div class="absolute top-3 left-3 flex flex-col gap-1.5 items-start">' +
                         (temNovidade(m) ? '<span class="bg-brand-orange text-white text-[9px] sm:text-[10px] font-black px-2 py-1 rounded-full uppercase tracking-wider shadow flex items-center gap-1"><span class="material-symbols-outlined text-[11px]">auto_awesome</span>Novidade</span>' : '') +
                         (temDestaque(m) ? '<span class="bg-amber-400 text-brand-blue text-[9px] sm:text-[10px] font-black px-2 py-1 rounded-full uppercase tracking-wider shadow flex items-center gap-1"><span class="material-symbols-outlined text-[11px]">star</span>Destaque</span>' : '') +
@@ -973,7 +983,7 @@
             if (modelos.some(temNovidade)) {
                 novToggleEl = document.createElement("button");
                 novToggleEl.innerHTML = '<span class="material-symbols-outlined text-base">auto_awesome</span> Só novidades';
-                novToggleEl.addEventListener("click", () => { novidadeOnly = !novidadeOnly; novStyle(); aplicar(); });
+                novToggleEl.addEventListener("click", () => { novidadeOnly = !novidadeOnly; novStyle(); aplicar(true); });
                 novStyle();
                 facetsBox.appendChild(novToggleEl);
             }
@@ -1013,7 +1023,7 @@
                 const c = document.createElement("button");
                 c.className = "inline-flex items-center gap-1.5 bg-slate-700 text-white text-xs font-bold pl-3 pr-2 py-1.5 rounded-full hover:bg-slate-800 transition-colors";
                 c.innerHTML = '“' + searchInput.value + '”<span class="material-symbols-outlined text-sm">close</span>';
-                c.addEventListener("click", () => { searchInput.value = ""; busca = ""; aplicar(); });
+                c.addEventListener("click", () => { searchInput.value = ""; busca = ""; aplicar(true); });
                 chipsBox.appendChild(c);
             }
             if (novidadeOnly) {
@@ -1021,7 +1031,7 @@
                 const c = document.createElement("button");
                 c.className = "inline-flex items-center gap-1.5 bg-brand-orange text-white text-xs font-bold pl-3 pr-2 py-1.5 rounded-full hover:bg-orange-600 transition-colors";
                 c.innerHTML = 'Novidades<span class="material-symbols-outlined text-sm">close</span>';
-                c.addEventListener("click", () => { novidadeOnly = false; novStyle(); aplicar(); });
+                c.addEventListener("click", () => { novidadeOnly = false; novStyle(); aplicar(true); });
                 chipsBox.appendChild(c);
             }
             FACETS.forEach(f => {
@@ -1031,7 +1041,7 @@
                     const c = document.createElement("button");
                     c.className = "inline-flex items-center gap-1.5 bg-brand-blue text-white text-xs font-bold capitalize pl-3 pr-2 py-1.5 rounded-full hover:bg-blue-900 transition-colors";
                     c.innerHTML = disp + '<span class="material-symbols-outlined text-sm">close</span>';
-                    c.addEventListener("click", () => { state[f.key].delete(v); syncChecks(); aplicar(); });
+                    c.addEventListener("click", () => { state[f.key].delete(v); syncChecks(); aplicar(true); });
                     chipsBox.appendChild(c);
                 });
             });
@@ -1045,13 +1055,18 @@
             }
         }
 
-        function aplicar() {
-            let vis = 0;
-            pares.forEach(p => { const ok = passa(p.m); p.el.classList.toggle("hidden", !ok); if (ok) vis++; });
-            countEl.textContent = vis;
-            emptyMsg.classList.toggle("hidden", vis > 0);
+        function aplicar(resetPage) {
+            if (resetPage) visibleCount = CATALOG_PAGE_SIZE;
+            const matched = pares.filter(p => passa(p.m));
+            pares.forEach(p => p.el.classList.add("hidden"));
+            matched.slice(0, visibleCount).forEach(p => p.el.classList.remove("hidden"));
+            countEl.textContent = matched.length;
+            emptyMsg.classList.toggle("hidden", matched.length > 0);
+            loadMoreWrap.classList.toggle("hidden", visibleCount >= matched.length);
             renderChips();
         }
+
+        loadMoreBtn.addEventListener("click", () => { visibleCount = Infinity; aplicar(false); });
 
         // ---------- Listeners ----------
         facetsBox.addEventListener("change", (e) => {
@@ -1060,20 +1075,20 @@
             const set = state[cb.dataset.facet];
             if (!set) return;
             if (cb.checked) set.add(cb.dataset.value); else set.delete(cb.dataset.value);
-            aplicar();
+            aplicar(true);
         });
 
         clearBtn.addEventListener("click", () => {
             FACETS.forEach(f => state[f.key].clear());
             novidadeOnly = false; novStyle();
             searchInput.value = ""; busca = "";
-            syncChecks(); aplicar();
+            syncChecks(); aplicar(true);
         });
 
         // ---------- Busca ----------
         const searchInput = document.getElementById("catalog-search");
         if (searchInput) {
-            searchInput.addEventListener("input", () => { busca = norm(searchInput.value).trim(); aplicar(); });
+            searchInput.addEventListener("input", () => { busca = norm(searchInput.value).trim(); aplicar(true); });
         }
 
         // ---------- Comparador ----------
@@ -1117,7 +1132,7 @@
             ms.forEach(m => {
                 const capa = window.fotoSrc(m.cores[0].fotos[0]);
                 html += '<th class="p-3 align-top text-center min-w-[140px]">' +
-                    '<div class="aspect-square bg-slate-50 rounded-xl overflow-hidden mb-2"><img src="' + capa + '" class="w-full h-full object-contain"></div>' +
+                    '<div class="aspect-[3/4] bg-slate-50 rounded-xl overflow-hidden mb-2"><img src="' + capa + '" class="w-full h-full object-cover"></div>' +
                     '<a href="detalhes-produto.html?id=' + encodeURIComponent(m.id) + '" class="font-black text-brand-blue hover:text-brand-orange block leading-tight">' + m.modelo + '</a>' +
                     '</th>';
             });
@@ -1160,7 +1175,7 @@
 
         // Init
         renderFacets();
-        aplicar();
+        aplicar(true);
     });
 </script>
 
