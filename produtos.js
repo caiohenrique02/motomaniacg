@@ -363,7 +363,7 @@ window.MODELOS = [
     {
         "id": "yoo-y200-350w",
         "modelo": "Yoo Y200 350W",
-        "categoria": "patinetes",
+        "categoria": "bikes",
         "descricao": "Bicicleta/patinete elétrico Yoo Y200 350W homologado pelo CONTRAN, que dispensa CNH e habilitação. Combina autonomia urbana, conforto com banco duplo e suspensão completa, ideal para o dia a dia na cidade. Equipado com farol LED, painel digital e cestinha frontal.",
         "specs": {
             "motor": "350W 48V (pico de 500W) brushless",
@@ -836,6 +836,7 @@ window.MODELOS = [
         "id": "patinete-vexor-flow-350w",
         "modelo": "Patinete Vexor Flow 350W",
         "categoria": "patinetes",
+        "lugares": 1,
         "cores": [
             {
                 "cor": "Preto",
@@ -863,6 +864,7 @@ window.MODELOS = [
         "id": "patinete-zetto-vexor",
         "modelo": "Patinete Zetto Vexor",
         "categoria": "patinetes",
+        "lugares": 1,
         "cores": [
             {
                 "cor": "Preto",
@@ -1108,7 +1110,8 @@ window.MODELOS = [
             "pneus": "Aro 8\"",
             "capacidade": "até 65 kg",
             "tempoCarga": "3 a 5 horas"
-        }
+        },
+        "lugares": 1
     },
     {
         "id": "drift-rosa-galaxia",
@@ -1134,7 +1137,8 @@ window.MODELOS = [
             "pneus": "Aro 8\"",
             "capacidade": "até 65 kg",
             "tempoCarga": "3 a 5 horas"
-        }
+        },
+        "lugares": 1
     }
 ];
 
