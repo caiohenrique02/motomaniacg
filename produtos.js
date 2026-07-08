@@ -49,7 +49,7 @@ window.MODELOS = [
         "descricao": "Triciclo elétrico de três rodas que oferece máxima estabilidade e segurança no dia a dia. Não exige CNH nem emplacamento, conta com marcha à ré, alarme e bagageiro, sendo ideal para uso urbano e mobilidade da família. Conforto e praticidade com painel digital e três níveis de velocidade.",
         "specs": {
             "motor": "1000W brushless (traseiro)",
-            "bateria": "Lítio 60V 20Ah",
+            "bateria": "Chumbo 60V 20Ah",
             "autonomia": "Até 45 km por carga",
             "velocidade": "25 km/h (3 níveis)",
             "freios": "Disco dianteiro + tambor traseiro",
@@ -77,9 +77,9 @@ window.MODELOS = [
         "id": "eko-7",
         "modelo": "Eko 7",
         "categoria": "motos",
-        "descricao": "Scooter elétrica Duos Eko 7 com motor de 600W, ideal para o dia a dia urbano: não precisa de CNH nem emplacamento. Vem com farol de LED, painel digital, alarme antifurto e acionamento por cartão NFC, além de cestinha para pequenas cargas. Autonomia de até 50 km com conforto para duas pessoas.",
+        "descricao": "Scooter elétrica Duos Eko 7 com motor de 800W, ideal para o dia a dia urbano: não precisa de CNH nem emplacamento. Vem com farol de LED, painel digital, alarme antifurto e acionamento por cartão NFC, além de cestinha para pequenas cargas. Autonomia de até 50 km com conforto para duas pessoas.",
         "specs": {
-            "motor": "600W",
+            "motor": "800W",
             "bateria": "Chumbo 48V 20Ah",
             "autonomia": "Até 50 km por carga",
             "velocidade": "32 km/h",
@@ -114,11 +114,11 @@ window.MODELOS = [
         "id": "raptor-pro",
         "modelo": "Raptor Pro",
         "categoria": "motos",
-        "descricao": "Scooter elétrica Trixx Raptor Pro 1000W brushless, robusta e com visual esportivo, dispensa CNH e emplacamento. Conta com freio dianteiro a disco hidráulico, suspensão telescópica hidráulica, proteção IP54, farol de LED e painel digital. Perfeita para deslocamentos urbanos com autonomia de 40 a 50 km.",
+        "descricao": "Scooter elétrica Trixx Raptor Pro 1000W brushless, robusta e com visual esportivo, dispensa CNH e emplacamento. Conta com freio dianteiro a disco hidráulico, suspensão telescópica hidráulica, proteção IP54, farol de LED e painel digital. Perfeita para deslocamentos urbanos com autonomia de até 60 km.",
         "specs": {
             "motor": "1000W brushless",
             "bateria": "Chumbo 60V 20Ah",
-            "autonomia": "40 a 50 km por carga",
+            "autonomia": "Até 60 km por carga",
             "velocidade": "32 km/h (3 níveis)",
             "freios": "Disco hidráulico dianteiro + tambor traseiro",
             "suspensao": "Garfo telescópico hidráulico dianteiro + mola dupla traseira",
@@ -482,7 +482,7 @@ window.MODELOS = [
         "novidade": true,
         "descricao": "Scooter elétrica Agile Raphynus na versão 1000W com bateria de lítio removível, ideal para o dia a dia urbano sem CNH e sem emplacamento. Com farol LED, painel digital e autonomia de até 45 km, une conforto do banco duplo e estabilidade dos pneus aro 14 para deslocamentos econômicos pela cidade.",
         "specs": {
-            "motor": "1000W brushless",
+            "motor": "600W brushless",
             "bateria": "Lítio 60V 20Ah (removível)",
             "autonomia": "Até 45 km por carga",
             "velocidade": "32 km/h",
@@ -739,7 +739,7 @@ window.MODELOS = [
         "descricao": "Triciclo elétrico Raphynus compacto e estável, perfeito para a mobilidade urbana do dia a dia. Com três rodas aro 10, freios a tambor e capacidade para adulto e criança, oferece conforto e segurança sem precisar de CNH. Painel digital, alarme e iluminação completa em LED de série.",
         "specs": {
             "motor": "650W",
-            "bateria": "Chumbo 48V 20Ah (fixa)",
+            "bateria": "Lítio 48V 20Ah (fixa)",
             "autonomia": "40 a 45 km por carga",
             "velocidade": "32 km/h",
             "freios": "Tambor (dianteiro e traseiro)",
