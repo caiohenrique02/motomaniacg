@@ -4,8 +4,26 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Moto Mania CG | Moto & Bike Elétrica — Campina Grande</title>
-    <meta name="description" content="A Moto Mania CG reúne os melhores modelos de motocicletas e bikes elétricas em Campina Grande. Venha conhecer nossa loja!">
+    <title>Moto Mania CG | Moto & Bike Elétrica — Campina Grande, Esperança e Cuité</title>
+    <meta name="description" content="A Moto Mania CG reúne os melhores modelos de motos e bikes elétricas sem CNH em Campina Grande, Esperança e Cuité (PB). Triciclos, scooters, patinetes e quadriciclos elétricos. Confira o catálogo e fale com uma loja perto de você.">
+    <link rel="canonical" href="https://motomania.site/" />
+    <link rel="icon" type="image/jpeg" href="assets/LogoMotomaniacg.jpg" />
+
+    <!-- Open Graph / WhatsApp / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Moto Mania CG" />
+    <meta property="og:title" content="Moto Mania CG | Moto & Bike Elétrica — Campina Grande, Esperança e Cuité" />
+    <meta property="og:description" content="Motos, triciclos, scooters, patinetes e quadriciclos elétricos sem CNH. 5 lojas físicas em Campina Grande, Esperança e Cuité (PB)." />
+    <meta property="og:url" content="https://motomania.site/" />
+    <meta property="og:image" content="https://motomania.site/assets/LogoMotomaniacg.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Moto Mania CG | Moto & Bike Elétrica" />
+    <meta name="twitter:description" content="Motos, triciclos, scooters, patinetes e quadriciclos elétricos sem CNH. 5 lojas físicas em Campina Grande, Esperança e Cuité (PB)." />
+    <meta name="twitter:image" content="https://motomania.site/assets/LogoMotomaniacg.jpg" />
+
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
@@ -90,6 +108,114 @@
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
+
+    <!-- Dados estruturados (Schema.org) — ajuda o Google a entender que é uma rede de lojas de moto elétrica -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://motomania.site/#organizacao",
+                "name": "Moto Mania CG",
+                "url": "https://motomania.site/",
+                "logo": "https://motomania.site/assets/LogoMotomaniacg.jpg",
+                "image": "https://motomania.site/assets/LogoMotomaniacg.jpg",
+                "telephone": "+5583981869199",
+                "areaServed": ["Campina Grande", "Esperança", "Cuité"]
+            },
+            {
+                "@type": "MotorcycleDealer",
+                "@id": "https://motomania.site/#loja-centro",
+                "name": "Moto Mania CG - Loja Centro",
+                "parentOrganization": { "@id": "https://motomania.site/#organizacao" },
+                "image": "https://motomania.site/assets/fachada-centro.jpg",
+                "telephone": "+5583981968997",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "R. João Suassuna, n° 126a - Centro",
+                    "addressLocality": "Campina Grande",
+                    "addressRegion": "PB",
+                    "postalCode": "58400-036",
+                    "addressCountry": "BR"
+                },
+                "openingHoursSpecification": [
+                    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "17:30" },
+                    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:00", "closes": "12:00" }
+                ]
+            },
+            {
+                "@type": "MotorcycleDealer",
+                "@id": "https://motomania.site/#loja-catole",
+                "name": "Moto Mania CG - Loja Catolé",
+                "parentOrganization": { "@id": "https://motomania.site/#organizacao" },
+                "image": "https://motomania.site/assets/fachada-catole.jpg",
+                "telephone": "+5583993786093",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "R. Maestro Heitor Vila Lobos, 28 - Loja 01 - Catolé",
+                    "addressLocality": "Campina Grande",
+                    "addressRegion": "PB",
+                    "postalCode": "58410-215",
+                    "addressCountry": "BR"
+                },
+                "openingHoursSpecification": [
+                    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "17:30" },
+                    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:00", "closes": "12:00" }
+                ]
+            },
+            {
+                "@type": "MotorcycleDealer",
+                "@id": "https://motomania.site/#loja-praca-adauto",
+                "name": "Moto Mania CG - Loja Praça Dom Adauto",
+                "parentOrganization": { "@id": "https://motomania.site/#organizacao" },
+                "telephone": "+5583986631071",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Praça Dom Adauto - Centro",
+                    "addressLocality": "Esperança",
+                    "addressRegion": "PB",
+                    "addressCountry": "BR"
+                },
+                "openingHoursSpecification": [
+                    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "07:00", "closes": "17:00" }
+                ]
+            },
+            {
+                "@type": "MotorcycleDealer",
+                "@id": "https://motomania.site/#loja-antenor",
+                "name": "Moto Mania CG - Loja Antenor Navarro",
+                "parentOrganization": { "@id": "https://motomania.site/#organizacao" },
+                "telephone": "+5583991084700",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "R. Antenor Navarro",
+                    "addressLocality": "Esperança",
+                    "addressRegion": "PB",
+                    "addressCountry": "BR"
+                },
+                "openingHoursSpecification": [
+                    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "07:00", "closes": "17:00" }
+                ]
+            },
+            {
+                "@type": "MotorcycleDealer",
+                "@id": "https://motomania.site/#loja-cuite",
+                "name": "Moto Mania CG - Loja Cuité",
+                "parentOrganization": { "@id": "https://motomania.site/#organizacao" },
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Cuité",
+                    "addressRegion": "PB",
+                    "addressCountry": "BR"
+                },
+                "openingHoursSpecification": [
+                    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "07:00", "closes": "17:00" }
+                ]
+            }
+        ]
+    }
+    </script>
 </head>
 
 <body class="bg-brand-light text-slate-900 font-display selection:bg-brand-orange selection:text-white">

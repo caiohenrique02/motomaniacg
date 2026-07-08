@@ -4,6 +4,14 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title id="page-title">Produto | Moto Mania CG</title>
+    <meta id="page-description" name="description" content="Confira as motos e bikes elétricas da Moto Mania CG, sem CNH e sem emplacamento. Lojas em Campina Grande, Esperança e Cuité (PB)." />
+    <link id="page-canonical" rel="canonical" href="https://motomania.site/detalhes-produto.html" />
+    <meta id="og-title" property="og:title" content="Produto | Moto Mania CG" />
+    <meta id="og-description" property="og:description" content="Confira as motos e bikes elétricas da Moto Mania CG, sem CNH e sem emplacamento." />
+    <meta id="og-url" property="og:url" content="https://motomania.site/detalhes-produto.html" />
+    <meta id="og-image" property="og:image" content="https://motomania.site/assets/LogoMotomaniacg.jpg" />
+    <meta property="og:type" content="product" />
+    <script id="product-jsonld" type="application/ld+json"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
@@ -253,7 +261,32 @@
                 // Textos da cor
                 elCor.textContent = c.cor;
                 elCorSel.textContent = m.cores.length > 1 ? "— " + c.cor : "";
-                document.getElementById("page-title").textContent = m.modelo + " " + c.cor + " | Moto Mania CG";
+                const tituloPagina = m.modelo + " " + c.cor + " | Moto Mania CG";
+                document.getElementById("page-title").textContent = tituloPagina;
+
+                // SEO: meta description, canonical e Open Graph dinâmicos por produto/cor
+                const categoriaLabel = (window.CATEGORIAS_LABEL[m.categoria] || m.categoria || "veículo elétrico").toLowerCase();
+                const descCurta = (m.descricao || "").slice(0, 155).trim();
+                const metaDesc = descCurta || (m.modelo + " " + c.cor + " — " + categoriaLabel + " elétrico sem CNH, Moto Mania CG.");
+                const urlAtual = window.location.origin + window.location.pathname + "?id=" + (m.id || id);
+                const fotoOg = c.fotos && c.fotos[0] ? window.location.origin + "/" + window.fotoSrc(c.fotos[0]) : "https://motomania.site/assets/LogoMotomaniacg.jpg";
+
+                document.getElementById("page-description").setAttribute("content", metaDesc);
+                document.getElementById("page-canonical").setAttribute("href", urlAtual);
+                document.getElementById("og-title").setAttribute("content", tituloPagina);
+                document.getElementById("og-description").setAttribute("content", metaDesc);
+                document.getElementById("og-url").setAttribute("content", urlAtual);
+                document.getElementById("og-image").setAttribute("content", fotoOg);
+
+                document.getElementById("product-jsonld").textContent = JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Product",
+                    "name": m.modelo + " " + c.cor,
+                    "category": categoriaLabel,
+                    "description": metaDesc,
+                    "image": fotoOg,
+                    "brand": { "@type": "Brand", "name": "Moto Mania CG" }
+                });
 
                 // Galeria
                 fotosAtuais = c.fotos;
