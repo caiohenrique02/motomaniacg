@@ -218,6 +218,18 @@
             
             let targetText = ''; // To store the original ?text=
 
+            // Rodízio: a cada dia local, o vendedor que estava no topo passa pro final da lista.
+            function diaDoAno() {
+                const agora = new Date();
+                const inicioAno = new Date(agora.getFullYear(), 0, 0);
+                return Math.floor((agora - inicioAno) / 86400000);
+            }
+            function comRodizio(lista) {
+                if (!lista || lista.length < 2) return lista || [];
+                const offset = diaDoAno() % lista.length;
+                return lista.slice(offset).concat(lista.slice(0, offset));
+            }
+
             // Function to open modal
             function openModal(text) {
                 targetText = text || '';
@@ -249,7 +261,7 @@
                 vendedorSelect.innerHTML = '<option value="">Selecione...</option>';
                 
                 if (unity && sellers[unity]) {
-                    sellers[unity].forEach(seller => {
+                    comRodizio(sellers[unity]).forEach(seller => {
                         const opt = document.createElement('option');
                         opt.value = seller.number;
                         opt.textContent = seller.name;
