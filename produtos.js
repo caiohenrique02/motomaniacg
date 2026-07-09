@@ -1166,9 +1166,6 @@ window.CATEGORIAS_LABEL = {
 };
 window.CATEGORIAS_ORDEM = ["motos", "triciclos", "quadriciclos", "bikes", "patinetes", "drifts"];
 
-// Número de WhatsApp padrão para o botão de interesse
-window.WHATSAPP_PADRAO = "5583981869199";
-
 // Busca um modelo pelo id (slug) OU por um ref numérico antigo (links legados).
 // Retorna { modelo, corIndex } ou null.
 window.getModelo = function (id) {

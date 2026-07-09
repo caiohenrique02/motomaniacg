@@ -160,7 +160,158 @@
         <button id="lb-next" class="absolute right-3 sm:right-6 w-11 h-11 flex items-center justify-center bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
     </div>
 
+    <!-- ========== WHATSAPP MODAL ========== -->
+    <div id="wa-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
+        <div class="bg-white w-[90%] max-w-md rounded-3xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300 p-6 relative">
+            <button id="wa-modal-close" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-slate-100 text-slate-500 rounded-full hover:bg-slate-200 transition-colors">
+                <span class="material-symbols-outlined text-sm">close</span>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 bg-brand-orange/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span class="material-symbols-outlined text-brand-orange">chat</span>
+                </div>
+                <h3 class="text-xl font-black text-brand-blue">Fale Conosco</h3>
+                <p class="text-sm text-slate-500 mt-1">Escolha a loja e com quem deseja falar.</p>
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Loja</label>
+                    <select id="wa-unidade" class="w-full rounded-xl border-slate-200 bg-slate-50 text-brand-blue font-bold focus:ring-brand-orange focus:border-brand-orange">
+                        <option value="">Selecione uma loja...</option>
+                        <option value="centro">Loja Centro (Campina Grande)</option>
+                        <option value="santa-cruz">Loja Santa Cruz (Campina Grande)</option>
+                        <option value="catole">Loja Catolé (Campina Grande)</option>
+                        <option value="cuite">Unidade Cuité</option>
+                        <option value="praca-adauto">Loja Praça Dom Adauto (Esperança)</option>
+                        <option value="antenor">Loja Antenor Navarro (Esperança)</option>
+                    </select>
+                </div>
+
+                <div id="wa-vendedor-container" class="hidden">
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Vendedor</label>
+                    <select id="wa-vendedor" class="w-full rounded-xl border-slate-200 bg-slate-50 text-brand-blue font-bold focus:ring-brand-orange focus:border-brand-orange">
+                        <option value="">Selecione...</option>
+                    </select>
+                </div>
+
+                <button id="wa-modal-submit" disabled class="w-full bg-brand-orange text-white py-3 rounded-xl font-black text-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-orange-600 transition-all shadow-lg shadow-brand-orange/30 mt-2 flex items-center justify-center gap-2">
+                    Continuar para WhatsApp <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script src="produtos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sellers = {
+                centro: [
+                    { name: "Jonas", number: "5583981968997" },
+                    { name: "Wellyngton", number: "5583999149347" },
+                    { name: "Fabrício", number: "5583987431313" },
+                    { name: "Marcelo", number: "5583989041968" }
+                ],
+                "santa-cruz": [
+                    { name: "Leidiane", number: "5583998338087" },
+                    { name: "Ryan", number: "5583981410704" }
+                ],
+                catole: [
+                    { name: "Thiago", number: "5583993786093" }
+                ],
+                cuite: [
+                    { name: "Paulo", number: "5583996443829" }
+                ],
+                "praca-adauto": [
+                    { name: "Val", number: "5583986631071" }
+                ],
+                antenor: [
+                    { name: "Val", number: "5583991084700" }
+                ]
+            };
+
+            const modal = document.getElementById('wa-modal');
+            const closeBtn = document.getElementById('wa-modal-close');
+            const unidadeSelect = document.getElementById('wa-unidade');
+            const vendedorContainer = document.getElementById('wa-vendedor-container');
+            const vendedorSelect = document.getElementById('wa-vendedor');
+            const submitBtn = document.getElementById('wa-modal-submit');
+
+            let targetText = '';
+
+            function openModal(text) {
+                targetText = text || '';
+                unidadeSelect.value = '';
+                vendedorContainer.classList.add('hidden');
+                vendedorSelect.innerHTML = '<option value="">Selecione...</option>';
+                submitBtn.disabled = true;
+
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modal.querySelector('div').classList.remove('scale-95');
+                modal.querySelector('div').classList.add('scale-100');
+            }
+
+            function closeModal() {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                modal.querySelector('div').classList.remove('scale-100');
+                modal.querySelector('div').classList.add('scale-95');
+            }
+
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+
+            unidadeSelect.addEventListener('change', (e) => {
+                const key = e.target.value;
+                vendedorSelect.innerHTML = '<option value="">Selecione...</option>';
+
+                if (key && sellers[key]) {
+                    sellers[key].forEach(seller => {
+                        const opt = document.createElement('option');
+                        opt.value = seller.number;
+                        opt.textContent = seller.name;
+                        vendedorSelect.appendChild(opt);
+                    });
+                    vendedorContainer.classList.remove('hidden');
+                } else {
+                    vendedorContainer.classList.add('hidden');
+                }
+                submitBtn.disabled = true;
+            });
+
+            vendedorSelect.addEventListener('change', (e) => {
+                submitBtn.disabled = !e.target.value;
+            });
+
+            submitBtn.addEventListener('click', () => {
+                const number = vendedorSelect.value;
+                if (!number) return;
+
+                let finalUrl = `https://wa.me/${number}`;
+                if (targetText) finalUrl += `?text=${encodeURIComponent(targetText)}`;
+
+                window.open(finalUrl, '_blank');
+                closeModal();
+            });
+
+            // Intercepta os links de "falar conosco" (exceto o de compartilhar, que não é contato).
+            document.body.addEventListener('click', (e) => {
+                const link = e.target.closest('a');
+                if (link && link.id !== 'btn-share' && link.href && link.href.includes('wa.me')) {
+                    e.preventDefault();
+
+                    let text = '';
+                    try {
+                        text = new URL(link.href).searchParams.get('text') || '';
+                    } catch (err) {}
+
+                    openModal(text);
+                }
+            });
+        });
+    </script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const params = new URLSearchParams(window.location.search);
@@ -305,7 +456,7 @@
                 // WhatsApp
                 const waText = "Olá! Tenho interesse no(a) *" + m.modelo + " - " + c.cor +
                     "* que vi no site de vocês. Poderia me passar mais informações?";
-                const waHref = "https://wa.me/" + window.WHATSAPP_PADRAO + "?text=" + encodeURIComponent(waText);
+                const waHref = "https://wa.me/?text=" + encodeURIComponent(waText);
                 btnWhats.href = waHref;
                 ctaWhats.href = waHref;
 
