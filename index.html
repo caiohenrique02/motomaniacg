@@ -9,6 +9,11 @@
     <link rel="canonical" href="https://motomania.site/" />
     <link rel="icon" type="image/jpeg" href="assets/LogoMotomaniacg.jpg" />
 
+    <!-- Preconnect: adianta a conexão com os hosts externos (Tailwind CDN e fontes) antes do parser chegar neles -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <!-- Open Graph / WhatsApp / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
@@ -445,7 +450,7 @@
                 <p class="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">Visite uma de nossas lojas em Campina Grande, Esperança ou Cuité para conhecer nossos modelos de perto e fazer um test-ride.</p>
             </div>
 
-            <div class="grid gap-10 mb-12 max-w-md mx-auto">
+            <div class="grid gap-10 mb-12 max-w-md md:max-w-4xl mx-auto md:grid-cols-2">
                 <!-- Unidade Centro -->
                 <div class="group bg-white border border-slate-200 p-8 rounded-[2rem] hover:border-brand-orange/30 transition-all backdrop-blur-md flex flex-col gap-8 shadow-xl">
                     <div class="w-full h-56 rounded-2xl overflow-hidden shadow-lg border border-slate-100">
@@ -612,7 +617,7 @@
                     </div>
                 </div>
                 <!-- Unidade Cuité -->
-                <div class="group bg-white border border-slate-200 p-8 rounded-[2rem] hover:border-brand-orange/30 transition-all backdrop-blur-md flex flex-col gap-8 shadow-xl">
+                <div class="group bg-white border border-slate-200 p-8 rounded-[2rem] hover:border-brand-orange/30 transition-all backdrop-blur-md flex flex-col gap-8 shadow-xl md:col-span-2 md:max-w-md md:mx-auto">
                     <div class="w-full h-72 rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-50 flex-shrink-0">
                         <img alt="Unidade Cuité - Moto Mania" class="w-full h-full object-contain"
                             src="assets/fachada-cuite.jpg" />
