@@ -460,21 +460,25 @@
                     <span class="material-symbols-outlined text-brand-orange">chat</span>
                 </div>
                 <h3 class="text-xl font-black text-brand-blue">Fale Conosco</h3>
-                <p class="text-sm text-slate-500 mt-1">Escolha a unidade e com quem deseja falar.</p>
+                <p id="wa-modal-subtitle" class="text-sm text-slate-500 mt-1">Escolha a loja e com quem deseja falar.</p>
             </div>
 
             <div class="space-y-4">
-                <div>
-                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Unidade</label>
+                <div id="wa-loja-container">
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Loja</label>
                     <select id="wa-unidade" class="w-full rounded-xl border-slate-200 bg-slate-50 text-brand-blue font-bold focus:ring-brand-orange focus:border-brand-orange">
-                        <option value="">Selecione uma unidade...</option>
-                        <option value="campina">Campina Grande</option>
-                        <option value="esperanca">Esperança</option>
+                        <option value="">Selecione uma loja...</option>
+                        <option value="centro">Loja Centro (Campina Grande)</option>
+                        <option value="santa-cruz">Loja Santa Cruz (Campina Grande)</option>
+                        <option value="catole">Loja Catolé (Campina Grande)</option>
+                        <option value="cuite">Unidade Cuité</option>
+                        <option value="praca-adauto">Loja Praça Dom Adauto (Esperança)</option>
+                        <option value="antenor">Loja Antenor Navarro (Esperança)</option>
                     </select>
                 </div>
 
                 <div id="wa-vendedor-container" class="hidden">
-                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Vendedor / Loja</label>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Vendedor</label>
                     <select id="wa-vendedor" class="w-full rounded-xl border-slate-200 bg-slate-50 text-brand-blue font-bold focus:ring-brand-orange focus:border-brand-orange">
                         <option value="">Selecione...</option>
                     </select>
@@ -489,27 +493,50 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Fonte única dos vendedores por unidade. Atualizado 2026-07 (ver Caio antes de trocar números).
             const sellers = {
-                campina: [
-                    { name: "Wanessa", number: "5583999149347" },
-                    { name: "Leidiane", number: "5583998338087" },
-                    { name: "Thiago", number: "5583993786093" },
-                    { name: "Neto", number: "5583996443829" },
-                    { name: "Jonas", number: "5583981968997" }
+                centro: [
+                    { name: "Jonas", number: "5583981968997" },
+                    { name: "Wellyngton", number: "5583999149347" },
+                    { name: "Fabrício", number: "5583987431313" },
+                    { name: "Marcelo", number: "5583989041968" },
+                    { name: "Ryan", number: "5583981410704" }
                 ],
-                esperanca: [
-                    { name: "Loja Praça Dom Adauto", number: "5583986631071" },
-                    { name: "Loja Antenor Navarro", number: "5583991084700" }
+                "santa-cruz": [
+                    { name: "Leidiane", number: "5583998338087" },
+                    { name: "João", number: "5583991998826" }
+                ],
+                catole: [
+                    { name: "Thiago", number: "5583993786093" }
+                ],
+                cuite: [
+                    { name: "Paulo", number: "5583996443829" }
+                ],
+                "praca-adauto": [
+                    { name: "Val", number: "5583986631071" }
+                ],
+                antenor: [
+                    { name: "Val", number: "5583991084700" }
                 ]
+            };
+            const storeLabels = {
+                centro: "Loja Centro",
+                "santa-cruz": "Loja Santa Cruz",
+                catole: "Loja Catolé",
+                cuite: "Unidade Cuité",
+                "praca-adauto": "Loja Praça Dom Adauto",
+                antenor: "Loja Antenor Navarro"
             };
 
             const modal = document.getElementById('wa-modal');
             const closeBtn = document.getElementById('wa-modal-close');
+            const subtitleEl = document.getElementById('wa-modal-subtitle');
+            const lojaContainer = document.getElementById('wa-loja-container');
             const unidadeSelect = document.getElementById('wa-unidade');
             const vendedorContainer = document.getElementById('wa-vendedor-container');
             const vendedorSelect = document.getElementById('wa-vendedor');
             const submitBtn = document.getElementById('wa-modal-submit');
-            
+
             let targetText = ''; // To store the original ?text=
 
             // Rodízio: a cada dia local, o vendedor que estava no topo passa pro final da lista.
@@ -524,14 +551,36 @@
                 return lista.slice(offset).concat(lista.slice(0, offset));
             }
 
-            // Function to open modal
-            function openModal(text) {
-                targetText = text || '';
-                unidadeSelect.value = '';
-                vendedorContainer.classList.add('hidden');
+            function fillVendedores(key) {
                 vendedorSelect.innerHTML = '<option value="">Selecione...</option>';
+                comRodizio(sellers[key]).forEach(seller => {
+                    const opt = document.createElement('option');
+                    opt.value = seller.number;
+                    opt.textContent = seller.name;
+                    vendedorSelect.appendChild(opt);
+                });
+            }
+
+            // Function to open modal. unidadeKey, se informado, trava a loja (usado pelo botão
+            // "Contato Direto" de cada unidade, pra só aparecer o contato daquela loja específica).
+            function openModal(text, unidadeKey) {
+                targetText = text || '';
                 submitBtn.disabled = true;
-                
+
+                if (unidadeKey && sellers[unidadeKey]) {
+                    lojaContainer.classList.add('hidden');
+                    unidadeSelect.value = unidadeKey;
+                    fillVendedores(unidadeKey);
+                    vendedorContainer.classList.remove('hidden');
+                    subtitleEl.textContent = 'Escolha com quem falar na ' + (storeLabels[unidadeKey] || 'loja') + '.';
+                } else {
+                    lojaContainer.classList.remove('hidden');
+                    unidadeSelect.value = '';
+                    vendedorContainer.classList.add('hidden');
+                    vendedorSelect.innerHTML = '<option value="">Selecione...</option>';
+                    subtitleEl.textContent = 'Escolha a loja e com quem deseja falar.';
+                }
+
                 modal.classList.remove('opacity-0', 'pointer-events-none');
                 modal.querySelector('div').classList.remove('scale-95');
                 modal.querySelector('div').classList.add('scale-100');
@@ -549,18 +598,11 @@
                 if(e.target === modal) closeModal();
             });
 
-            // Handle unity change
+            // Handle loja change (fluxo genérico, sem unidade travada)
             unidadeSelect.addEventListener('change', (e) => {
-                const unity = e.target.value;
-                vendedorSelect.innerHTML = '<option value="">Selecione...</option>';
-                
-                if (unity && sellers[unity]) {
-                    comRodizio(sellers[unity]).forEach(seller => {
-                        const opt = document.createElement('option');
-                        opt.value = seller.number;
-                        opt.textContent = seller.name;
-                        vendedorSelect.appendChild(opt);
-                    });
+                const key = e.target.value;
+                if (key && sellers[key]) {
+                    fillVendedores(key);
                     vendedorContainer.classList.remove('hidden');
                 } else {
                     vendedorContainer.classList.add('hidden');
@@ -577,12 +619,12 @@
             submitBtn.addEventListener('click', () => {
                 const number = vendedorSelect.value;
                 if (!number) return;
-                
+
                 let finalUrl = `https://wa.me/${number}`;
                 if (targetText) {
                     finalUrl += `?text=${encodeURIComponent(targetText)}`;
                 }
-                
+
                 window.open(finalUrl, '_blank');
                 closeModal();
             });
@@ -592,7 +634,7 @@
                 const link = e.target.closest('a');
                 if (link && link.href && link.href.includes('wa.me')) {
                     e.preventDefault();
-                    
+
                     // Extract text param if exists
                     let text = '';
                     try {
@@ -606,8 +648,9 @@
                              text = decodeURIComponent(link.href.split('?text=')[1] || '');
                         } catch(e) {}
                     }
-                    
-                    openModal(text);
+
+                    const unidadeKey = link.dataset.unidade || '';
+                    openModal(text, unidadeKey);
                 }
             });
         });
