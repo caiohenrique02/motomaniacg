@@ -65,9 +65,7 @@ window.MODELOS = [
                 "fotos": [
                     "1.jpeg",
                     "1 (1).jpeg",
-                    "1 (2).jpeg",
-                    "19 (1).jpeg",
-                    "19 (2).jpeg"
+                    "1 (2).jpeg"
                 ],
                 "ref": 1
             }
@@ -143,6 +141,14 @@ window.MODELOS = [
                     "raptor-pro-vermelho-1.jpeg",
                     "raptor-pro-vermelho-2.jpeg",
                     "raptor-pro-vermelho-3.jpeg"
+                ]
+            },
+            {
+                "cor": "Preta",
+                "loja": "",
+                "fotos": [
+                    "agile-raphynus-branca-preto-1.jpeg",
+                    "agile-raphynus-branca-preto-2.jpeg"
                 ]
             }
         ]
@@ -355,7 +361,10 @@ window.MODELOS = [
                 "fotos": [
                     "WhatsApp Image 2026-06-01 at 14.52.28.jpeg",
                     "WhatsApp Image 2026-06-01 at 14.52.29 (2).jpeg",
-                    "WhatsApp Image 2026-06-01 at 14.52.29 (3).jpeg"
+                    "WhatsApp Image 2026-06-01 at 14.52.29 (3).jpeg",
+                    "triciclo-bonmad-azul-nova-1.jpeg",
+                    "triciclo-bonmad-azul-nova-2.jpeg",
+                    "triciclo-bonmad-azul-nova-3.jpeg"
                 ]
             }
         ]
@@ -447,6 +456,35 @@ window.MODELOS = [
         ]
     },
     {
+        "id": "super-mini",
+        "modelo": "Super Mini",
+        "categoria": "motos",
+        "novidade": true,
+        "lugares": 2,
+        "descricao": "Scooter elétrica Super Mini, com cestinha dianteira e banco duplo com encosto para o passageiro. Autopropelida, dispensa CNH e emplacamento, boa opção para uso urbano com espaço extra pra carga do dia a dia.",
+        "specs": {
+            "motor": "500W brushless (estimado)",
+            "bateria": "Chumbo 48V 20Ah (estimado)",
+            "autonomia": "30 a 40 km por carga (estimado)",
+            "velocidade": "32 km/h",
+            "freios": "Tambor dianteiro e traseiro",
+            "suspensao": "Dianteira e traseira",
+            "pneus": "Aro 12\"",
+            "capacidade": "120 kg (estimado)",
+            "tempoCarga": "6 a 8 horas"
+        },
+        "cores": [
+            {
+                "cor": "Verde",
+                "loja": "",
+                "fotos": [
+                    "centry-mini-verde-1.jpeg",
+                    "centry-mini-verde-2.jpeg"
+                ]
+            }
+        ]
+    },
+    {
         "id": "bonmad-500w",
         "modelo": "Bonmad 500W",
         "categoria": "motos",
@@ -501,14 +539,6 @@ window.MODELOS = [
                     "17 (4).jpeg"
                 ],
                 "ref": 18
-            },
-            {
-                "cor": "Branca com preto",
-                "loja": "",
-                "fotos": [
-                    "agile-raphynus-branca-preto-1.jpeg",
-                    "agile-raphynus-branca-preto-2.jpeg"
-                ]
             }
         ]
     },
@@ -734,6 +764,15 @@ window.MODELOS = [
                     "WhatsApp Image 2026-06-01 at 14.53.01 (1).jpeg",
                     "WhatsApp Image 2026-06-01 at 14.53.01 (3).jpeg"
                 ]
+            },
+            {
+                "cor": "Vermelho",
+                "loja": "",
+                "fotos": [
+                    "triciclo-raphynus-vermelho-1.jpeg",
+                    "triciclo-raphynus-vermelho-2.jpeg",
+                    "triciclo-raphynus-vermelho-3.jpeg"
+                ]
             }
         ],
         "descricao": "Triciclo elétrico Raphynus compacto e estável, perfeito para a mobilidade urbana do dia a dia. Com três rodas aro 10, freios a tambor e capacidade para adulto e criança, oferece conforto e segurança sem precisar de CNH. Painel digital, alarme e iluminação completa em LED de série.",
@@ -760,8 +799,7 @@ window.MODELOS = [
                 "loja": "",
                 "fotos": [
                     "WhatsApp Image 2026-06-01 at 14.52.34 (1).jpeg",
-                    "WhatsApp Image 2026-06-01 at 14.52.34.jpeg",
-                    "WhatsApp Image 2026-06-01 at 14.52.36 (1).jpeg"
+                    "WhatsApp Image 2026-06-01 at 14.52.34.jpeg"
                 ]
             }
         ],
@@ -1139,6 +1177,272 @@ window.MODELOS = [
             "tempoCarga": "3 a 5 horas"
         },
         "lugares": 1
+    },
+    {
+        "id": "triciclo-big",
+        "modelo": "Triciclo Big",
+        "categoria": "triciclos",
+        "novidade": true,
+        "lugares": 2,
+        "descricao": "Triciclo elétrico Moto Chefe BigTri, robusto e espaçoso, com bagageiro dianteiro e baú traseiro para cargas do dia a dia. Autopropelido, dispensa CNH e emplacamento, e traz banco duplo com encosto, painel digital e iluminação em LED. Ótima estabilidade das três rodas para uso urbano e familiar.",
+        "specs": {
+            "motor": "1000W (traseiro)",
+            "bateria": "Chumbo 60V 20Ah",
+            "autonomia": "Até 50 km por carga",
+            "velocidade": "32 km/h",
+            "freios": "Tambor dianteiro e traseiro",
+            "suspensao": "Dianteira e traseira",
+            "pneus": "Aro 10\"",
+            "capacidade": "2 pessoas (até 150 kg)",
+            "tempoCarga": "6 a 8 horas"
+        },
+        "cores": [
+            {
+                "cor": "Prata",
+                "loja": "",
+                "fotos": [
+                    "triciclo-big-prata-1.jpeg",
+                    "triciclo-big-prata-2.jpeg",
+                    "triciclo-big-prata-3.jpeg"
+                ]
+            },
+            {
+                "cor": "Preto",
+                "loja": "",
+                "fotos": [
+                    "triciclo-big-preto-1.jpeg",
+                    "triciclo-big-preto-2.jpeg",
+                    "triciclo-big-preto-3.jpeg"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "cruiser-max",
+        "modelo": "Cruiser Max",
+        "categoria": "motos",
+        "novidade": true,
+        "descricao": "Scooter elétrica RioSouth Cruiser Max, visual retrô e conforto para o uso urbano do dia a dia. Autopropelida, dispensa CNH e emplacamento, com cestinha dianteira, farol de LED em anel e banco duplo com encosto. Ideal para deslocamentos rápidos pela cidade.",
+        "specs": {
+            "motor": "800W brushless",
+            "bateria": "Chumbo 48V 20Ah",
+            "autonomia": "Até 45 km por carga",
+            "velocidade": "32 km/h",
+            "freios": "Tambor dianteiro e traseiro",
+            "suspensao": "Dianteira telescópica + traseira",
+            "pneus": "Aro 14\"",
+            "capacidade": "120 kg",
+            "tempoCarga": "6 a 8 horas"
+        },
+        "cores": [
+            {
+                "cor": "Vermelha",
+                "loja": "",
+                "fotos": [
+                    "cruiser-max-vermelho-1.jpeg",
+                    "cruiser-max-vermelho-2.jpeg",
+                    "cruiser-max-vermelho-3.jpeg"
+                ]
+            },
+            {
+                "cor": "Azul",
+                "loja": "",
+                "fotos": [
+                    "cruiser-max-azul-1.jpeg",
+                    "cruiser-max-azul-2.jpeg",
+                    "cruiser-max-azul-3.jpeg"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "vense",
+        "modelo": "Vense",
+        "categoria": "motos",
+        "novidade": true,
+        "descricao": "Scooter elétrica Duact Vense, design moderno e minimalista com baú frontal integrado e farol full LED. Autopropelida, sem necessidade de CNH ou emplacamento, com painel digital, banco confortável com encosto e boa autonomia para o dia a dia na cidade.",
+        "specs": {
+            "motor": "800W brushless",
+            "bateria": "Lítio 48V 20Ah (removível)",
+            "autonomia": "Até 50 km por carga",
+            "velocidade": "32 km/h",
+            "freios": "Disco dianteiro e traseiro",
+            "suspensao": "Dianteira telescópica + traseira",
+            "pneus": "Aro 12\"",
+            "capacidade": "120 kg",
+            "tempoCarga": "5 a 6 horas"
+        },
+        "cores": [
+            {
+                "cor": "Preta com vermelho",
+                "loja": "",
+                "fotos": [
+                    "vense-preta-vermelho-1.jpeg",
+                    "vense-preta-vermelho-2.jpeg"
+                ]
+            },
+            {
+                "cor": "Branca com amarela",
+                "loja": "",
+                "fotos": [
+                    "vense-branca-amarela-1.jpeg",
+                    "vense-branca-amarela-2.jpeg",
+                    "vense-branca-amarela-3.jpeg"
+                ]
+            },
+            {
+                "cor": "Cinza com vermelha",
+                "loja": "",
+                "fotos": [
+                    "vense-cinza-vermelho-1.jpeg",
+                    "vense-cinza-vermelho-2.jpeg",
+                    "vense-cinza-vermelho-3.jpeg"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "zetar-az1",
+        "modelo": "Zetar AZ1",
+        "categoria": "motos",
+        "novidade": true,
+        "descricao": "Scooter elétrica Zetar Z1 Max, autopropelida e isenta de CNH e emplacamento. Traz cesta dianteira, banco duplo com encosto, painel digital e iluminação em LED, sendo uma ótima opção econômica para o trajeto diário na cidade.",
+        "specs": {
+            "motor": "500W brushless",
+            "bateria": "Chumbo 48V 12Ah",
+            "autonomia": "30 a 40 km por carga",
+            "velocidade": "32 km/h",
+            "freios": "Tambor dianteiro e traseiro",
+            "suspensao": "Dianteira e traseira",
+            "pneus": "Aro 14\"",
+            "capacidade": "120 kg",
+            "tempoCarga": "6 a 8 horas"
+        },
+        "cores": [
+            {
+                "cor": "Vermelha",
+                "loja": "",
+                "fotos": [
+                    "zetar-az1-vermelha-1.jpeg",
+                    "zetar-az1-vermelha-2.jpeg"
+                ]
+            },
+            {
+                "cor": "Preta",
+                "loja": "",
+                "fotos": [
+                    "zetar-az1-preta-1.jpeg",
+                    "zetar-az1-preta-2.jpeg"
+                ]
+            },
+            {
+                "cor": "Branca",
+                "loja": "",
+                "fotos": [
+                    "zetar-az1-branca-1.jpeg",
+                    "zetar-az1-branca-2.jpeg"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "skylo",
+        "modelo": "Skylo",
+        "categoria": "motos",
+        "novidade": true,
+        "descricao": "Scooter elétrica Skylo estilo citycoco, visual robusto com pneu largo e banco duplo. Autopropelida, dispensa CNH e emplacamento, traz farol full LED, painel digital e suspensão completa para maior conforto no uso urbano.",
+        "specs": {
+            "motor": "1000W brushless",
+            "bateria": "Chumbo 60V 20Ah",
+            "autonomia": "Até 45 km por carga",
+            "velocidade": "32 km/h",
+            "freios": "Disco dianteiro e traseiro",
+            "suspensao": "Dianteira hidráulica + traseira",
+            "pneus": "Aro 10\" largo",
+            "capacidade": "150 kg",
+            "tempoCarga": "6 a 8 horas"
+        },
+        "cores": [
+            {
+                "cor": "Prata",
+                "loja": "",
+                "fotos": [
+                    "skylo-prata-1.jpeg",
+                    "skylo-prata-2.jpeg",
+                    "skylo-prata-3.jpeg"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "tokyo-2026",
+        "modelo": "Tokyo 2026",
+        "categoria": "motos",
+        "novidade": true,
+        "descricao": "Scooter elétrica Conduzza Tokyo 2026, autopropelida e isenta de CNH e emplacamento. Com farol full LED, painel digital e banco confortável com encosto, é uma opção completa para o dia a dia urbano com bom acabamento e iluminação moderna.",
+        "specs": {
+            "motor": "1000W brushless",
+            "bateria": "Lítio 60V 20Ah (removível)",
+            "autonomia": "Até 70 km por carga",
+            "velocidade": "32 km/h",
+            "freios": "Disco hidráulico dianteiro e traseiro",
+            "suspensao": "Dianteira e traseira",
+            "pneus": "Aro 12\"",
+            "capacidade": "150 kg",
+            "tempoCarga": "6 a 8 horas"
+        },
+        "cores": [
+            {
+                "cor": "Branca",
+                "loja": "",
+                "fotos": [
+                    "tokyo-2026-branca-1.jpeg",
+                    "tokyo-2026-branca-2.jpeg",
+                    "tokyo-2026-branca-3.jpeg",
+                    "tokyo-2026-branca-4.jpeg",
+                    "tokyo-2026-branca-5.jpeg"
+                ]
+            },
+            {
+                "cor": "Preta",
+                "loja": "",
+                "fotos": [
+                    "tokyo-2026-preta-1.jpeg",
+                    "tokyo-2026-preta-2.jpeg",
+                    "tokyo-2026-preta-3.jpeg",
+                    "fx2000-preta-4.jpeg"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "fx2000",
+        "modelo": "Fx2000",
+        "categoria": "motos",
+        "novidade": true,
+        "descricao": "Scooter elétrica Fx2000 estilo citycoco, com pneus largos e visual esportivo. Autopropelida, dispensa CNH e emplacamento, conta com banco duplo com encosto e bagageiro traseiro, unindo conforto e estilo para o uso urbano.",
+        "specs": {
+            "motor": "1000W brushless",
+            "bateria": "Chumbo 60V 20Ah",
+            "autonomia": "Até 45 km por carga",
+            "velocidade": "32 km/h",
+            "freios": "Disco dianteiro e traseiro",
+            "suspensao": "Dianteira hidráulica + traseira dupla",
+            "pneus": "Aro 10\" largo",
+            "capacidade": "150 kg",
+            "tempoCarga": "6 a 8 horas"
+        },
+        "cores": [
+            {
+                "cor": "Preta",
+                "loja": "",
+                "fotos": [
+                    "fx2000-preta-1.jpeg",
+                    "fx2000-preta-2.jpeg",
+                    "fx2000-preta-3.jpeg"
+                ]
+            }
+        ]
     }
 ];
 
